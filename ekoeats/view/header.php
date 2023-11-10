@@ -23,12 +23,12 @@
                 <ul>
                     <li><a href="index.html">
                             <img width="100%"
-                                src="../img/ekoeats.jpg" alt="">
+                                src="../asset/img/logo.png" alt="">
                         </a>
                     </li>
-                    <li><a href="menu.html">THỰC ĐƠN</a></li>
-                    <li><a href="about-us.html">VỀ CHÚNG TÔI</a></li>
-                    <li><a href="contact.html">LIÊN HỆ CHÚNG TÔI</a></li>
+                    <li><a href="../menu.html">THỰC ĐƠN</a></li>
+                    <li><a href="../about-us.html">VỀ CHÚNG TÔI</a></li>
+                    <li><a href="../contact.html">LIÊN HỆ CHÚNG TÔI</a></li>
                 </ul>
             </div>
             <div class="header-right">
