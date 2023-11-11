@@ -1,4 +1,5 @@
 <?php
+    include("../model/pdo.php");
     include("header.php");
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
@@ -20,12 +21,12 @@
                 if(isset($_GET['id'])&&($_GET['id']>0)){
                     delete_danhmuc($_GET['id']);
                 }
-                $listdanhmuc=loadall_danhmuc();
+                $listdanhmuc=loadall_dm();
                 include "./danhmuc/list.php";
                 break;
             case "suadm":
                 if(isset($_GET['id'])&&($_GET['id']>0)){
-                    $dm=loadone_danhmuc($_GET['id']);
+                    $dm=loadone_dm($_GET['id']);
                 }
                 include "./danhmuc/update.php";
                 break;
@@ -33,10 +34,10 @@
                 if(isset($_POST['capnhat'])&& ($_POST['capnhat'])){
                     $tenloai=$_POST['tenloai'];
                     $id=$_POST['id'];
-                    update_danhmuc($id,$tenloai); 
+                    update_dm($id,$tenloai); 
                     $thongbao="cập nhật thành công";
                 }
-                $listdanhmuc=loadall_danhmuc();
+                $listdanhmuc=loadall_dm();
                 include "./danhmuc/list.php";
                 break;
             }
