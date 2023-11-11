@@ -10,7 +10,7 @@
            <select name="iddm" id="">
                     <?php  foreach ($listdm as $dm) {
                         extract($dm);
-                        echo '<option value="'.$id.'"'.$name.'></option>';
+                        echo '<option value="'.$id.'">'.$name.'</option>';
                     } ?>
                     
             </select>     
@@ -23,7 +23,7 @@
 
            <div class="row2 mb10">
             <label>Tên sản phẩm </label> <br>
-            <input type="text" name="tenloai" placeholder="nhập vào tên">
+            <input type="text" name="tensp" placeholder="nhập vào tên">
            </div>
 
            <div class="row2 mb10">

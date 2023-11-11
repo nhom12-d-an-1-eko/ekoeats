@@ -1,6 +1,6 @@
 <?php
 function insert_sp($tensp, $giasp,$hinh,$soluong,$mota,$iddm){
-    $sql="INSERT INTO sanpham(name,price,img,soluong,iddm,mota) VALUES ('$tensp','$giasp','$hinh',$soluong,$iddm,'$mota')";
+    $sql="INSERT INTO sanpham(name,price,img,soluong,mota,iddm) VALUES ('$tensp','$giasp','$hinh','$soluong','$mota','$iddm')";
     pdo_execute($sql);
 }
 function delete_sp($id){
