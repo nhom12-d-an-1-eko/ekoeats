@@ -11,6 +11,10 @@
                 }
                 include "./danhmuc/add.php";
                 break;  
+             case "listdm":
+            //         $listdanhmuc=loadall_danhmuc();
+                    include "./danhmuc/list.php";
+                    break;
             }
         }else{
             include "home.php";
