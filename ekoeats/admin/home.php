@@ -2,24 +2,6 @@
     <div class="container">
         <!-- Start content -->
         <div class="content">
-            <section class="delivery-address">
-                <p><span>Đặt Ngay</span> <img src="https://img.icons8.com/color/48/motorcycle.png"
-                        alt="motorcycle" /></i> <span>Giao Hàng</span><img
-                        src="https://img.icons8.com/color/48/food-receiver.png" alt="food-receiver" /> <span>hoặc Mang
-                        đi</span>
-                        <button><a href="#">Bắt đầu đặt hàng</a></button>
-                    </p>
-            </section>
-            <section class="banner">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide"><img src="../asset/img/buatruavuive.webp" alt=""></div>
-                      <div class="swiper-slide"><img src="../asset/img/gahoangkim.webp" alt=""></div>
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                  </div>
-            </section>
             <section class="category">
                 <div class="title">
                     <h1>DANH MỤC MÓN ĂN</h1>
@@ -54,6 +36,7 @@
                         <img src="../asset/img/TRANG MIENG.jpg" alt="">
                         <div class="sub"><a href="#">Thức Uống & Tráng Miệng <i class="fa-solid fa-angle-right"></i></a></div>
                     </div>
+                    <input class="mr20" type="submit" value="THÊM MỚI" name="themmoi">
                 </div>
             </section>
             <section class="category">
