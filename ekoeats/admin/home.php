@@ -36,7 +36,7 @@
                         <img src="../asset/img/TRANG MIENG.jpg" alt="">
                         <div class="sub"><a href="#">Thức Uống & Tráng Miệng <i class="fa-solid fa-angle-right"></i></a></div>
                     </div>
-                    <input class="mr20" type="submit" value="THÊM MỚI" name="themmoi">
+                    <a href="index.php?act=adddm"><input  class="sub" type="button" value="DANH SÁCH"></a>
                 </div>
             </section>
             <section class="category">

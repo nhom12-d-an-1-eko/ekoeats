@@ -1,5 +1,5 @@
 <div class="row2">
-         <div class="row2 font_title">
+        <div class="title">
           <h1>THÊM MỚI DANH MỤC</h1>
          </div>
          <div class="row2 form_content ">
@@ -13,16 +13,11 @@
             <input type="text" name="tenloai" placeholder="nhập vào tên">
            </div>
            <div class="row mb10 ">
-         <input class="mr20" type="submit" value="THÊM MỚI" name="themmoi">
-         <input  class="mr20" type="reset" value="NHẬP LẠI">
+         <input class="sub" type="submit" value="THÊM MỚI" name="themmoi">
+         <input  class="sub" type="reset" value="NHẬP LẠI">
 
-         <a href="index.php?act=listdm"><input  class="mr20" type="button" value="DANH SÁCH"></a>
+         <a href="index.php?act=listdm"><input  class="sub" type="button" value="DANH SÁCH"></a>
            </div>
-           <?php
-            if(isset($thongbao)&&($thongbao)!=""){
-              echo $thongbao;
-            }
-           ?>
           </form>
          </div>
         </div>

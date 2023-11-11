@@ -202,9 +202,9 @@ background-image: linear-gradient(#000, #000);
     margin-left: 8px;
  }
 
- .combo-list {
+ /* .combo-list {
 
- }
+ } */
 
  .combo-card {
     flex-direction: column;
@@ -337,3 +337,28 @@ background-image: linear-gradient(#000, #000);
     margin-left: 8px;
 }
 
+/* /////////////////// */
+.row2{
+  float:left;
+      width:100%;
+  }
+.form_content input[type="text"]{
+    width:100%;
+    border:1px solid #ccc;
+    border-radius:5px ;
+    padding:6px 10px;
+    margin-bottom:12px;
+  }
+.form_content input[type="submit"],
+.form_content input[type="reset"],
+.form_content input[type="button"]{
+    padding:6px;
+    background:white;
+    border:1px solid #CCC;
+    border-radius:5px;
+}
+.form_content input[type="submit"]:hover,
+.form_content input[type="reset"]:hover,
+.form_content input[type="button"]:hover{
+    background:#CCC;
+}
