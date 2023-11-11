@@ -1,69 +1,49 @@
-<?php
-    if (is_array($sanpham)) {
-        extract($sanpham);
-    }
-    $hinhpath="../upload/".$img;
-    if (is_file($hinhpath)) {
-        $hinh="<img src='".$hinhpath."' height='80'>";
-    }else{
-        $hinh="no photo";
-    }    
-?>
 <div class="form">
-        <div class=" font_title ">
-          <h1>THÊM MỚI SẢN PHẨM</h1>
+         <div class="row2 font_title">
+          <h1>CẬP NHẬT LOẠI HÀNG HÓA</h1>
          </div>
          <div class="row2 form_content ">
-          <form action="index.php?act=addsp" method="multipart/form-data">
-
-          <div class="row2 mb10 ">
-           <label> Danh mục </label> <br>
-           <select name="iddm" id="">
-                    <?php  foreach ($listdm as $dm) {
-                        extract($dm);
-                        echo '<option value="'.$id.'">'.$name.'></option>';
-                    } ?>
-                    
-            </select>     
-          </div>
-
-           <div class="row2 mb10 ">
-           <label> Mã sản phẩm </label> <br>
-            <input type="text" name="masp" placeholder="mã sản phẩm">
+         <form action="index.php?act=updatesp" method="POST" enctype="multipart/form-data">
+           <div class="row2 mb10 form_content_container">
+           <label> Danh Muc </label> <br>
+           <select name="iddm">
+                <option value="0">Tất Cả</option>
+            <?php 
+                foreach ($listdm as $dm) {
+                  extract($dm);
+                  if($sanpham['iddm']==$dm['id']) echo '<option value="'.$dm['id'].'"selected>'.$name.'</option>';
+                  else echo '<option value="'.$dm['id'].'">'.$name.'</option>';
+                }
+              ?>
+            </select>
            </div>
-
            <div class="row2 mb10">
-            <label>Tên sản phẩm </label> <br>
-            <input type="text" name="tenloai" placeholder="nhập vào tên">
+            <label>Tên món </label> <br>
+            <input type="text" name="tensp" placeholder="nhập vào tên" value="<?=$sanpham['name']?>">
            </div>
-
            <div class="row2 mb10">
-            <label>Hình</label> <br>
-            <input type="file" name="hinh">
+            <label>price </label> <br>
+            <input type="text" name="price" placeholder="nhập vào giá" value="<?=$sanpham['price']?>">
            </div>
-
            <div class="row2 mb10">
-            <label>Giá </label> <br>
-            <input type="text" name="giasp" placeholder="nhập vào giá">
+            <label>img </label> <br>
+            <input type="file" name="img" >
+            <?=$sanpham['img']?>
            </div>
-           
-           
            <div class="row2 mb10">
-            <label>Mô tả</label> <br>
-            <input type="text" name="mota" placeholder="nhập mô tả">
+            <label>mô ta </label> <br>
+            <textarea name="motasp"  cols="75" rows="10"><?=$sanpham['mota']?></textarea>
            </div>
            <div class="row2 mb10">
             <label>Số lượng</label> <br>
-            <input type="text" name="soluong" placeholder="nhập số lượng">
+            <input type="text" name="soluong" placeholder="nhập số lượng"value="<?=$sanpham['soluong']?>">
            </div>
-
-
-           <var class="sub1">
+           <div class="row mb10 ">
            <input type="hidden" name="id" value="<?=$sanpham['id']?>">
-            <input class="sub2" type="submit" value="Cập Nhật" name="capnhat">
-            <input  class="sub2" type="reset" value="NHẬP LẠI">
-            <a href="index.php?act=listsp"><input  class="sub2" type="button" value="DANH SÁCH"></a>
-            </var>
+           <input class="mr20" type="submit" value="Cập nhật" name="capnhat">
+           <input  class="mr20" type="reset" value="NHẬP LẠI">
+
+         <a href="index.php?act=listsp"><input  class="mr20" type="button" value="DANH SÁCH"></a>
            </div>
           </form>
          </div>

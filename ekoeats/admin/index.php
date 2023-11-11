@@ -46,23 +46,22 @@
             //      CONTROLER SẢN PHẨM
         case "addsp":
             //kiểm tra xem người dùng có click vào nút add hay không
-            if(isset($_POST['themmoi'])){
-                $id=$_POST['id'];
+            if(isset($_POST['themmoi'])&& ($_POST['themmoi'])){
                 $iddm=$_POST['iddm'];
-                $tensp= $_POST['tensp'];
-                $giasp= $_POST['giasp'];
-                $mota= $_POST['mota'];
-                $hinh= $_FILES['hinh']['name'];
+                $tensp=$_POST['tensp'];
+                $price=$_POST['price'];
+                $motasp=$_POST['motasp'];
                 $soluong= $_POST['soluong'];
-                $target_dir= "../upload/";
-                $target_file= $target_dir . basename($_FILES["hinh"]["name"]);
-                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                    //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-                } else {
-                   // echo "Sorry, there was an error uploading your file.";
-                }
-                insert_sp($tensp, $giasp,$hinh,$mota,$iddm,$soluong);
-                $thongbao="Thêm thành công";
+                $hinh=$_FILES['img']['name'];
+                $target_dir ="../upload/";
+                $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                if(move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["img"]["name"])). " has been uploaded.";
+                  } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                  }
+                insert_sp($tensp,$price,$hinh,$motasp,$soluong,$iddm);
+                $thongbao="thêm thành công";
             }
             $listdm=loadall_dm();
             include "sanpham/add.php";
@@ -96,21 +95,21 @@
         case 'updatesp':
 
             if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
+                $id=$_POST['id'];
                 $iddm=$_POST['iddm'];
-                $id=$_GET['id'];
-                $tensp= $_POST['tensp'];
-                $giasp= $_POST['giasp'];
-                $mota= $_POST['mota'];
-                $hinh= $_FILES['hinh']['name'];
+                $tensp=$_POST['tensp'];
+                $price=$_POST['price'];
+                $motasp=$_POST['motasp'];
                 $soluong= $_POST['soluong'];
-                $target_dir= "../upload/";
-                $target_file= $target_dir . basename($_FILES["hinh"]["name"]);
-                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-                    //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-                } else {
+                $hinh=$_FILES['img']['name'];
+                $target_dir ="../upload/";
+                $target_file = $target_dir . basename($_FILES["img"]["name"]);
+                if(move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["img"]["name"])). " has been uploaded.";
+                  } else {
                     // echo "Sorry, there was an error uploading your file.";
-                }
-                update_sp($id,$iddm,$tensp,$giasp,$mota,$hinh,$soluong);
+                  }
+                update_sp($id,$iddm,$tensp,$price,$motasp,$hinh,$soluong);
                 $thongbao="Cập nhật thành công";
             }
             $listdm=loadall_dm();

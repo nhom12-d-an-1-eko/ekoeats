@@ -1,6 +1,6 @@
 <?php
-function insert_sp($tensp, $giasp,$hinh,$soluong,$mota,$iddm){
-    $sql="INSERT INTO sanpham(name,price,img,soluong,mota,iddm) VALUES ('$tensp','$giasp','$hinh','$soluong','$mota','$iddm')";
+function insert_sp($tensp,$price,$hinh,$motasp,$soluong,$iddm){
+    $sql= "INSERT INTO sanpham(name,price,img,mota,soluong,iddm) VALUES('$tensp','$price','$hinh','$motasp','$soluong','$iddm')";
     pdo_execute($sql);
 }
 function delete_sp($id){
@@ -47,13 +47,10 @@ function loadone_spcl($id,$iddm){
     return $listsp;
 }
 
-function update_sp($id,$iddm,$tensp,$giasp,$soluong,$mota,$hinh){
-    if ($hinh!=""){
-        $sql="update sanpham set iddm='".$iddm."',name='".$tensp."', price='".$giasp."',img='".$hinh."',soluong='".$soluong."', mota='".$mota."' where id=".$id;
-    } else{
-        $sql="UPDATE sanpham SET iddm='".$iddm."', name='".$tensp."', price='".$giasp."',soluong='".$soluong."', mota='".$mota."' where id=".$id;
+    function update_sp($id,$iddm,$tensp,$price,$motasp,$hinh,$soluong){
+        if($hinh!="")
+            $sql= "UPDATE sanpham SET iddm='".$iddm."',name='".$tensp."',price='".$price."',mota='".$motasp."',img='".$hinh."',soluong='".$soluong."' WHERE id= ".$id;
+        else
+            $sql= "UPDATE sanpham SET iddm='".$iddm."',name='".$tensp."',price='".$price."',mota='".$motasp."',soluong='".$soluong."' WHERE id= ".$id;
+        pdo_execute($sql);   
     }
-
-    pdo_execute($sql);
-}
-?>
