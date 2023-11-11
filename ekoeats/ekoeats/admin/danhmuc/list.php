@@ -13,8 +13,8 @@
                 <th></th>
             </tr>
                 <?php 
-                    // foreach ($listdanhmuc as $danhmuc) {
-                    //     extract($danhmuc);
+                     foreach ($listdm as $dm) {
+                         extract($dm);
                          $suadm="index.php?act=suadm&id=".$id;
                          $xoadm="index.php?act=xoadm&id=".$id;
                          echo '<tr>
@@ -23,7 +23,7 @@
                         <td>'.$name.'</td>
                          <td><a href="'.$suadm.'"><input type="button" value="Sửa"></a> <a href="'.$xoadm.'">   <input type="button" value="Xóa"></a></td>
                      </tr>';
-                    //  }
+                      }
                 
                 
                 ?>
