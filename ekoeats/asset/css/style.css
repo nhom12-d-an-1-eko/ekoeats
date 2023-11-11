@@ -1,5 +1,4 @@
 * {
-  
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0;
@@ -338,10 +337,32 @@ background-image: linear-gradient(#000, #000);
 }
 
 /* /////////////////// */
+.form{
+  width:100%;
+  margin-top: 140px;
+  background-color: #CCC;
+}
+.row{
+  display:flex;
+  width:100%;
+}
 .row2{
-  float:left;
-      width:100%;
-  }
+    width:70%;
+    background-color: #CCC;
+}
+.mb{
+    margin-bottom:30px;
+}
+.mb10{
+    margin-bottom:10px;
+}
+.font_title{
+  text-align: center;
+}
+.sub1{
+  display: flex;
+  justify-items: center;
+}
 .form_content input[type="text"]{
     width:100%;
     border:1px solid #ccc;

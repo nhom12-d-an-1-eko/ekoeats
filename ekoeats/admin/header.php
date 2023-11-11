@@ -26,9 +26,11 @@
                                 src="../asset/img/logo.png" alt="">
                         </a>
                     </li>
-                    <li><a href="menu.html">THỰC ĐƠN</a></li>
-                    <li><a href="about-us.html">VỀ CHÚNG TÔI</a></li>
-                    <li><a href="contact.html">LIÊN HỆ CHÚNG TÔI</a></li>
+                    <li><a href="menu.html">Danh Mục </a></li>
+                    <li><a href="about-us.html">Sản Phẩm</a></li>
+                    <li><a href="contact.html">Tài Khoản </a></li>
+                    <li><a href="contact.html">Hóa Đơn </a></li>
+                    <li><a href="contact.html">Thống kê </a></li>
                 </ul>
             </div>
             <div class="header-right">

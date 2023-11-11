@@ -1,6 +1,5 @@
 <?php
     include("header.php");
-    include("home.php");
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
