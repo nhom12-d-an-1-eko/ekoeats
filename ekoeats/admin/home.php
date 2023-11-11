@@ -36,7 +36,7 @@
                         <img src="../asset/img/TRANG MIENG.jpg" alt="">
                         <div class="sub"><a href="#">Thức Uống & Tráng Miệng <i class="fa-solid fa-angle-right"></i></a></div>
                     </div>
-                    <a href="index.php?act=adddm"><input  class="sub" type="button" value="DANH SÁCH"></a>
+                    <a href="index.php?act=listdm"><input  class="sub2" type="button" value="DANH SÁCH"></a>
                 </div>
             </section>
             <section class="category">
