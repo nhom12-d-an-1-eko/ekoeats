@@ -27,7 +27,7 @@
                         </a>
                     </li>
                     <li><a href="index.php?act=listdm">Danh Mục </a></li>
-                    <li><a href="about-us.html">Sản Phẩm</a></li>
+                    <li><a href="index.php?act=listsp">Sản Phẩm</a></li>
                     <li><a href="contact.html">Tài Khoản </a></li>
                     <li><a href="contact.html">Hóa Đơn </a></li>
                     <li><a href="contact.html">Thống kê </a></li>

@@ -10,7 +10,7 @@
            <select name="iddm" id="">
                     <?php  foreach ($listdm as $dm) {
                         extract($dm);
-                        echo '<option value="'.$id.'">'.$name.'></option>';
+                        echo '<option value="'.$id.'"'.$name.'></option>';
                     } ?>
                     
             </select>     

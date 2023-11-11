@@ -46,7 +46,7 @@
             //      CONTROLER SẢN PHẨM
         case "addsp":
             //kiểm tra xem người dùng có click vào nút add hay không
-            if(isset($_POST['addsp'])){
+            if(isset($_POST['themmoi'])){
                 $id=$_POST['id'];
                 $iddm=$_POST['iddm'];
                 $tensp= $_POST['tensp'];
