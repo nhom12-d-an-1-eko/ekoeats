@@ -8,12 +8,10 @@
                 
                 <select name="iddm" >
                     <option value="0" select>Tất cả</option>
-                    <?php  
-                        foreach ($listdanhmuc as $danhmuc) {
-                        extract($danhmuc);
-                        echo '<option value="'.$id.'">'.$name.'</option>';
-                    } 
-                    ?>
+                    <?php  foreach ($listdm as $dm) {
+                        extract($dm);
+                        echo '<option value="'.$id.'">'.$name.'></option>';
+                    } ?>
                     
                 
                 </select>
