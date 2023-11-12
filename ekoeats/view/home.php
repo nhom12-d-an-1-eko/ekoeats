@@ -11,82 +11,48 @@
                 </section>
                 <div class="option-menu">
                     <ul>
-                        <li><a href="#sale">ƯU ĐÃI</a></li>
-                        <li><a href="#new-menu">MÓN MỚI</a></li>
-                        <li><a href="#combo1">COMBO 1 NGƯỜI</a></li>
-                        <li><a href="#combo-team">COMBO NHÓM</a></li>
-                        <li><a href="#chicken">GÀ RÁN - GÀ QUAY</a></li>
-                        <li><a href="#burger">BURGER-CƠM-MỲ Ý</a></li>
-                        <li><a href="#drink">THỨC ĂN</a></li>
+                    <?php
+                      foreach($listdm as $danhmuc){
+                          extract($danhmuc);
+                          $linkdm="index.php?act=home&iddm=".$id;
+                          echo '<li><a href="'.$linkdm.'">'.$name.' </a></li>';
+                      }
+                      ?>
+
                     </ul>
                 </div>
             </div>
         </div>
         <!-- món ưu đãi -->
         <div id="sale" class="container ">
-            <h2>ƯU ĐÃI</h2>
             <div class="menu-sale">
+                <?php
+            $i=0;
+            foreach ($listsp as $sp){
+                extract($sp);
+                $hinh =  $img_path.$img;
+                $linksp="index.php?act=sanphamct&idsp=".$id;
+                
+                if(($i==2)||($i==5)||($i==8)){
+                    $mr="mr";
+                }else{
+                    $mr="";
+                }
+                echo '<div class="item-menu '.$mr.'">
+                <img width="100%" src="'.$hinh.'" alt="">
+                <p><a href="'. $linksp .'">'.$name.'</a></p>
+                <p>$'.$price.'<del>60.000₫</del></p>
+                <p>'. $mota .'</p>
+                <button>Thêm</button>
+                </div>';
 
-                <div class="item-menu">
-                    <img width="100%" src="https://static.kfcvietnam.com.vn/images/items/lg/MIRINDA-HS.jpg?v=L7ybXg" alt="">
-                    <p>Combo Trưa - Cơm Gà Rán</p>
-                    <p>45.000₫ <del>60.000₫</del></p>
-                    <p>1 Cơm Gà Rán + 1 Lon Mirinda cam. *Chỉ áp dụng từ 10:00 - 14:00, từ thứ Hai đến thứ Sáu trong tuần.</p>
-                    <button>Thêm</button>
-                </div>
-                <div class="item-menu">
-                    <img width="100%" src="https://static.kfcvietnam.com.vn/images/items/lg/MIRINDA-HS.jpg?v=L7ybXg" alt="">
-                    <p>Combo Trưa - Cơm Gà Rán</p>
-                    <p>45.000₫ <del>60.000₫</del></p>
-                    <p>1 Cơm Gà Rán + 1 Lon Mirinda cam. *Chỉ áp dụng từ 10:00 - 14:00, từ thứ Hai đến thứ Sáu trong tuần.</p>
-                    <button>Thêm</button>
-                </div>
-                <div class="item-menu">
-                    <img width="100%" src="https://static.kfcvietnam.com.vn/images/items/lg/MIRINDA-HS.jpg?v=L7ybXg" alt="">
-                    <p>Combo Trưa - Cơm Gà Rán</p>
-                    <p>45.000₫ <del>60.000₫</del></p>
-                    <p>1 Cơm Gà Rán + 1 Lon Mirinda cam. *Chỉ áp dụng từ 10:00 - 14:00, từ thứ Hai đến thứ Sáu trong tuần.</p>
-                    <button>Thêm</button>
-                </div>
-                <div class="item-menu">
-                    <img width="100%" src="https://static.kfcvietnam.com.vn/images/items/lg/MIRINDA-HS.jpg?v=L7ybXg" alt="">
-                    <p>Combo Trưa - Cơm Gà Rán</p>
-                    <p>45.000₫ <del>60.000₫</del></p>
-                    <p>1 Cơm Gà Rán + 1 Lon Mirinda cam. *Chỉ áp dụng từ 10:00 - 14:00, từ thứ Hai đến thứ Sáu trong tuần.</p>
-                    <button>Thêm</button>
-                </div>
-                <div class="item-menu">
-                    <img width="100%" src="https://static.kfcvietnam.com.vn/images/items/lg/MIRINDA-HS.jpg?v=L7ybXg" alt="">
-                    <p>Combo Trưa - Cơm Gà Rán</p>
-                    <p>45.000₫ <del>60.000₫</del></p>
-                    <p>1 Cơm Gà Rán + 1 Lon Mirinda cam. *Chỉ áp dụng từ 10:00 - 14:00, từ thứ Hai đến thứ Sáu trong tuần.</p>
-                    <button>Thêm</button>
-                </div>
-                <div class="item-menu">
-                    <img width="100%" src="https://static.kfcvietnam.com.vn/images/items/lg/MIRINDA-HS.jpg?v=L7ybXg" alt="">
-                    <p>Combo Trưa - Cơm Gà Rán</p>
-                    <p>45.000₫ <del>60.000₫</del></p>
-                    <p>1 Cơm Gà Rán + 1 Lon Mirinda cam. *Chỉ áp dụng từ 10:00 - 14:00, từ thứ Hai đến thứ Sáu trong tuần.</p>
-                    <button>Thêm</button>
-                </div>
-                <div class="item-menu">
-                    <img width="100%" src="https://static.kfcvietnam.com.vn/images/items/lg/MIRINDA-HS.jpg?v=L7ybXg" alt="">
-                    <p>Combo Trưa - Cơm Gà Rán</p>
-                    <p>45.000₫ <del>60.000₫</del></p>
-                    <p>1 Cơm Gà Rán + 1 Lon Mirinda cam. *Chỉ áp dụng từ 10:00 - 14:00, từ thứ Hai đến thứ Sáu trong tuần.</p>
-                    <button>Thêm</button>
-                </div>
-                <div class="item-menu">
-                    <img width="100%" src="https://static.kfcvietnam.com.vn/images/items/lg/MIRINDA-HS.jpg?v=L7ybXg" alt="">
-                    <p>Combo Trưa - Cơm Gà Rán</p>
-                    <p>45.000₫ <del>60.000₫</del></p>
-                    <p>1 Cơm Gà Rán + 1 Lon Mirinda cam. *Chỉ áp dụng từ 10:00 - 14:00, từ thứ Hai đến thứ Sáu trong tuần.</p>
-                    <button>Thêm</button>
-                </div>
+                    $i+=1;
+                }
+            ?>
 
             </div>
         </div>
-        <!-- món mới -->
+        <!-- món mới
         <div id="new-menu" class="container new-menu">
             <h2>MÓN MỚI</h2>
             <div class="menu-sale">
@@ -150,7 +116,7 @@
 
             </div>
         </div>
-        <!-- combo 1 người -->
+         combo 1 người 
         <div id="combo1" class="container combo-alone">
             <h2>COMBO 1 NGƯỜI</h2>
             <div class="menu-sale">
@@ -186,7 +152,7 @@
 
             </div>
         </div>
-        <!-- combo team -->
+         combo team 
         <div id="combo-team" class="container combo-team">
             <h2>COMBO NHÓM</h2>
             <div class="menu-sale">
@@ -218,7 +184,7 @@
 
             </div>
         </div>
-        <!-- combo chicken -->
+        combo chicken 
         <div id="chicken" class="container combo-chicken">
             <h2>GÀ RÁN -GÀ QUAY</h2>
             <div class="menu-sale">
@@ -274,7 +240,7 @@
 
             </div>
         </div>
-        <!-- combo burger -->
+         combo burger 
 
         <div id="burger" class="container combo-chicken">
             <h2>BURGER -CƠM - MÌ Ý</h2>
@@ -331,7 +297,7 @@
 
             </div>
         </div>
-        <!-- thức uống  -->
+         thức uống  
         <div id="drink" class="container combo-drink">
             <h2>BURGER -CƠM - MÌ Ý</h2>
             <div class="menu-sale">
@@ -393,7 +359,7 @@
               
                 
 
-            </div>
-        </div>
+            </div>  
+        </div> -->
     </main>
     <!-- end main -->

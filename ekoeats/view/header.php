@@ -26,13 +26,8 @@
     border-bottom: 1px solid #d8d6d6;
     margin-bottom: 30px;
 }
-.option-menu a{
-    color: #969696;
-}
-.option-menu ul li:nth-child(1) a{
-    color: #000;
-    border-bottom: 2px solid red;
-}
+
+
 .container{
     width: 1200px;
 }
@@ -59,6 +54,7 @@
 .item-menu img{
     transition: .2s linear;
     width: 100%;
+    border: 1px solid black;
 }
 .item-menu:hover img{
     transform: scale(1.1);
@@ -103,7 +99,7 @@
                             src="../asset/img/logo.png" alt="">
                     </a>
                 </li>
-                <li><a href="menu.html">THỰC ĐƠN</a></li>
+                <li><a href="index.php?act=home">THỰC ĐƠN</a></li>
                 <li><a href="about-us.html">VỀ CHÚNG TÔI</a></li>
                 <li><a href="contact.html">LIÊN HỆ CHÚNG TÔI</a></li>
             </ul>

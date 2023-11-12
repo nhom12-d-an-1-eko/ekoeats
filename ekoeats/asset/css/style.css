@@ -398,3 +398,10 @@ background-image: linear-gradient(#000, #000);
 .tim{
   width: 300px;
 }
+.items{
+  width:95%;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:20px;
+}
