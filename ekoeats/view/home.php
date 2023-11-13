@@ -52,7 +52,7 @@
                 echo '<div class="item-menu '.$mr.'">
                 <img width="100%" src="'.$hinh.'" alt="">
                 <p><a href="'. $linksp .'">'.$name.'</a></p>
-                <p>$'.$price.'<del>60.000₫</del></p>
+                <p>'.$price.'.000₫<del>60.000₫</del></p>
                 <p>'. $mota .'</p>
                 <button>Thêm</button>
                 </div>';
@@ -374,3 +374,15 @@
         </div> -->
     </main>
     <!-- end main -->
+    <style>
+        .item-menu button{
+  width: 80%;
+  padding: 15px;
+  margin: 30px 0 20px;
+  border: none;
+  background-color: #a73a3a;
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px  rgb(88, 88, 88);
+}
+    </style>
