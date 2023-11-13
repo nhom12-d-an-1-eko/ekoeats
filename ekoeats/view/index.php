@@ -3,6 +3,7 @@
     include "../model/sanpham.php";
     include "../model/danhmuc.php";
     include "header.php";
+    include "chitietsp.php";
     include "../global.php";
     $listsp = loadall_sp($kyw,$iddm);
     $listdm = loadall_dm();
@@ -24,6 +25,18 @@
               $name= load_ten_dm($iddm);
               include "home.php";
               break;
+            
+            case 'chitietsp':
+                if (isset($_GET['idsp'])&& ($_GET['idsp']>0)){
+                    $id= $_GET['idsp'];
+                    $onesp= loadone_sp($id);
+                    extract($onesp);
+                    $sp_cungloai=loadone_spcl($id,$iddm);
+                    include "chitietsp.php";
+                }else{
+                    include "home.php";
+                }
+                break;
             }
          }else{
             include "home.php";

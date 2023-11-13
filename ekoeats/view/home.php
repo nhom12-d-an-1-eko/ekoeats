@@ -42,7 +42,7 @@
             foreach ($listsp as $sp){
                 extract($sp);
                 $hinh =  $img_path.$img;
-                $linksp="index.php?act=sanphamct&idsp=".$id;
+                $linksp="index.php?act=chitietsp&idsp=".$id;
                 
                 if(($i==2)||($i==5)||($i==8)){
                     $mr="mr";
