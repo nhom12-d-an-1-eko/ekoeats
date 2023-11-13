@@ -26,7 +26,7 @@
                       foreach($listdm as $danhmuc){
                           extract($danhmuc);
                           $linkdm="index.php?act=home&iddm=".$id;
-                          echo '<li><a href="'.$linkdm.'">'.$name.' </a></li>';
+                          echo '<li><a href="'.$linkdm.'"#sale>'.$name.' </a></li>';
                       }
                       ?>
 
