@@ -1,7 +1,7 @@
 <main>
         <div class="main-menu">
             <div class="content">
-                <section class="delivery-address">
+            <section class="delivery-address">
                     <p><span>Đặt Ngay</span> <img src="https://img.icons8.com/color/48/motorcycle.png"
                         alt="motorcycle" /></i> <span>Giao Hàng</span><img
                         src="https://img.icons8.com/color/48/food-receiver.png" alt="food-receiver" /> <span>hoặc Mang
@@ -9,6 +9,17 @@
                         <button><a href="#">Bắt đầu đặt hàng</a></button>
                     </p>
                 </section>
+            <section class="banner">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="../asset/img/buatruavuive.webp" alt=""></div>
+                      <div class="swiper-slide"><img src="../asset/img/gahoangkim.webp" alt=""></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
+            </section>
+                
                 <div class="option-menu">
                     <ul>
                     <?php

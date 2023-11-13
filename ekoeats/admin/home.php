@@ -2,6 +2,16 @@
     <div class="container">
         <!-- Start content -->
         <div class="content">
+        <section class="banner">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="../asset/img/buatruavuive.webp" alt=""></div>
+                      <div class="swiper-slide"><img src="../asset/img/gahoangkim.webp" alt=""></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
+            </section>
             <section class="category">
                 <div class="title">
                     <h1>DANH MỤC MÓN ĂN</h1>
