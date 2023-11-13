@@ -5,7 +5,7 @@
     include "header.php";
     include "chitietsp.php";
     include "../global.php";
-    $listsp = loadall_sp($kyw,$iddm);
+    $listsp = loadall_sp();
     $listdm = loadall_dm();
     if(isset($_GET['act'])&&($_GET['act']!="")){
       $act=$_GET['act'];
@@ -25,6 +25,7 @@
               $name= load_ten_dm($iddm);
               include "home.php";
               break;
+<<<<<<< HEAD
             
             case 'chitietsp':
                 if (isset($_GET['idsp'])&& ($_GET['idsp']>0)){
@@ -35,6 +36,15 @@
                     include "chitietsp.php";
                 }else{
                     include "home.php";
+=======
+              case "sanphamct":
+                if(isset($_GET['idsp']) && $_GET['idsp'] > 0){
+                    $listsp = loadone_sanpham($_GET['idsp']);
+                    $listsp = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
+                    include "view/chitietsanpham.php";
+                }else{  
+                    include "view/home.php";            
+>>>>>>> 9f793b7fa99e061d2c600ae099a732474917048d
                 }
                 break;
             }
