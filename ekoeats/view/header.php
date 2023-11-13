@@ -54,7 +54,6 @@
 .item-menu img{
     transition: .2s linear;
     width: 100%;
-    border: 1px solid black;
 }
 .item-menu:hover img{
     transform: scale(1.1);
