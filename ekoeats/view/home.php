@@ -54,7 +54,7 @@
                 <p><a href="'. $linksp .'">'.$name.'</a></p>
                 <p>'.$price.'.000₫<del>60.000₫</del></p>
                 <p>'. $mota .'</p>
-                <button>Thêm</button>
+                <a href=""><button>Thêm</button></a>
                 </div>';
 
                     $i+=1;
