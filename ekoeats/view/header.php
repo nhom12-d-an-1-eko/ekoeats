@@ -54,10 +54,6 @@
 .item-menu img{
     transition: .2s linear;
     width: 100%;
-<<<<<<< HEAD
-  
-=======
->>>>>>> ecae0a7d8b5a1586abb0866efef823abeae5e093
 }
 .item-menu:hover img{
     transform: scale(1.1);
