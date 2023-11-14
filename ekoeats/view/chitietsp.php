@@ -61,9 +61,9 @@ extract($onesp);
                                 <span class="lbl">Số lượng</span>
                             </div>
 
-                            <button class="btn-minute" type="button" onclick="giam()">-</button>
-                            <input type="text" name="amount" id="amount" value="1">
-                            <button class="btn-plus" type="button" onclick="tang()">+</button>
+                            <button class="btn-minute" type="button" onclick="giam1()">-</button>
+                            <input type="text" name="amount1" id="amount1" value="1">
+                            <button class="btn-plus" type="button" onclick="tang1()">+</button>
                             <div class="btn-cart">
                                 <button type="button" title="Thêm vào giỏ hàng">Thêm
                                     vào giỏ hàng</button>
@@ -208,6 +208,17 @@ extract($onesp);
         border-radius: 5px;
         font-size: 20px;
     }
+    .inner input{
+            width: 32px;
+            height: 32px;
+            background-color: #d3737bdd;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            padding: 8px;
+           
+        }
+        
 
     .nav-bottom {
         clear: both;
@@ -249,15 +260,38 @@ extract($onesp);
     }
     let giam = () =>{
         if(amount > 1)
-        console.log(amount);
+       
         amount--
         render(amount);
     }
     amountElement.addEventListener('input', () =>{
         amount = amountElement.value;
         amount = parseInt(amount);
-        amount = isNaN(amount)?1:amount;
+        amount = isNaN(amount)? 1 : amount;
         render(amount);
+    }
+    );
+    let amount1Element = document.getElementById('amount1');
+    let amount1 = amount1Element.value;
+    let render1 = (amount1) => {
+        amount1Element.value = amount1
+    }
+    let tang1 = () =>{
+        console.log(amount1);
+        amount1++
+        render1(amount1);
+    }
+    let giam1 = () =>{
+        if(amount1 > 1)
+       
+        amount1--
+        render1(amount1);
+    }
+    amount1Element.addEventListener('input', () =>{
+        amount1 = amount1Element.value;
+        amount1 = parseInt(amount1);
+        amount1 = isNaN(amount1)? 1 : amount1;
+        render1(amount1);
     }
     );
 </script>
