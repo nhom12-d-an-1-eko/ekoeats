@@ -50,10 +50,10 @@
                     $mr="";
                 }
                 echo '<div class="item-menu '.$mr.'">
-                <img width="100%" src="'.$hinh.'" alt="">
-                <p><a href="'. $linksp .'">'.$name.'</a></p>
+                <a href="'.$linksp.'"><img width="100%" src="'.$hinh.'" alt="">
+                <p>'.$name.'</a></p>
                 <p>'.$price.'.000₫<del>60.000₫</del></p>
-                <p>'. $mota .'</p>
+                <p>'.$mota.'</p>
                 <a href=""><button>Thêm</button></a>
                 </div>';
 
