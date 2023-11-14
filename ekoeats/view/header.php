@@ -93,7 +93,7 @@
     <div class="header">
         <div class="header-left">
             <ul>
-                <li><a href="index.html">
+                <li><a href="index.php">
                         <img width="100%"
                             src="../asset/img/logo.png" alt="">
                     </a>
