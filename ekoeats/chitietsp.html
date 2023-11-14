@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="icon" href="/asset/img/logo.png">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <style>
+        .wrapper {
+            width: 60%;
+            height: 900px;
+            line-height: 30px;
+            padding-top: 150px;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .product-catagory-detail {
+            width: 100%;
+            padding-bottom: 100px;
+        }
+
+        .field-back {
+            float: right;
+
+        }
+
+        .field-back>button {
+            color: #ff5b6a;
+            background-color: white;
+            border-radius: 40px;
+            padding: 5px 17px;
+            border: none;
+            box-shadow: 1px 2px 2px 2px rgba(128, 128, 128, 0.415);
+
+        }
+
+        .fied-img {
+            clear: both;
+            border-radius: 1px solid black;
+        }
+
+        .item {
+            float: left;
+            width: 50px;
+        }
+
+        .content {
+            float: right;
+            width: 30%;
+            margin-top: 0;
+            line-height: 50px;
+            padding-left: 30px;
+        }
+
+        h3 {
+            font-size: xx-large;
+        }
+
+        .fied-price {
+            font-size: x-large;
+            color: #ff5b6a;
+        }
+
+        del {
+            color: rgb(60, 55, 55);
+            font-size: medium;
+        }
+
+        .options-product {
+            width: 500px;
+        }
+
+        .headline {
+            height: 67px;
+            padding: 15px;
+            font-size: 17px;
+            background-color: #F2F2F2;
+        }
+
+        .list-options {
+            line-height: 1.4px;
+            padding: 10px;
+            height: 50px;
+
+        }
+
+        .product-name {
+            float: left;
+
+        }
+
+        .product-name>img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .txt {
+            font-size: 14px;
+            margin-left: 15px;
+            margin-bottom: 5px;
+            height: 50px;
+        }
+
+        .r-info {
+            float: right;
+        }
+
+        .inner {
+            display: inline;
+            width: 50%;
+        }
+
+        .price {
+            font-size: 14px;
+            margin-bottom: 5px;
+            width: 50px;
+            margin-right: 15px;
+            text-align: center;
+        }
+        .inner>button{
+            width: 32px;
+            height: 32px;
+            background-color: #e36872dd;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        
+        .nav-bottom {
+            clear: both;
+            margin-top: 20px;
+        }
+        .btn-cart> button{
+            width: 200px;
+            height: 50px;
+            background-color: #dd3c4add;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Start header -->
+        <div class="header">
+            <div class="header-left">
+                <ul>
+                    <li><a href="index.html">
+                            <img width="100%" src="img/ekoeats.jpg" alt="">
+                        </a>
+                    </li>
+                    <li><a href="menu.html">THỰC ĐƠN</a></li>
+                    <li><a href="about-us.html">VỀ CHÚNG TÔI</a></li>
+                    <li><a href="contact.html">LIÊN HỆ CHÚNG TÔI</a></li>
+                </ul>
+            </div>
+            <div class="header-right">
+                <ul>
+                    <li><a href="login.html"><i class="fa-solid fa-user icon fa-lg"></i></a></li>
+                    <li><a href="cart.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+                    <li><i class="fa-solid fa-bars fa-lg"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End header -->
+    <div class="wrapper">
+        <form action="">
+            <main class="container">
+                <div class="product-catagory-detail">
+                    <div class="field-back">
+                        <button type="button" title="Quay lại">← <b>Quay lại</b></button>
+                    </div>
+                </div>
+
+                <div class="fied-img">
+                    <div class="item">
+                        <img src="./upload/1-gahoangkim.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="fied-content">
+                            <h3>Gà Hoàng Kim</h3>
+                            <div class="fied-price">80.000đ <del> 150.000đ</del></div>
+                        </div>
+                        <div class="fied-note">
+                            <span class="fied-text">
+                                <p>2 miếng gà Hoàng Kim</p>
+                            </span>
+                        </div>
+
+                        <div class="options-product">
+                            <div class="headline">
+                                <h4>Có thể bạn sẽ thích</h4>
+                            </div>
+                            <ul class="list-options add-opts">
+                                <li>
+                                    <div class="product-name">
+                                        <img src="./upload/1-Fried-Chicken.jpg" alt="">
+                                        <span class="txt">Gà Que Kem Xốt Cajun</span>
+                                    </div>
+                                    <div class="r-info">
+                                        <div class="inner">
+                                            <span class="price">
+                                                +43.000đ
+                                            </span>
+
+                                            <button class="btn-minute" type="button">-</button>
+                                            <span class="number">0</span>
+                                            <button class="btn-plus" type="button">+</button>
+
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="nav-bottom">
+                            <div class="inner">
+                                <div class="pty">
+                                    <span class="lbl">Số lượng</span>
+                                </div>
+                               
+                                    <button class="btn-plus" type="button" disabled>-</button>
+                                    <span class="number">1</span>
+                                    <button class="btn-plus" type="button">+</button>
+                               <div class="btn-cart">
+                                <button type="button" title="Thêm vào giỏ hàng">Thêm
+                                    vào giỏ hàng</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </form>
+    </div>
+    <!-- Start footer -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-title">
+                    <h3>Danh Mục Món Ăn</h3>
+                    <ul>
+                        <li><a href="#">Món Mới</a></li>
+                        <li><a href="#">Combo 1 Người</a></li>
+                        <li><a href="#">Combo Nhóm</a></li>
+                        <li><a href="#">Gà Rán - Gà Quay</a></li>
+                        <li><a href="#">Burger - Cơm - Mì Ý</a></li>
+                        <li><a href="#">Thức Ăn Nhẹ</a></li>
+                        <li><a href="#">Thức Uống & Tráng Miệng</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">
+                    <h3>Về KFC</h3>
+                    <ul>
+                        <li><a href="#">Câu Chuyện Của Chúng Tôi</a></li>
+                        <li><a href="#">Tin Khuyến Mãi</a></li>
+                        <li><a href="#">Tin tức KFC</a></li>
+                        <li><a href="#">Gà Rán - Gà Quay</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Đặt tiệc Sinh nhật</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">
+                    <h3>Liên hệ KFC</h3>
+                    <ul>
+                        <li><a href="#">Theo dõi đơn hàng</a></li>
+                        <li><a href="#">Hệ Thống Nhà Hàng</a></li>
+                        <li><a href="#">Combo Nhóm</a></li>
+                        <li><a href="#">Liên hệ KFC</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">
+                    <h3>Chính sách</h3>
+                    <ul>
+                        <li><a href="#">Chính sách hoạt động</a></li>
+                        <li><a href="#">Chính sách và quy định</a></li>
+                        <li><a href="#">Chính sách bảo mật thông tin</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-title">
+                    <h3>Download App</h3>
+                    <div class="app-logo">
+                        <a class="chplay" href="#"><img src="asset/img/boton-google.png" alt=""></a>
+                        <a class="appstore" href="#"><img src="asset/img/boton-app-store.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-social">
+            <div class=""></div>
+            <div class="copyright">Hoàng Minh Hậu</div>
+            <div class="social">
+                <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- End footer -->
+</body>
+
+</html>
