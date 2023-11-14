@@ -11,13 +11,13 @@
                 <?php
                     $img= $img_path.$img;
                     echo'<div style="text-align: center" class="row mb"><img src="'.$img.'"></div><br>';
-                    echo $mo_ta;
+                    echo $mota;
                 ?>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <iframe src="view/binhluan/binhluanform.php?idpro=<?=$id?>" frameborder="0" width="100%" height="300px"></iframe>
-        </div>
+        </div> -->
         <div class="row mb">
             <div class="boxtitle">
                 <p>SẢN PHẨM CÙNG LOẠI</p>
