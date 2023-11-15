@@ -51,9 +51,9 @@
                 }
                 echo '<div class="item-menu '.$mr.'">
                 <a href="'.$linksp.'"><img width="100%" src="'.$hinh.'" alt="">
-                <p>'.$name.'</a></p>
+                <p>'.$name.'</p>
                 <p>'.$price.'.000₫<del>60.000₫</del></p>
-                <p>'.$mota.'</p>
+                <p>'.$mota.'</p></a>
                 <a href=""><button>Thêm</button></a>
                 </div>';
 
