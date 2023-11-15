@@ -12,7 +12,7 @@
 											</div>
 											<div class="breadcomb-ctn">
 												<h2>Quản Lí </h2>
-												<p>Chào mừng <span class="bread-ntd"> Admin Nguyễn Tấn Đức</span></p>
+												<p>Chào mừng <span class="bread-ntd"> Admin</span></p>
 											</div>
 										</div>
                                     </div>
