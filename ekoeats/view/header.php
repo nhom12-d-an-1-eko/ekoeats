@@ -99,14 +99,14 @@
                     </a>
                 </li>
                 <li><a href="index.php?act=home">THỰC ĐƠN</a></li>
-                <li><a href="about-us.html">VỀ CHÚNG TÔI</a></li>
-                <li><a href="contact.html">LIÊN HỆ CHÚNG TÔI</a></li>
+                <li><a href="index.php?act=about">VỀ CHÚNG TÔI</a></li>
+                <li><a href="index.php?act=contact">LIÊN HỆ CHÚNG TÔI</a></li>
             </ul>
         </div>
         <div class="header-right">
             <ul>
-                <li><a href="login.html"><i class="fa-solid fa-user icon fa-lg"></i></a></li>
-                <li><a href="cart.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+                <li><a href="index.php?act=login"><i class="fa-solid fa-user icon fa-lg"></i></a></li>
+                <li><a href="index.php?act=cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
                 <li><i class="fa-solid fa-bars fa-lg"></i></li>
             </ul>
         </div>

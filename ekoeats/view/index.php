@@ -37,7 +37,14 @@
                     include "home.php";
                 }
                 break;
+            case 'about':
+                include "about-us.php";
+                break;
+            case "contact":
+                include "contact.php";
+                break;
             }
+            
          }else{
             include "home.php";
         } 
