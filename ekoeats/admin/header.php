@@ -55,7 +55,7 @@
     <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../admin/style.css">
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="css/responsive.css">
@@ -71,10 +71,10 @@
 
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
-            <div class="sidebar-header">
+            <!-- <div class="sidebar-header">
                 <a href="index.php"><img class="main-logo" src="../asset/img/logo.png" alt="" /></a>
                 <strong><img src="../asset/img/logo.png" alt="" /></strong>
-            </div>
+            </div> -->
 			<div class="nalika-profile">
 				<div class="profile-dtl">
 					<a href="#"><img src="../asset/img/logo.png" alt="" /></a>
