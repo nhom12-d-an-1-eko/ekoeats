@@ -152,7 +152,7 @@ body {}
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    border: 2px solid #152036;
+
 }
 .profile-dtl h2{
 	font-size:16px;
@@ -186,6 +186,9 @@ ul.dtl-social li a{
 }
 #sidebar.active .sidebar-header .main-logo{
 	display:none;
+}
+.sidebar-header .main-logo{
+    width: 50px;
 }
 #sidebar.active
 #sidebar.active .sidebar-header h3{
