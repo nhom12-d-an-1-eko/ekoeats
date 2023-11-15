@@ -105,8 +105,8 @@
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Product List" href="index.php?act=dssp"><span class="mini-sub-pro">Danh Sách Sản Phẩm</span></a></li>
                                 <li><a title="Product Add " href="index.php?act=themsp"><span class="mini-sub-pro">Thêm Sản Phẩm</span></a></li>
-                                <li><a title="Product Edit" href="index.php?act=suasp"><span class="mini-sub-pro">Sửa Sản phẩm</span></a></li>
-                                <li><a title="Compose Mail" href="index.php?act=ctsp"><span class="mini-sub-pro">Chi Tiết Sản Phẩm</span></a></li>
+                                <!-- <li><a title="Product Edit" href="index.php?act=suasp"><span class="mini-sub-pro">Sửa Sản phẩm</span></a></li>
+                                <li><a title="Compose Mail" href="index.php?act=ctsp"><span class="mini-sub-pro">Chi Tiết Sản Phẩm</span></a></li> -->
 
                             </ul>
                             
@@ -118,7 +118,7 @@
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Inbox" href="index.php?act=dsdm"><span class="mini-sub-pro">Danh Sách Danh Mục Sản Phẩm</span></a></li>
                                 <li><a title="View Mail" href="index.php?act=themdm"><span class="mini-sub-pro">Thêm Danh Mục Sản Phảm</span></a></li>
-                                <li><a title="Compose Mail" href="index.php?act=suadm"><span class="mini-sub-pro">Sửa Danh Mục Sản Phẩm</span></a></li>
+                                <!-- <li><a title="Compose Mail" href="index.php?act=suadm"><span class="mini-sub-pro">Sửa Danh Mục Sản Phẩm</span></a></li> -->
                             </ul>
                         </li>
                         <li>
