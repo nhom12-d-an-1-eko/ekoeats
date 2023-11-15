@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="icon" href="../asset/img/logo.png">
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="../bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../app.css" type="text/css">
+    <!--  -->
     <link rel="stylesheet" href="../asset/css/style.css">
  
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>

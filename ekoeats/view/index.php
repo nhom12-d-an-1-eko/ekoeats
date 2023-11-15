@@ -43,6 +43,9 @@
             case "contact":
                 include "contact.php";
                 break;
+            case "thanhtoan":
+                include "thanhtoan.php";
+                break;
             }
             
          }else{
