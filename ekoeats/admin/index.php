@@ -132,7 +132,12 @@ include "header.php";
                 include "xoabl.php";
                 break;
             case "dsdh" :   
-                $listbill=loadall_bill(0);
+                if (isset($_POST['kyw'])) {
+                    $kyw=$_POST['kyw'];
+                }else{
+                    $kyw="";
+                }
+                $listbill=loadall_bill($kyw,0);
                 include "donhang/dsdh.php";
                 break;
             case "suadh":   

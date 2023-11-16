@@ -40,6 +40,14 @@
                                         <div class="product-status-wrap border-pdt-ct">
                                             <table>
                                                 <tr>
+                                                <form role="search" action="index.php?act=dsdh" method="POST" class="">
+                                                <th>
+													<input type="text" name="kyw" placeholder="Tìm Kiếm..." class="form-control">
+												</th>
+                                                <th><input type="submit" name="listok" class="form-control"></th>
+                                                </form>
+                                                </tr>
+                                                <tr>
                                                     <th>MÃ ĐƠN HÀNG</th>
                                                     <th>KHÁCH HÀNG</th>
                                                     <th>SỐ LƯỢNG HÀNG</th>
