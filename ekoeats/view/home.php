@@ -54,7 +54,13 @@
                 <p>'.$name.'</p>
                 <p>'.$price.'.000₫<del>60.000₫</del></p>
                 <p>'.$mota.'</p></a>
-                <a href=""><button>Thêm</button></a>
+                <form action="index.php?act=addtocart" method="post">
+                    <input type="hidden" name="id" value="'.$id.'">
+                    <input type="hidden" name="name" value="'.$name.'">
+                    <input type="hidden" name="img" value="'.$img.'">
+                    <input type="hidden" name="price" value="'.$price.'">
+                    <button type="submit" name"addtocart">Thêm</button>
+                </form>
                 </div>';
 
                     $i+=1;

@@ -5,6 +5,7 @@
     include "header.php";
     // include "chitietsp.php";
     include "../global.php";
+    if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
     $listsp = loadall_sp();
     $listdm = loadall_dm();
     if(isset($_GET['act'])&&($_GET['act']!="")){
@@ -40,9 +41,21 @@
             case 'about':
                 include "about-us.php";
                 break;
-            case "contact":
-                include "contact.php";
+            case "addtocart":
+                if(isset($_POST['addtocart']) &&$_POST['addtocart'] ){
+                    $id=$_POST['id'];
+                    $name=$_POST['name'];
+                    $img=$_POST['img'];
+                    $price=$_POST['price'];
+                    $soluong=1;
+                    $ttien= $price * $soluong;
+                    $spadd=[$id,$name,$img,$price,$soluong,$ttien];
+                    array_push( $_SESSION['mycart'],$spadd);
+                    
+                }
+                include "cart/viewcart.php";
                 break;
+                
             case "thanhtoan":
                 include "thanhtoan.php";
                 break;
