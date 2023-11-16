@@ -2,6 +2,7 @@
 include("../model/pdo.php");
 include("../model/danhmuc.php");
 include("../model/sanpham.php");
+include("../model/donhang.php");
 
 include "header.php";
     if(isset($_GET['act'])&&($_GET['act']!="")){
@@ -131,6 +132,7 @@ include "header.php";
                 include "xoabl.php";
                 break;
             case "dsdh" :   
+                $listbill=loadall_bill(0);
                 include "donhang/dsdh.php";
                 break;
             case "suadh":   

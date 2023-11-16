@@ -46,7 +46,8 @@
                                                 <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-favorites" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" name="maloai" placeholder="Mã Loại">
-                                                    </div>    
+                                                    </div>   
+                                                    <label class="ten">TÊN DANH MỤC:</label> </br> 
                                                 <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" name="tenloai" placeholder="Tên Hàng Hóa">
@@ -294,3 +295,8 @@
                 </div>
             </div>
         </div>
+        <style>
+            .ten{
+                color:#fff;
+            }
+        </style>
