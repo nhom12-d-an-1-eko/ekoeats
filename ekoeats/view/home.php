@@ -59,7 +59,7 @@
                     <input type="hidden" name="name" value="'.$name.'">
                     <input type="hidden" name="img" value="'.$img.'">
                     <input type="hidden" name="price" value="'.$price.'">
-                    <button type="submit" name"addtocart">Thêm</button>
+                    <input type="submit" name="addtocart" value="THÊM" >
                 </form>
                 </div>';
 
@@ -381,7 +381,7 @@
     </main>
     <!-- end main -->
     <style>
-        .item-menu button{
+        .item-menu input{
   width: 80%;
   padding: 15px;
   margin: 30px 0 20px;

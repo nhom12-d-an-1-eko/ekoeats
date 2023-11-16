@@ -1,8 +1,10 @@
  <?php
+    session_start();
     include "../model/pdo.php";
     include "../model/sanpham.php";
     include "../model/danhmuc.php";
     include "../model/taikhoan.php";
+    include "../model/cart.php";
     include "header.php";
     // include "chitietsp.php";
     include "../global.php";
@@ -41,25 +43,27 @@
                 break;
                  case 'dangky':
                      if (isset($_POST['dangky'])&&($_POST['dangky'])){
-                         $email=$_POST['email'];
                          $user=$_POST['user'];
                          $pass=$_POST['pass'];
-                         insert_taikhoan($email,$user,$pass);
+                         $email=$_POST['email'];
+                         insert_taikhoan($user,$pass,$email);
                          $thongbao="Đã đăng ký thành công. Vui lòng đăng nhập.";
                      }
                      include "taikhoan/dangky.php";
                      break;
                 case 'login':
-                     if (isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
-                         $user=$_POST['user'];
+                     if (isset($_POST['dangnhap'])){
+                         $email=$_POST['email'];
                          $pass=$_POST['pass'];
-                         $checkuser=checkuser($user,$pass);
+                         $checkuser=checkuser($email,$pass);
                          if (is_array($checkuser)) {
-                             $_SESSION['user']=$checkuser;
+                             $_SESSION['email']=$checkuser;
                              //$thongbao="Bạn đã đăng nhập thành công!!";
                              header('Location: index.php');
+                         }else {
+                             $thongbao="Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký.";
                          }
-                         $thongbao="Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký.";
+                        
                      }
                     include "login.php";
                     break;
@@ -93,20 +97,26 @@
                 include "about-us.php";
                 break;
             case "addtocart":
-                if(isset($_POST['addtocart']) &&$_POST['addtocart'] ){
+                if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
                     $id=$_POST['id'];
                     $name=$_POST['name'];
                     $img=$_POST['img'];
                     $price=$_POST['price'];
                     $soluong=1;
-                    $ttien= $price * $soluong;
-                    $spadd=[$id,$name,$img,$price,$soluong,$ttien];
-                    array_push( $_SESSION['mycart'],$spadd);
-                    
+                    $ttien=$soluong*$price;
+                    $spadd=[$id,$name,$img,$price,$soluong,$ttien]; 
+                    array_push($_SESSION['mycart'],$spadd);
                 }
                 include "cart/viewcart.php";
                 break;
-                
+            case "delcart": 
+                    if(isset($_GET['idcart'])){
+                        array_splice($_SESSION['mycart'],$_GET['idcart'],1);
+                    }else{
+                        $_SESSION['mycart']=[];
+                    }
+                    header('Location: index.php?act=addtocart');
+                    break;    
             case "thanhtoan":
                 include "thanhtoan.php";
                 break;

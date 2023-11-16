@@ -3,6 +3,7 @@
        <div class="form-cart">
         <table class="table" >
           
+                <!-- <thead>
                 <tr>
                     <th>STT</th>
                     <th>Tên Món</th>
@@ -11,44 +12,34 @@
                     <th>Giá</th>
                     <th>Thành Tiền</th>
                 </tr>
-              
-                <?php
-                $tong = 0;
-                foreach ($_SESSION['mycart'] as $cart) {
-                    $hinh = $img_path.$cart[2];
-                    $ttien=$cart[3]*$cart[4];
-                    $tong+= $ttien;
-                   echo' <tr>
-                   <td>'.$cart[0].'</td>
-                   <td>'.$cart[1].'</td>
-                   <td><img src="'.$cart[2].'" width="80px" alt=""></td>
+                </thead> -->
 
-                   <td>'.$cart[4].'</td>
-                   <td>'.$cart[3].'</td>
-                   <td>'. $ttien.'</td>
-               </tr>';
-                }
-        //         echo'
-        //         </table>
-        // <div class="right-cart">
-        //     <table>
-        //         <tr>
-        //             <th>Total</th>
-        //             <th>Tổng tiền</th>
-        //          </tr>
-        //         <tr>
-        //             <td>=></td>
-        //             <td>'.$tong.'</td>
-        //         </tr>
-        //     </table>
-        //         ';
-                ?>
-            
+                   
+                    <?php
+                    viewcart(1);
+                    ?>
+
+                 
+        </table>
+         <!-- echo'
+                
+                <div class="right-cart">
+                    <table>
+                        <tr>
+                            <th>Total</th>
+                            <th>Tổng tiền</th>
+                         </tr>
+                        <tr>
+                            <td>=></td>
+                            <td>'.$tong.'</td>
+                        </tr>
+                    </table>
+                        ';    -->
 
          
-       
-               </table>
-        </div>
+           
+               
+        
        </div>
     </div>
     <style>
