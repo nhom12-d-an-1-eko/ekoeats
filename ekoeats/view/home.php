@@ -1,4 +1,4 @@
-<main>
+<main >
         <div class="main-menu">
             <div class="content">
             <section class="delivery-address">
@@ -6,7 +6,7 @@
                         alt="motorcycle" /></i> <span>Giao Hàng</span><img
                         src="https://img.icons8.com/color/48/food-receiver.png" alt="food-receiver" /> <span>hoặc Mang
                         đi</span>
-                        <button><a href="#">Bắt đầu đặt hàng</a></button>
+                        <button><a href="index.php?act=">Bắt đầu đặt hàng</a></button>
                     </p>
                 </section>
             <section class="banner">

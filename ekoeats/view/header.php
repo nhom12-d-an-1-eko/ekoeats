@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="icon" href="../asset/img/logo.png">
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="../bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../app.css" type="text/css">
+    <!--  -->
     <link rel="stylesheet" href="../asset/css/style.css">
     <link rel="stylesheet" href="../asset/css/login.css">
  

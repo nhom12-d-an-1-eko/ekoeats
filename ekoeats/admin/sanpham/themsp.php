@@ -45,10 +45,12 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">
+                                                <label class="ten">TÊN SẢN PHẨM:</label>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" name="tensp" placeholder="Tên Sản Phẩm">
                                                     </div>
+                                                    <label class="ten">GIÁ SẢN PHẨM:</label>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" name="price" placeholder="Giá">
@@ -57,6 +59,7 @@
                                                         <span class="input-group-addon"><i class="icon nalika-new-file" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" placeholder="Thuế">
                                                     </div> -->
+                                                    <label class="ten">SỐ LƯỢNG:</label>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-favorites" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" name="soluong" placeholder="Số Lượng">
@@ -65,6 +68,7 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">
+                                                <label class="ten">MÔ TẢ SẢN PHẨM:</label>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-favorites-button" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" name="motasp" placeholder="Mô Tả">
@@ -73,12 +77,14 @@
                                                         <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" placeholder="Khuyến Mãi">
                                                     </div> -->
+                                                    <label class="ten">ẢNH SẢN PHẨM:</label>
                                                      <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
                                                         <input type="file" class="form-control" name="img" placeholder="Loại">
                                                     </div> 
                                                      <!-- <select name="select" class="form-control pro-edt-select form-control-primary"> -->
-															<select name="iddm" class="form-control pro-edt-select form-control-primary">
+                                                        <label class="ten">DANH MỤC:</label>
+															<select name="iddm" class="form-control pro-edt-select form-control-primary" >
                                                                  <?php 
                                                                     foreach ($listdm as $dm) {
                                                                     extract($dm);
@@ -325,3 +331,8 @@
                 </div>
             </div>
         </div>
+        <style>
+            .ten{
+                color: #fff;
+            }
+        </style>

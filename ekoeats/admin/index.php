@@ -2,12 +2,14 @@
 include("../model/pdo.php");
 include("../model/danhmuc.php");
 include("../model/sanpham.php");
+include("../model/donhang.php");
 
 include "header.php";
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
-            case "dssp":if(isset($_POST['listok'])&&($_POST['listok'])){
+            case "dssp":
+            if(isset($_POST['listok'])&&($_POST['listok'])){
                 $kyw= $_POST['kyw'];
                 $iddm= $_POST['iddm'];
             } else{
@@ -131,6 +133,12 @@ include "header.php";
                 include "xoabl.php";
                 break;
             case "dsdh" :   
+                if (isset($_POST['kyw'])) {
+                    $kyw=$_POST['kyw'];
+                }else{
+                    $kyw="";
+                }
+                $listbill=loadall_bill($kyw,0);
                 include "donhang/dsdh.php";
                 break;
             case "suadh":   
