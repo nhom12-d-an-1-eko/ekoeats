@@ -1,3 +1,14 @@
+<?php
+if (is_array($sanpham)) {
+    extract($sanpham);
+}
+ $img="../upload/".$img;
+ if (is_file($img)) {
+    $img="<img src='".$img."' width=50 height='50'>";
+}else{
+    $img="no photo";
+}
+?>
 <div class="breadcome-area">
                 <div class="container-fluid">
                     <div class="row">
@@ -75,7 +86,7 @@
                                                     </div> -->
                                                      <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
-                                                        <input type="file" class="form-control" name="img" placeholder="anh" ><button type="button" class="btn btn-ctl-bt waves-effect waves-light"><?=$sanpham['img']?></button>
+                                                        <input type="file" class="form-control" name="img" placeholder="anh" ><button type="button" class="btn btn-ctl-bt waves-effect waves-light"><?=$img?></button>
                                                          
                                                         
                                                     </div> 

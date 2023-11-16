@@ -40,6 +40,25 @@
                             </div>
                             <table>
                                 <tr>
+                                    <form role="search" action="index.php?act=dssp" method="POST" class="">
+                                    <th>
+										<input type="text" name="kyw" placeholder="Tìm Kiếm..." class="form-control">
+									</th>
+                                    <th>
+                                    <select name="iddm" class="form-control">
+                                        <option value="0" selected>Tất Cả</option>
+                                        <?php 
+                                            foreach ($listdm as $danhmuc) {
+                                                extract($danhmuc);
+                                                echo '<option value="'.$id.'">'.$name.'</option>';
+                                            }
+                                        ?>
+                                    </select>
+                                    </th>
+                                    <th><input type="submit" name="listok" class="form-control"></th>
+                                    </form>
+                                </tr>
+                                <tr>
                                     <th>MÃ SẢN PHẨM</th>
                                     <th>TÊN SẢN PHẨM</th>
                                     <th>Hình</th>

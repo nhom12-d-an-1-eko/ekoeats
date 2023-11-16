@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../app.css" type="text/css">
     <!--  -->
     <link rel="stylesheet" href="../asset/css/style.css">
+    <link rel="stylesheet" href="../asset/css/login.css">
  
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
