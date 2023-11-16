@@ -8,7 +8,8 @@ include "header.php";
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
-            case "dssp":if(isset($_POST['listok'])&&($_POST['listok'])){
+            case "dssp":
+            if(isset($_POST['listok'])&&($_POST['listok'])){
                 $kyw= $_POST['kyw'];
                 $iddm= $_POST['iddm'];
             } else{

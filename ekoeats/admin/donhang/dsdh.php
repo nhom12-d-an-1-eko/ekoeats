@@ -65,7 +65,6 @@
                 
                                                         $countsp=loadall_cart_count($bill["id"]);
                                                         $ttdh=get_ttdh($bill["bill_status"]);
-
                                                         $suadm="index.php?act=suadm&id=".$id;
                                                         $xoadm="index.php?act=xoadm&id=".$id;
                                                         echo '<tr>
