@@ -3,8 +3,11 @@
     include "../model/pdo.php";
     include "../model/sanpham.php";
     include "../model/danhmuc.php";
+// <<<<<<< HEAD
+// =======
     include "../model/taikhoan.php";
     include "../model/cart.php";
+// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
     include "header.php";
     // include "chitietsp.php";
     include "../global.php";
@@ -41,6 +44,8 @@
                     include "home.php";
                 }
                 break;
+// <<<<<<< HEAD
+// =======
                  case 'dangky':
                      if (isset($_POST['dangky'])&&($_POST['dangky'])){
                          $user=$_POST['user'];
@@ -93,19 +98,33 @@
                 //     }
                 //     include "view/taikhoan/quenmk.php";
                 //     break;
+// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
             case 'about':
                 include "about-us.php";
                 break;
-            case "addtocart":
+            case 'contact':
+                include "contact.php";
+                break;
+//             case "addtocart":
+// <<<<<<< HEAD
+                if(isset($_POST['addtocart']) && ($_POST['addtocart'] )){
+// =======
                 if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
+// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
                     $id=$_POST['id'];
                     $name=$_POST['name'];
                     $img=$_POST['img'];
                     $price=$_POST['price'];
                     $soluong=1;
+// <<<<<<< HEAD
+                    $ttien= $price * $soluong;
+                    $spadd=[$id,$name,$img,$price,$soluong,$ttien];
+                    array_push( $_SESSION['mycart'],$spadd);
+// =======
                     $ttien=$soluong*$price;
                     $spadd=[$id,$name,$img,$price,$soluong,$ttien]; 
                     array_push($_SESSION['mycart'],$spadd);
+// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
                 }
                 include "cart/viewcart.php";
                 break;
