@@ -105,9 +105,9 @@
             case 'contact':
                 include "contact.php";
                 break;
-//             case "addtocart":
+            case "addtocart":
 // <<<<<<< HEAD
-                if(isset($_POST['addtocart']) && ($_POST['addtocart'] )){
+                // if(isset($_POST['addtocart']) && ($_POST['addtocart'] )){
 // =======
                 if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
 // >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
