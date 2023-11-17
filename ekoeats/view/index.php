@@ -105,26 +105,18 @@
             case 'contact':
                 include "contact.php";
                 break;
-//             case "addtocart":
-// <<<<<<< HEAD
+            case "addtocart":
                 if(isset($_POST['addtocart']) && ($_POST['addtocart'] )){
-// =======
-                if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
-// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
                     $id=$_POST['id'];
                     $name=$_POST['name'];
                     $img=$_POST['img'];
                     $price=$_POST['price'];
                     $soluong=1;
-// <<<<<<< HEAD
                     $ttien= $price * $soluong;
                     $spadd=[$id,$name,$img,$price,$soluong,$ttien];
                     array_push( $_SESSION['mycart'],$spadd);
-// =======
                     $ttien=$soluong*$price;
-                    $spadd=[$id,$name,$img,$price,$soluong,$ttien]; 
-                    array_push($_SESSION['mycart'],$spadd);
-// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
+
                 }
                 include "cart/viewcart.php";
                 break;

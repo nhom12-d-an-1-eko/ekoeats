@@ -1,61 +1,4 @@
 <div class="cart">
-<!-- <<<<<<< HEAD -->
-    <h1>Giỏ Hàng Của Bạn</h1>
-    <div class="form-cart">
-        <table class="table">
-
-            <tr>
-                <th>STT</th>
-                <th>Tên Món</th>
-                <th>Ảnh</th>
-                <th>Số Lượng</th>
-                <th>Giá</th>
-                <th>Thành Tiền</th>
-            </tr>
-
-            <?php
-            $tong = 0;
-            foreach ($_SESSION['mycart'] as $cart) {
-                $hinh = $img_path.$cart[2];
-                $ttien = $cart[3] * $cart[4];
-                $tong += $ttien;
-                echo ' <tr>
-                   <td>'.$cart[0].'</td>
-                   <td>'.$cart[1].'</td>
-                   <td><img src="'.$hinh.'" width="80px" alt=""></td>
-                   <td>'.$cart[4].'</td>
-                   <td>'.$cart[3].'</td>
-                   <td>'.$ttien.'</td>
-               </tr>';
-            }
-            echo'
-            <tr>
-            <td colspan="5">Tổng đơn hàng </td>
-            <td>'.$tong.'</td>
-           
-        </tr>
-                ';
-            //         echo'
-            //         </table>
-            // <div class="right-cart">
-            //     <table>
-            //         <tr>
-            //             <th>Total</th>
-            //             <th>Tổng tiền</th>
-            //          </tr>
-            //         <tr>
-            //             <td>=></td>
-            //             <td>'.$tong.'</td>
-            //         </tr>
-            //     </table>
-            //         ';
-            ?>
-
-
-
-
-        </table>
-<!-- ======= -->
         <h1>Giỏ Hàng Của Bạn</h1>
        <div class="form-cart">
         <table class="table" >
@@ -98,7 +41,6 @@
                
         
        </div>
-<!-- >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77 -->
     </div>
 </div>
 </div>
@@ -106,7 +48,8 @@
     .cart {
         margin: 150px auto 50px;
         width: 1200px;
-        height: 500px;
+        height: 100%;
+
     }
 
     .cart h1 {
@@ -131,6 +74,6 @@
     .form-cart {
         display: grid;
         grid-template-columns: 10fr 1fr;
-
+        height: 100%;
     }
 </style>
