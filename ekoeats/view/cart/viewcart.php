@@ -76,4 +76,22 @@
         grid-template-columns: 10fr 1fr;
         height: 100%;
     }
+    button {
+        width: 32px;
+        height: 32px;
+        background-color: #e36872dd;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+    input{
+            width: 32px;
+            height: 32px;
+            background-color: #d3737bdd;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            padding: 8px;
+           
+        }
 </style>

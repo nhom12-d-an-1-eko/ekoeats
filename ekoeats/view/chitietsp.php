@@ -65,8 +65,13 @@ extract($onesp);
                             <input type="text" name="amount1" id="amount1" value="1">
                             <button class="btn-plus" type="button" onclick="tang1()">+</button>
                             <div class="btn-cart">
-                                <button type="button" title="Thêm vào giỏ hàng">Thêm
-                                    vào giỏ hàng</button>
+                            <form action="index.php?act=addtocart" method="post">
+                                 <input type="hidden" name="id" value="<?=$id?>">
+                                 <input type="hidden" name="name" value="<?=$name?>">
+                                 <input type="hidden" name="img" value="<?=$img?>">
+                                 <input type="hidden" name="price" value="<?=$price?>">
+                                 <input type="submit" name="addtocart" value="THÊM" >
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -225,7 +230,7 @@ extract($onesp);
         margin-top: 20px;
     }
 
-    .btn-cart>button {
+    .btn-cart>input {
         width: 200px;
         height: 50px;
         background-color: #dd3c4add;
@@ -236,7 +241,7 @@ extract($onesp);
         margin-top: 40px;
     }
 
-    .btn-cart>button:hover {
+    .btn-cart>input:hover {
         width: 200px;
         height: 50px;
         background-color: darksalmon;
@@ -246,6 +251,16 @@ extract($onesp);
         color: white;
         margin-top: 40px;
     }
+    .btn-cart input{
+  width: 80%;
+  margin: 30px 0 20px;
+  border: none;
+  background-color: #a73a3a;
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px  rgb(88, 88, 88);
+  padding-bottom: 50px;
+}
 </style>
 <script>
     let amountElement = document.getElementById('amount');
