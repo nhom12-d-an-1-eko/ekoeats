@@ -3,11 +3,9 @@
     include "../model/pdo.php";
     include "../model/sanpham.php";
     include "../model/danhmuc.php";
-// <<<<<<< HEAD
-// =======
     include "../model/taikhoan.php";
     include "../model/cart.php";
-// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
+
     include "header.php";
     // include "chitietsp.php";
     include "../global.php";
