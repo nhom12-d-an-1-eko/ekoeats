@@ -96,6 +96,9 @@
             case 'about':
                 include "about-us.php";
                 break;
+            case 'contact':
+                include "contact.php";
+                break;
             case "addtocart":
                 if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
                     $id=$_POST['id'];
