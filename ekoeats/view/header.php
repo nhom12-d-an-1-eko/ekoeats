@@ -111,7 +111,7 @@
         <div class="header-right">
             <ul>
                 <li><a href="index.php?act=login"><i class="fa-solid fa-user icon fa-lg"></i></a></li>
-                <li><a href="index.php?act=cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+                <li><a href="index.php?act=addtocart"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
                 <li><i class="fa-solid fa-bars fa-lg"></i></li>
             </ul>
         </div>

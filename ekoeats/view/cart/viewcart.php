@@ -1,4 +1,5 @@
 <div class="cart">
+<!-- <<<<<<< HEAD -->
     <h1>Giỏ Hàng Của Bạn</h1>
     <div class="form-cart">
         <table class="table">
@@ -54,6 +55,50 @@
 
 
         </table>
+<!-- ======= -->
+        <h1>Giỏ Hàng Của Bạn</h1>
+       <div class="form-cart">
+        <table class="table" >
+          
+                <!-- <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên Món</th>
+                    <th>Ảnh</th>
+                    <th>Số Lượng</th>
+                    <th>Giá</th>
+                    <th>Thành Tiền</th>
+                </tr>
+                </thead> -->
+
+                   
+                    <?php
+                    viewcart(1);
+                    ?>
+
+                 
+        </table>
+         <!-- echo'
+                
+                <div class="right-cart">
+                    <table>
+                        <tr>
+                            <th>Total</th>
+                            <th>Tổng tiền</th>
+                         </tr>
+                        <tr>
+                            <td>=></td>
+                            <td>'.$tong.'</td>
+                        </tr>
+                    </table>
+                        ';    -->
+
+         
+           
+               
+        
+       </div>
+<!-- >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77 -->
     </div>
 </div>
 </div>
