@@ -5,6 +5,7 @@
     include "../model/danhmuc.php";
     include "../model/taikhoan.php";
     include "../model/cart.php";
+
     include "header.php";
     // include "chitietsp.php";
     include "../global.php";
@@ -41,6 +42,8 @@
                     include "home.php";
                 }
                 break;
+// <<<<<<< HEAD
+// =======
                  case 'dangky':
                      if (isset($_POST['dangky'])&&($_POST['dangky'])){
                          $user=$_POST['user'];
@@ -93,6 +96,7 @@
                 //     }
                 //     include "view/taikhoan/quenmk.php";
                 //     break;
+// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
             case 'about':
                 include "about-us.php";
                 break;
@@ -104,15 +108,17 @@
                 header('Location: index.php?act=home');
                 break;        
             case "addtocart":
-                if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
+                if(isset($_POST['addtocart']) && ($_POST['addtocart'] )){
                     $id=$_POST['id'];
                     $name=$_POST['name'];
                     $img=$_POST['img'];
                     $price=$_POST['price'];
                     $soluong=1;
+                    $ttien= $price * $soluong;
+                    $spadd=[$id,$name,$img,$price,$soluong,$ttien];
+                    array_push( $_SESSION['mycart'],$spadd);
                     $ttien=$soluong*$price;
-                    $spadd=[$id,$name,$img,$price,$soluong,$ttien]; 
-                    array_push($_SESSION['mycart'],$spadd);
+
                 }
                 include "cart/viewcart.php";
                 break;

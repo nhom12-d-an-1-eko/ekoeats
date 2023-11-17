@@ -53,19 +53,19 @@
                                     </div>
                                 </div>
                                 <br>
-                                <h5>Thay đổi mật khẩu</h5>
+                                <h5>THAY ĐỔI MẬT KHẨU</h5>
                                 <div class="form-group row">
                                     <label for="r_old_password" class="col-md-3 col-form-label">Mật khẩu cũ</label>
                                     <div class="col-m-7">
                                         <input type="password" placeholder="Nhập mật khẩu cũ" class="form-control" name="oldPassword" id="r_old_password" autocomplete="off">
-                                        <p class="invalid">Không được để trống</p>
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="r_confirm_password" class="col-md-3 col-form-label">Nhập lại mật khẩu</label>
                                     <div class="col-md-7">
                                         <input type="password" name="confirmPassword" id="r_confirm_password" placeholder="Nhập lại mật khẩu" class="form-control" autocomplete="off">
-                                        <p class="invalid">Không được để trống</p>
+                                        <p class="invalid" style="color: #ff5b6a;">Không được để trống</p>
                                     </div>
                                 </div>
                                 <div class="form-action">
@@ -83,6 +83,15 @@
 </body>
 </html>
 <style>
+    .main{
+        padding-left: 500px;
+        padding-top: 50px;
+        line-height: 30px;
+    }
+    .container{
+        width: 500px;
+
+    }
     .my-account .b-menu ul a {
     display: block;
     color: #fff;
@@ -196,18 +205,11 @@
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+    padding-left: 50px;
 }.form-group {
     margin-bottom: 1rem;
 }
 
-.row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
 .form-group label {
     font-weight: 500;
     display: block;
@@ -235,6 +237,9 @@
     padding: 0;
     border: 0;
     width: 100%;
+}
+input{
+    width: 300px;
 }
 .form-control:disabled, .form-control[readonly] {
     background: rgba(255,91,106,.1);
