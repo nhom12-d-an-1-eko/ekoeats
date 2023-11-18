@@ -110,10 +110,28 @@
         </div>
         <div class="header-right">
             <ul>
+            <?php 
+            if (isset($_SESSION['email'])) {
+                extract($_SESSION['email']);
+        ?>
+            <li class="user"><?=$user?></li>   
+            <li class="form_li"><a href="index.php?act=quenmk">Quên mật khẩu</a></li>
+            <li class="form_li"><a href="index.php?act=info">Thông tin tài khoản</a></li>
+            <li class="form_li"><a href="index.php?act=dangxuat">Thoát</a></li>
+            <li><a href="index.php?act=addtocart"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
+            <br>    
+        <?php }else { ?>
                 <li><a href="index.php?act=login"><i class="fa-solid fa-user icon fa-lg"></i></a></li>
-                <li><a href="index.php?act=addtocart"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
-                <li><i class="fa-solid fa-bars fa-lg"></i></li>
+                
+            <?php } ?>
             </ul>
         </div>
     </div>
     <!-- End header -->
+
+    <style>
+        .user{
+            font-weight: 300;
+            font-size: 25px;
+        }
+    </style>

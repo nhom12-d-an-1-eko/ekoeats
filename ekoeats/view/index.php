@@ -42,8 +42,6 @@
                     include "home.php";
                 }
                 break;
-// <<<<<<< HEAD
-// =======
                  case 'dangky':
                      if (isset($_POST['dangky'])&&($_POST['dangky'])){
                          $user=$_POST['user'];
@@ -96,7 +94,6 @@
                 //     }
                 //     include "view/taikhoan/quenmk.php";
                 //     break;
-// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
             case 'about':
                 include "about-us.php";
                 break;
@@ -129,7 +126,27 @@
                         $_SESSION['mycart']=[];
                     }
                     header('Location: index.php?act=addtocart');
+                    break;
+            case "bill";
+                    include "cart/bill.php";
                     break;    
+            case "billconfirm":
+                        // if(isset($_POST['dongydathang'])&&($_POST['dongydathang'])){
+                        //     $name=$_POST['user'];
+                        //     $email=$_POST['email'];
+                        //     $address=$_POST['address'];
+                        //     $tel=$_POST['tel'];
+                        //     $pttt=$_POST['pttt'];
+                        //     $ngaydathang=date('Y-m-d');
+                        //     $tongdonhang=tongdonhang();
+                        //     $idbill=insert_bill($name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
+                        //     //insert into cart :session['mycart']&bill
+                        //     foreach($session['mycart'] as $cart){
+                        //         insert_cart($_SESSION['user']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5]);
+                        //     }
+                        // }
+                        include "view/cart/billconfirm.php";
+                        break;    
             case "thanhtoan":
                 include "thanhtoan.php";
                 break;
