@@ -132,20 +132,22 @@
                     break;    
             case "billconfirm":
                          if(isset($_POST['dong'])&&($_POST['dong'])){
+                             $iduser=$_SESSION['email']['id'];
                              $name=$_POST['user'];
                              $email=$_POST['email'];
                              $address=$_POST['diachi'];
                              $tel=$_POST['tel'];
-                             $pttt=$_POST['pttt'];
                              $ngaydathang=date('Y-m-d');
                              $tongdonhang=tongdonhang();
-                             $idbill=insert_bill($name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
+                             $pttt=$_POST['pttt'];
+                             $idbill=insert_bill($iduser,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
                              //insert into cart :session['mycart']&bill
-                             foreach($session['mycart'] as $cart){
-                                 insert_cart($_SESSION['user']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5]);
+                             foreach($_SESSION['mycart'] as $cart){
+                                 insert_cart($_SESSION['email']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
                              }
                          }
-                        include "home.php";
+                         $bill=loadone_bill($idbill);
+                        include "cart/billconfirm.php";
                         break;    
             }
             

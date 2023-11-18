@@ -88,12 +88,17 @@
       return  $tong;
        
 }
-    function insert_bill($name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt){
-        $sql="INSERT INTO bill(user,email,diachi,tel,pttt,ngaydathang,tongthanhtoan) values('$name','$email','$address','$tel','$pttt','$ngaydathang','$tongdonhang')";
-        return pdo_execute_return_lastInsertID($sql);
+    function insert_bill($iduser,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt){
+        $sql="INSERT INTO bill(iduser,user,email,diachi,tel,ngaydathang,tongthanhtoan,pttt) values('$iduser','$name','$email','$address','$tel','$ngaydathang','$tongdonhang','$pttt')";
+        return pdo_execute_return_lastInsertId($sql);
     }
     function insert_cart($iduser,$idpro,$img,$name,$price,$soluong,$thanhtien,$idbill){
-        $sql="INSERT INTO cart(iduser,idpro,img,name,price,soluong,,thanhtien,idbill) values('$iduser','$idpro','$img','$price','$soluong','$thanhtien','$idbill')";
-        return pdo_execute_return_lastInsertID($sql);
+        $sql="INSERT INTO cart(iduser,idpro,img,name,price,soluong,thanhtien,idbill) values('$iduser','$idpro','$img','$name','$price','$soluong','$thanhtien','$idbill')";
+        return pdo_execute($sql);
+    }
+    function loadone_bill($id){
+        $sql= "SELECT * FROM bill WHERE id=".$id;
+        $bill=pdo_query_one($sql);
+        return $bill;
     }
 ?>
