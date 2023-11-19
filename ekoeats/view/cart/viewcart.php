@@ -43,10 +43,12 @@
         
        </div>
     </div>
+<!-- <<<<<<< HEAD -->
     <style>
     .cart{
     margin: 150px auto 50px;
     width: 1200px;
+    height: 100%;
 }
 .cart h1{
     margin: 50px 0;
@@ -64,13 +66,32 @@ table, th, td {
   }
   .form-cart{
     display: grid;
-    grid-template-columns: 10fr 1fr;
+    grid-template-columns: 10fr 1fr;}
+   button {
+        width: 32px;
+        height: 32px;
+        background-color: #e36872dd;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+    input{
+            width: 32px;
+            height: 32px;
+            background-color: #d3737bdd;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            padding: 8px;
+           
+        }
     
-  }
+
   </style>
 
+</div>
+</div>
 
-
-
+</style>
 
 

@@ -52,8 +52,8 @@
                 <div class="footer-title">
                     <h3>Download App</h3>
                     <div class="app-logo">
-                        <a class="chplay" href="#"><img width="100%" src="asset/img width="100%"/boton-google.png" alt=""></a>
-                        <a class="appstore" href="#"><img width="100%" src="asset/img width="100%"/boton-app-store.png" alt=""></a>
+                        <a class="chplay" href="#"><img width="100%" src="../asset/img/boton-google.png" alt=""></a>
+                        <a class="appstore" href="#"><img width="100%" src="../asset/img/boton-app-store.png" alt=""></a>
                     </div>
                 </div>
             </div>
