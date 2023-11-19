@@ -34,19 +34,71 @@
                               <td>'.$cart[0].'</td>
                               <td>'.$cart[1].'</td>
                               <td><img src="'.$hinh.'" alt="" height="200 "></td>                             
-                              <td>'.$cart[3].'</td>
                               <td>'.$cart[4].'</td>
-                              <td>'.$ttien.'</td>
+                              <td>'.$cart[3].'.000</td>
+                              <td>'.$ttien.'.000</td>
                               <td>'.$xoasp_td.'</td>
                               </tr>';
                               $i+=1;
                           }
                           echo '<tr>
                           <td colspan="5">Tổng Đơn Hàng</td>
-                          <td>'.$tong.'</td>
-                          <td></td>
+                          <td>'.$tong.'.000</td>
+                          <td><a href="index.php?act=bill"><input type="button" value="Tiếp Tục Đặt Hàng"> </a></td>
                           </tr>
                           ';
-                         
+                        }
+      function view(){
+        global $img_path;
+                          $tong=0;
+                          $i = 0;
+        foreach($_SESSION['mycart'] as $cart){
+            $hinh=$img_path.$cart[2];
+            $ttien=$cart[3]*$cart[4];
+            $tong+=$ttien;
+            echo
+            '
+            <tr>
+            <td>'.$cart[1].'</td>
+            <td><img src="'.$hinh.'" alt="" height="50 "></td>                             
+            <td>'.$cart[3].'.000</td>
+            <td></td>
+            <td>'.$cart[4].'</td>
+            <td></td>
+            <td>'.$ttien.'.000</td>
+            </tr>';
+            $i+=1;
+        }
+        echo '<tr>
+        
+        <td>'.$tong.'.000</td>
+        </tr>
+        ';
       }
+      function tongdonhang(){
+    
+        $tong=0;
+        
+        foreach($_SESSION['mycart'] as $cart){
+           $ttien=$cart[3]*$cart[4];
+           $tong+=$ttien;
+           
+            
+        }
+      return  $tong;
+       
+}
+    function insert_bill($iduser,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt){
+        $sql="INSERT INTO bill(iduser,user,email,diachi,tel,ngaydathang,tongthanhtoan,pttt) values('$iduser','$name','$email','$address','$tel','$ngaydathang','$tongdonhang','$pttt')";
+        return pdo_execute_return_lastInsertId($sql);
+    }
+    function insert_cart($iduser,$idpro,$img,$name,$price,$soluong,$thanhtien,$idbill){
+        $sql="INSERT INTO cart(iduser,idpro,img,name,price,soluong,thanhtien,idbill) values('$iduser','$idpro','$img','$name','$price','$soluong','$thanhtien','$idbill')";
+        return pdo_execute($sql);
+    }
+    function loadone_bill($id){
+        $sql= "SELECT * FROM bill WHERE id=".$id;
+        $bill=pdo_query_one($sql);
+        return $bill;
+    }
 ?>

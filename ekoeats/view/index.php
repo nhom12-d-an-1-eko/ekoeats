@@ -3,11 +3,9 @@
     include "../model/pdo.php";
     include "../model/sanpham.php";
     include "../model/danhmuc.php";
-// <<<<<<< HEAD
-// =======
     include "../model/taikhoan.php";
     include "../model/cart.php";
-// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
+
     include "header.php";
     // include "chitietsp.php";
     include "../global.php";
@@ -44,8 +42,6 @@
                     include "home.php";
                 }
                 break;
-// <<<<<<< HEAD
-// =======
                  case 'dangky':
                      if (isset($_POST['dangky'])&&($_POST['dangky'])){
                          $user=$_POST['user'];
@@ -72,20 +68,20 @@
                      }
                     include "login.php";
                     break;
-                // case 'edit_taikhoan':
-                //     if (isset($_POST['capnhat'])&&($_POST['capnhat'])){
-                //         $user=$_POST['user'];
-                //         $pass=$_POST['pass'];
-                //         $email=$_POST['email'];
-                //         $address=$_POST['address'];
-                //         $tel=$_POST['tel'];
-                //         $id=$_POST['id'];
-                //         update_taikhoan($id,$user,$pass,$email,$address,$tel);
-                //         $_SESSION['user']=checkuser($user,$pass); 
-                //         header('Location: index.php?act=edit_taikhoan');
-                //     }
-                //     include "view/taikhoan/edit_taikhoan.php";
-                //     break;
+                 case 'info':
+                    if (isset($_POST['capnhat'])&&($_POST['capnhat'])){
+                        $user=$_POST['user'];
+                        $pass=$_POST['pass'];
+                        $email=$_POST['email'];
+                        $address=$_POST['address'];
+                        $tel=$_POST['tel'];
+                        $id=$_POST['id'];
+                        update_taikhoan($id,$user,$pass,$email,$address,$tel);
+                        $_SESSION['user']=checkuser($user,$pass); 
+                        header('Location: index.php?act=info');
+                    }
+                     include "taikhoan/info.php";
+                     break;
                 // case 'quenmk':
                 //     if (isset($_POST['guiemail'])&&($_POST['guiemail'])){
                 //         $email=$_POST['email'];
@@ -98,33 +94,28 @@
                 //     }
                 //     include "view/taikhoan/quenmk.php";
                 //     break;
-// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
             case 'about':
                 include "about-us.php";
                 break;
             case 'contact':
                 include "contact.php";
                 break;
+            case 'dangxuat':
+                session_unset();
+                header('Location: index.php?act=home');
+                break;        
             case "addtocart":
-// <<<<<<< HEAD
-                // if(isset($_POST['addtocart']) && ($_POST['addtocart'] )){
-// =======
-                if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
-// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
+                if(isset($_POST['addtocart']) && ($_POST['addtocart'] )){
                     $id=$_POST['id'];
                     $name=$_POST['name'];
                     $img=$_POST['img'];
                     $price=$_POST['price'];
                     $soluong=1;
-// <<<<<<< HEAD
                     $ttien= $price * $soluong;
                     $spadd=[$id,$name,$img,$price,$soluong,$ttien];
                     array_push( $_SESSION['mycart'],$spadd);
-// =======
                     $ttien=$soluong*$price;
-                    $spadd=[$id,$name,$img,$price,$soluong,$ttien]; 
-                    array_push($_SESSION['mycart'],$spadd);
-// >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
+
                 }
                 include "cart/viewcart.php";
                 break;
@@ -135,10 +126,29 @@
                         $_SESSION['mycart']=[];
                     }
                     header('Location: index.php?act=addtocart');
+                    break;
+            case "bill";
+                    include "thanhtoan.php";
                     break;    
-            case "thanhtoan":
-                include "thanhtoan.php";
-                break;
+            case "billconfirm":
+                         if(isset($_POST['dong'])&&($_POST['dong'])){
+                             $iduser=$_SESSION['email']['id'];
+                             $name=$_POST['user'];
+                             $email=$_POST['email'];
+                             $address=$_POST['diachi'];
+                             $tel=$_POST['tel'];
+                             $ngaydathang=date('Y-m-d');
+                             $tongdonhang=tongdonhang();
+                             $pttt=$_POST['pttt'];
+                             $idbill=insert_bill($iduser,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
+                             //insert into cart :session['mycart']&bill
+                             foreach($_SESSION['mycart'] as $cart){
+                                 insert_cart($_SESSION['email']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
+                             }
+                         }
+                         $bill=loadone_bill($idbill);
+                        include "cart/billconfirm.php";
+                        break;    
             }
             
          }else{

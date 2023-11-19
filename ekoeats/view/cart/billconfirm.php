@@ -1,13 +1,17 @@
-<main role="main" class="container">
+ <main role="main" class="container">
     <form action="index.php?act=billconfirm" method="post">
         <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
         <div class="container mt-4">
             <form class="needs-validation">
-
+            <?php
+            if (isset($bill)&&(is_array($bill))) {
+                extract($bill);
+            }
+            ?>
                 <div class="py-5 text-center">
                     <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
-                    <h2>Thanh toán</h2>
-                    <p class="lead">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Đặt hàng.</p>
+                    <h2>Thông tin đơn hàng</h2>
+                    <p class="lead">Cảm ơn quý khách đã đặt hàng</p>
                 </div>
 
                 <div class="row">
@@ -24,14 +28,6 @@
                             
                         </ul>
 
-
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Mã khuyến mãi">
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-secondary">Xác nhận</button>
-                            </div>
-                        </div>
-
                     </div>
                     <div class="col-md-8 order-md-1">
                         <h4 class="mb-3">Thông tin khách hàng</h4>
@@ -40,23 +36,23 @@
                             
                             <div class="col-md-12">
                                 <label for="kh_ten">Họ tên</label>
-                                <input type="text" class="form-control" name="user" 
-                                    value="<?=$user?>" readonly="">
+                                <input type="text" class="form-control"
+                                    value="<?=$bill['user']?>" readonly="">
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_diachi">Địa chỉ</label>
-                                <input type="text" class="form-control" name="diachi" 
-                                    >
+                                <input type="text" class="form-control" 
+                                    value="<?=$bill['diachi']?>" readonly="">
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_dienthoai">Điện thoại</label>
-                                <input type="text" class="form-control" name="tel" 
-                                    >
+                                <input type="text" class="form-control"
+                                    value="<?=$bill['tel']?>" readonly="">
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_email">Email</label>
-                                <input type="text" class="form-control" name="email" 
-                                    value="<?=$email?>" readonly="">
+                                <input type="text" class="form-control" 
+                                    value="<?=$bill['email']?>" readonly="">
                             </div>
                         </div>
 
@@ -64,24 +60,32 @@
 
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="httt-1" name="pttt" type="radio" class="custom-control-input" checked required=""
-                                    value="0">
-                                <label class="custom-control-label" for="httt-1">Tiền mặt</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input id="httt-2" name="pttt" type="radio" class="custom-control-input" required=""
-                                    value="1">
-                                <label class="custom-control-label" for="httt-2">Chuyển khoản</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input id="httt-3" name="pttt" type="radio" class="custom-control-input" required=""
-                                    value="2">
-                                <label class="custom-control-label" for="httt-3">Ship COD</label>
+                                <input id="httt-1" name="pttt" type="radio" class="custom-control-input" value="<?=$bill['pttt']?>" required="">
                             </div>
                         </div>
-                        <hr class="mb-4">
-                        <!-- <button class="btn btn-primary btn-lg btn-block" type="submit" name="dong">Đặt hàng</button> -->
-                            <input class="btn btn-primary btn-lg btn-block" type="submit" name="dong" value="Đặt hàng">
+                        <div class="row">
+                            
+                            <div class="col-md-12">
+                                <label for="kh_ten">Mã đơn hàng</label>
+                                <input type="text" class="form-control" name="user" 
+                                    value="EKO-<?=$bill['id']?>" readonly="">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="kh_diachi">Ngày đặt hàng</label>
+                                <input type="text" class="form-control" name="diachi" 
+                                    value="<?=$bill['ngaydathang']?>" readonly="">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="kh_dienthoai">Tổng đơn hàng</label>
+                                <input type="text" class="form-control" name="tel" 
+                                    value="<?=$bill['tongthanhtoan']?>.000" readonly="">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="kh_email">Email</label>
+                                <input type="text" class="form-control" name="email" 
+                                    value="<?=$email?>" readonly="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>

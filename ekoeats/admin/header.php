@@ -125,15 +125,14 @@
                             <a class="has-arrow" href="index.php?act=dstk" aria-expanded="false"><span class="mini-click-non">Khách hàng</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Google Map" href="index.php?act=dstk"><span class="mini-sub-pro">Danh Sách Tài Khoản</span></a></li>
-                                <li><a title="Data Maps" href="index.php?act=suatk"><span class="mini-sub-pro">Sửa Tài Khoản</span></a></li>
                             </ul>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a class="has-arrow" href="index.php?act=dsbl" aria-expanded="false"><span class="mini-click-non">Bình Luận</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="File Manager" href="index.php?act=dsbl"><span class="mini-sub-pro">Danh sách bình luận</span></a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li>
                             <a class="has-arrow" href="index.php?act=dsdh" aria-expanded="false"><span class="mini-click-non">Đơn Hàng </span></a>
                             <ul class="submenu-angle" aria-expanded="false">
@@ -142,17 +141,17 @@
                                 <li><a title="Blog Details" href="index.php?act=dsbl"><span class="mini-sub-pro">Thêm Đơn Hàng</span></a></li> -->
                             </ul>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a class="has-arrow" href="index.php?act=dsbanner" aria-expanded="false"><span class="mini-click-non">Banner marketing</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="File Manager" href="index.php?act=dsbanner"><span class="mini-sub-pro">Danh Sách Banner</span></a></li>
                                 <li><a title="File Manager" href="index.php?act=suabanner"><span class="mini-sub-pro">Sửa Banner</span></a></li>
                             </ul>
-                        </li>
-                        <li class="active"><a class="has-arrow" href="index.php">	   
+                        </li> -->
+                        <!-- <li class="active"><a class="has-arrow" href="index.php">	   
 								   <span class="mini-click-non">Teams</span>
 								</a>
- </li>
+                        </li> -->
                     </ul>
                 </nav>
             </div>

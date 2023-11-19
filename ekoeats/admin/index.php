@@ -3,6 +3,7 @@ include("../model/pdo.php");
 include("../model/danhmuc.php");
 include("../model/sanpham.php");
 include("../model/donhang.php");
+include("../model/taikhoan.php");
 
 include "header.php";
     if(isset($_GET['act'])&&($_GET['act']!="")){
@@ -118,13 +119,35 @@ include "header.php";
                 break;                            
                          
             case "dstk":
+                $listtaikhoan=loadall_taikhoan();
                 include "taikhoan/dstk.php";
                 break;
             case "xoatk":
-                include "taikhoan/xoatk.php";
+                if(isset($_GET['id'])&&($_GET['id']>0)){
+                    delete_tk($_GET['id']);
+                }
+                $listtaikhoan=loadall_taikhoan();
+                include "taikhoan/dstk.php";
                 break;    
             case "suatk":
+                if(isset($_GET['id'])&&($_GET['id']>0)){
+                    $taikhoan=loadone_tk($_GET['id']);
+                }
                 include "taikhoan/suatk.php" ;                          
+                break;
+            case "updatetk":
+                    if(isset($_POST['capnhat'])){
+                        $id=$_POST['id'];
+                        $user=$_POST['user'];
+                        $pass=$_POST['pass'];
+                        $email=$_POST['email'];
+                        $address=$_POST['address'];
+                        $tel=$_POST['tel'];
+                        $role=$_POST['role'];
+                        update_tk($id,$user,$pass,$email,$address,$tel,$role); 
+                    }
+                    $listtaikhoan=loadall_taikhoan();
+                    include "taikhoan/dstk.php" ;                        
                 break;                
             case "dsbl" :
                 include "binhluan/dsbl.php";
