@@ -46,12 +46,12 @@
                             <div class="col-md-12">
                                 <label for="kh_diachi">Địa chỉ</label>
                                 <input type="text" class="form-control" name="diachi" 
-                                    value="<?=$address?>" readonly="">
+                                    >
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_dienthoai">Điện thoại</label>
                                 <input type="text" class="form-control" name="tel" 
-                                    value="<?=$tel?>" readonly="">
+                                    >
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_email">Email</label>
