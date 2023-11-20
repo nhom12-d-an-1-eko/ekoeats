@@ -42,50 +42,6 @@
                     include "home.php";
                 }
                 break;
-<<<<<<< HEAD
-                 case 'dangky':
-                     if (isset($_POST['dangky'])&&($_POST['dangky'])){
-                         $user=$_POST['user'];
-                         $pass=$_POST['pass'];
-                         $email=$_POST['email'];
-                         insert_taikhoan($user,$pass,$email);
-                         $thongbao="Đã đăng ký thành công. Vui lòng đăng nhập.";
-                     }
-                     include "taikhoan/dangky.php";
-                     break;
-                case 'login':
-                     if (isset($_POST['dangnhap'])){
-                         $email=$_POST['email'];
-                         $pass=$_POST['pass'];
-                         $checkuser=checkuser($email,$pass);
-                         if (is_array($checkuser)) {
-                             $_SESSION['email']=$checkuser;
-                             //$thongbao="Bạn đã đăng nhập thành công!!";
-                             header('Location: index.php');
-                         }else {
-                             $thongbao="Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký.";
-                         }
-                        
-                     }
-                    include "login.php";
-                    break;
-                 case 'info':
-                    if (isset($_POST['capnhat'])&&($_POST['capnhat'])){
-                        $user=$_POST['user'];
-                        $pass=$_POST['pass'];
-                        $email=$_POST['email'];
-                        $address=$_POST['address'];
-                        $tel=$_POST['tel'];
-                        $id=$_POST['id'];
-                        update_taikhoan($id,$user,$pass,$email,$address,$tel);
-                        $_SESSION['user']=checkuser($user,$pass); 
-                        header('Location: index.php?act=info');
-                    }
-                     include "taikhoan/info.php";
-                     break;
-=======
-                // <<<<<<< HEAD
-                // =======
             case 'dangky':
                 if (isset($_POST['dangky']) && ($_POST['dangky'])) {
                     $user = $_POST['user'];
@@ -125,7 +81,6 @@
                 //     }
                 //     include "view/taikhoan/edit_taikhoan.php";
                 //     break;
->>>>>>> themgiohang
                 // case 'quenmk':
                 //     if (isset($_POST['guiemail'])&&($_POST['guiemail'])){
                 //         $email=$_POST['email'];
@@ -138,10 +93,7 @@
                 //     }
                 //     include "view/taikhoan/quenmk.php";
                 //     break;
-<<<<<<< HEAD
-=======
                 // >>>>>>> 24155c2ebadcb1dcf286639d10ad3520ec9e7e77
->>>>>>> themgiohang
             case 'about':
                 include "about-us.php";
                 break;
@@ -153,19 +105,6 @@
                 header('Location: index.php?act=home');
                 break;        
             case "addtocart":
-<<<<<<< HEAD
-                if(isset($_POST['addtocart']) && ($_POST['addtocart'] )){
-                    $id=$_POST['id'];
-                    $name=$_POST['name'];
-                    $img=$_POST['img'];
-                    $price=$_POST['price'];
-                    $soluong=1;
-                    $ttien= $price * $soluong;
-                    $spadd=[$id,$name,$img,$price,$soluong,$ttien];
-                    array_push( $_SESSION['mycart'],$spadd);
-                    $ttien=$soluong*$price;
-
-=======
                 if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
                     $id = $_POST['id'];
                     $name = $_POST['name'];
@@ -189,7 +128,6 @@
                     if($cnsl==0){
                     $spadd = [$id, $name, $img, $price, $soluong, $ttien];
                     array_push($_SESSION['mycart'], $spadd);
->>>>>>> themgiohang
                 }
             }
                 include "cart/viewcart.php";
@@ -204,7 +142,6 @@
                     include "cart/viewcart.php";
                     header('Location: index.php?act=addtocart');
                     break;
-<<<<<<< HEAD
             case "bill";
                     include "thanhtoan.php";
                     break;    
@@ -232,14 +169,5 @@
          }else{
             include "home.php";
         } 
-=======
-            case "thanhtoan":
-                include "thanhtoan.php";
-                break;
-        }
-    } else {
-        include "home.php";
-    }
->>>>>>> themgiohang
     include "footer.php";
     ?>
