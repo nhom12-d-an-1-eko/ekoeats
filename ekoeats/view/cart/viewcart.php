@@ -43,7 +43,6 @@
         
        </div>
     </div>
-<!-- <<<<<<< HEAD -->
     <style>
     .cart{
     margin: 150px auto 50px;
@@ -94,7 +93,6 @@ table, th, td {
 
 </style>
 
-<!-- =======
 </div>
 </div>
 <style>
@@ -102,6 +100,7 @@ table, th, td {
         margin: 150px auto 50px;
         width: 1200px;
         height: 100%;
+        margin-bottom: 20px;
 
     }
 
@@ -115,7 +114,7 @@ table, th, td {
         border: 1px solid rgb(252, 45, 45);
         border-collapse: collapse;
         padding: 10px 20px;
-
+       
 
     }
 
@@ -127,7 +126,9 @@ table, th, td {
     .form-cart {
         display: grid;
         grid-template-columns: 10fr 1fr;
-        height: 100%;
+        height: 80%;
+        
+        
     }
     button {
         width: 32px;
@@ -148,5 +149,5 @@ table, th, td {
            
         }
 </style>
->>>>>>> 4b814d1acf75a8c9f4c974897716d40b3c598797
- -->
+
+

@@ -131,49 +131,44 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     array_push($_SESSION['mycart'], $spadd);
                 }
             }
-            include "cart/viewcart.php";
-            break;
-
-        case "delcart":
-            if (isset($_GET['idcart'])) {
-                array_splice($_SESSION['mycart'], $_GET['idcart'], 1);
-            } else {
-                $_SESSION['mycart'] = [];
+                include "cart/viewcart.php";
+                break;
+                case "delcart": 
+                    if(isset($_GET['idcart'])){
+                        array_splice($_SESSION['mycart'],$_GET['idcart'],1);
+                       
+                    }else{
+                        $_SESSION['mycart']=[];
+                    }
+                    include "cart/viewcart.php";
+                    header('Location: index.php?act=addtocart');
+                    break;
+            case "bill";
+                    include "thanhtoan.php";
+                    break;    
+            case "billconfirm":
+                         if(isset($_POST['dong'])&&($_POST['dong'])){
+                             $iduser=$_SESSION['email']['id'];
+                             $name=$_POST['user'];
+                             $email=$_POST['email'];
+                             $address=$_POST['diachi'];
+                             $tel=$_POST['tel'];
+                             $ngaydathang=date('Y-m-d');
+                             $tongdonhang=tongdonhang();
+                             $pttt=$_POST['pttt'];
+                             $idbill=insert_bill($iduser,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
+                             //insert into cart :session['mycart']&bill
+                             foreach($_SESSION['mycart'] as $cart){
+                                 insert_cart($_SESSION['email']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
+                             }
+                         }
+                         $bill=loadone_bill($idbill);
+                        include "cart/billconfirm.php";
+                        break;    
             }
-            include "cart/viewcart.php";
-            header('Location: index.php?act=addtocart');
-            break;
-        case "bill":
-            include "thanhtoan.php";
-            break;
-        case "billconfirm":
-            if (isset($_POST['dong']) && ($_POST['dong'])) {
-                $iduser = $_SESSION['email']['id'];
-                $name = $_POST['user'];
-                $email = $_POST['email'];
-                $address = $_POST['diachi'];
-                $tel = $_POST['tel'];
-                $ngaydathang = date('Y-m-d');
-
-                $tongdonhang = tongdonhang();
-
-                $pttt = $_POST['pttt'];
-
-                $idbill = insert_bill($iduser, $name, $email, $address, $tel, $ngaydathang, $tongdonhang, $pttt);
-                //insert into cart :session['mycart']&bill
-                foreach ($_SESSION['mycart'] as $cart) {
-                    insert_cart($_SESSION['email']['id'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
-                }
-            }
-            $bill = loadone_bill($idbill);
-            include "cart/billconfirm.php";
-            break;
-       
-        }}else {
-        include "home.php";
-}
-
-
-include "footer.php";
-
-?>
+            
+         }else{
+            include "home.php";
+        } 
+    include "footer.php";
+    ?>
