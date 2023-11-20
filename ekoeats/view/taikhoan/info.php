@@ -12,16 +12,7 @@
                         <div class="f-full name" name="user" value="<?=$user?>"></div>
                       </div>
                     </div>
-                    <div class="b-menu">
-                        <ul>
-                            <li class="active"> 
-                                <a href="index.php?act=info" title=""><h5>Thông tin tài khoản</h5></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="../upload/icon-logout.svg" alt="" style="color: #000;"><h6> Đăng xuất</h6></a>
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </div>
 
                 <div class="account-right d-block" >
@@ -85,6 +76,9 @@
         </main>
     </div>
     <style>
+    .container{
+        height: 100%;
+        }
     .my-account .b-menu ul h5 {
     font-size: x-large;
         display: block;

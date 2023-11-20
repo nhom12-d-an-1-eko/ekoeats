@@ -43,11 +43,7 @@
         
        </div>
     </div>
-<<<<<<< HEAD
-
-=======
 <!-- <<<<<<< HEAD -->
->>>>>>> themgiohang
     <style>
     .cart{
     margin: 150px auto 50px;
@@ -98,7 +94,7 @@ table, th, td {
 
 </style>
 
-=======
+<!-- =======
 </div>
 </div>
 <style>
@@ -153,4 +149,4 @@ table, th, td {
         }
 </style>
 >>>>>>> 4b814d1acf75a8c9f4c974897716d40b3c598797
-
+ -->

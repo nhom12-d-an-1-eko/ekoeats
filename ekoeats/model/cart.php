@@ -34,15 +34,10 @@
                               <tr>
                               <td>'.($i+1).'</td>
                               <td>'.$cart[1].'</td>
-<<<<<<< HEAD
-                              <td><img src="'.$hinh.'" alt="" height="200 "></td>                             
-                              <td>'.$cart[4].'</td>
-=======
                               <td><img src="'.$hinh.'" alt="" height="70px"></td>                             
                               <td><button class="btn-minute" type="button" onclick="giamsl(this)">-</button>
                               <input type="text" name="amount" id="amount" value="'.$cart[4].'">
                               <button class="btn-plus" type="button" onclick="tangsl(this)">+</button></td>
->>>>>>> themgiohang
                               <td>'.$cart[3].'.000</td>
                               <td>'.$ttien.'.000</td>
                               <td>'.$xoasp_td.'</td>
@@ -52,11 +47,7 @@
                           echo '<tr>
                           <td colspan="5">Tổng Đơn Hàng</td>
                           <td>'.$tong.'.000</td>
-<<<<<<< HEAD
-                          <td><a href="index.php?act=bill"><input type="button" value="Tiếp Tục Đặt Hàng"> </a></td>
-=======
-                          <td></td>
->>>>>>> themgiohang
+                          <td><a href="index.php?act=bill"><input type="button" value="Thanh toán "> </a></td>
                           </tr>
                           ';
                         }
@@ -82,12 +73,11 @@
             $i+=1;
         }
         echo '<tr>
-        
+        <td colspan="6">Tổng Đơn Hàng</td>
         <td>'.$tong.'.000</td>
         </tr>
         ';
       }
-<<<<<<< HEAD
       function tongdonhang(){
     
         $tong=0;
@@ -115,15 +105,24 @@
         return $bill;
     }
 ?>
-=======
     
      
 
-?>
+
 
 <style>
     input.mr20{
         width: 50px;
+        
+    }
+    a>input{
+        width: 150px;
+
+    }
+    a>input:hover{
+        background-color: green;
+        color: white;
+        
     }
 </style>
 <script>
@@ -170,4 +169,3 @@
             // tt.innerText = thanhtien;
         
 </script>
->>>>>>> themgiohang

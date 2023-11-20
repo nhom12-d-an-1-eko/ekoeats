@@ -1,4 +1,4 @@
- <main role="main" class="container">
+<main role="main" class="container">
     <form action="index.php?act=billconfirm" method="post">
         <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
         <div class="container mt-4">
@@ -20,7 +20,19 @@
                             <span class="text-muted">Giỏ hàng</span>
                         </h4>
                         <ul class="list-group mb-3">
-                            <table>
+                        <table>
+                                
+                        <tr>
+                        
+                            <th>Tên Món</th>    
+                            <th>Ảnh</th>
+                            <th>Giá</th>
+                            <th></th>
+                            <th>Số Lượng</th>
+                            <th></th>
+                            <th>Thành Tiền</th>
+                        </tr>
+                
                             <?php 
                                 view();
                             ?>
@@ -95,6 +107,27 @@
         <!-- End block content -->
 </main>
 <style>
+    .cart{
+    margin: 150px auto 50px;
+    width: 100px;
+    height: 100%;
+}
+.cart h1{
+    margin: 50px 0;
+}
+table, th, td {
+    border: 1px solid rgb(252, 45, 45);
+    border-collapse: collapse;
+    padding: 10px 20px;
+   
+  }
+  table th {
+    background-color: rgb(252, 45, 45);
+    color: aliceblue;
+  }
+  .form-cart{
+    display: grid;
+    grid-template-columns: 5fr 1fr;}
     .container{
         width: 100%;
         height:2000px;
