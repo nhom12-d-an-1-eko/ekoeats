@@ -79,7 +79,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                    $tel=$_POST['tel'];
                    $id=$_POST['id'];
                    update_taikhoan($id,$user,$pass,$email,$address,$tel);
-                   $_SESSION['user']=checkuser($user,$pass); 
+                   $_SESSION['email']=checkuser($email,$pass); 
                    header('Location: index.php?act=info');
                }
                 include "taikhoan/info.php";

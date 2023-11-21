@@ -2,8 +2,8 @@
         <main class="main">
             <div class="container">
             <?php 
-                                    if (isset($_SESSION['user'])&&(is_array($_SESSION['user']))) {
-                                        extract($_SESSION['user']);
+                                    if (isset($_SESSION['email'])&&(is_array($_SESSION['email']))) {
+                                        extract($_SESSION['email']);
                                     }
                                 ?>
                 <div class="my-account">
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="form-action">
                                 <input type="hidden" name="id" value="<?=$id?>">
-                                    <input type="button" class="btn btn-primary" type="submit" value="Cập nhật" name="capnhat">
+                                    <input class="btn btn-primary" type="submit" value="Cập nhật" name="capnhat">
                                     </input>
                                 </div>
                             </form>
