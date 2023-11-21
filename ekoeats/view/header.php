@@ -117,6 +117,7 @@
             <li class="user"><?=$user?></li>   
             <li class="form_li"><a href="index.php?act=info">Thông tin tài khoản</a></li>
             <li class="form_li"><a href="index.php?act=dangxuat">Thoát</a></li>
+            <li class="form_li"><a href="index.php?act=mybill">Đơn hàng của tôi</a></li>
             <li><a href="index.php?act=addtocart"><i class="fa-solid fa-cart-shopping fa-lg"></i></a></li>
             <br>    
         <?php }else { ?>

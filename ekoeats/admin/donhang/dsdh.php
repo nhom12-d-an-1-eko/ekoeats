@@ -65,16 +65,15 @@
                 
                                                         $countsp=loadall_cart_count($bill["id"]);
                                                         $ttdh=get_ttdh($bill["bill_status"]);
-                                                        $suadm="index.php?act=suadm&id=".$id;
-                                                        $xoadm="index.php?act=xoadm&id=".$id;
+                                                        $suadh="index.php?act=suadh&id=".$id;
+                                                        $xoadh="index.php?act=xoadh&id=".$id;
                                                         echo '<tr>
                                                         <td>EKO-'.$bill['id'].'</td>
                                                         <td>'.$kh.'</td>
                                                         <td>'.$countsp.'</td>
                                                         <td>'.$bill['tongthanhtoan'].'</td>
                                                         <td>'.$ttdh.'</td>
-                                                        <td>
-                                                        <td><a href="'.$suadm.'"><input type="button" value="Sửa"></a> <a href="'.$xoadm.'">   <input type="button" value="Xóa"></a></td>
+                                                        <td><a href="'.$suadh.'"><input type="button" value="Sửa"></a> <a href="'.$xoadh.'">   <input type="button" value="Xóa"></a></td>
                                                         </td>
                                                     </tr>';
                                                     }

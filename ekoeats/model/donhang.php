@@ -14,6 +14,11 @@
         $bill=pdo_query($sql);
         return sizeof($bill) ;
     }
+    function loadall_dh($iduser){
+        $sql="SELECT * FROM bill WHERE iduser=".$iduser;
+        $dsbill=pdo_query($sql);
+        return $dsbill ;
+    }
     function get_ttdh($n){
         switch ($n) {
             case '0':
@@ -37,5 +42,18 @@
                 break;
         }
         return $tt;
+    }
+    function delete_dh($id){
+        $sql="DELETE FROM bill WHERE id=".$id;
+        pdo_execute($sql);
+    }
+    function loadone_dh($id){
+        $sql= "SELECT * FROM bill WHERE id=".$id;
+        $bill=pdo_query_one($sql);
+        return $bill;
+    }
+    function update_dh($id,$ttdh){
+        $sql="UPDATE bill SET bill_status='".$ttdh."' WHERE id=".$id;
+        pdo_execute($sql);
     }
 ?>

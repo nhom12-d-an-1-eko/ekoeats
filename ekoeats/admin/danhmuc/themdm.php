@@ -43,9 +43,10 @@
                                            <form action="index.php?act=themdm" method="POST">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                 <div class="review-content-section">
+                                                <label class="ten">MÃ DANH MỤC:</label> </br>
                                                 <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-favorites" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" name="maloai" placeholder="Mã Loại">
+                                                        <input type="text" class="form-control"  placeholder="Mã Loại" >
                                                     </div>   
                                                     <label class="ten">TÊN DANH MỤC:</label> </br> 
                                                 <div class="input-group mg-b-pro-edt">

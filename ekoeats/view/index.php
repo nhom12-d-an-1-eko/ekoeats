@@ -6,6 +6,7 @@ include "../model/sanpham.php";
 include "../model/danhmuc.php";
 include "../model/taikhoan.php";
 include "../model/cart.php";
+include "../model/donhang.php";
 
 include "header.php";
 // include "chitietsp.php";
@@ -161,8 +162,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                          }
                          $bill=loadone_bill($idbill);
                         include "cart/billconfirm.php";
-                        break;    
-                        }
+                        break; 
+            case "mybill";
+                    $dsbill=loadall_dh($_SESSION['email']['id']);
+                    include "cart/mybill.php";
+                    break;   
+                }
             
          }else{
             include "home.php";

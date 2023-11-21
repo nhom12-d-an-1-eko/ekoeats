@@ -79,9 +79,6 @@ include "header.php";
                 $listsp =loadall_sp();
                 include "sanpham/dssp.php" ;                        
                 break;  
-            case "ctsp":
-                include "sanpham/ctsp.php";                        
-                break;   
                 ///////////////////////////
             case "dsdm":
                 $listdm=loadall_dm();
@@ -164,14 +161,30 @@ include "header.php";
                 $listbill=loadall_bill($kyw,0);
                 include "donhang/dsdh.php";
                 break;
-            case "suadh":   
+            case "suadh":  
+                if(isset($_GET['id'])&&($_GET['id']>0)){
+                    $bill=loadone_dh($_GET['id']);
+                } 
                 include "donhang/suadh.php";
                 break;
             case "themdh" :   
                 include "donhang/themdh.php";
                 break;
-            case "xoadh" :   
-                include "donhang/xoadh.php";
+            case "xoadh" : 
+                if (isset($_GET['id'])&& ($_GET['id']>0)){
+                    delete_dh($_GET['id']);
+                }
+                $listbill=loadall_bill("",0); 
+                include "donhang/dsdh.php";
+                break;
+            case "updatedh":
+                if(isset($_POST['capnhat'])&& ($_POST['capnhat'])){
+                    $ttdh=$_POST['bill_status'];
+                    $id=$_POST['id'];
+                    update_dh($id,$ttdh); 
+                }
+                $listbill=loadall_bill("",0); 
+                include "donhang/dsdh.php";
                 break;
             case "dsbanner" :   
                 include "banner/dsbanner.php";
