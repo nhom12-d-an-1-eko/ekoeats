@@ -1,5 +1,10 @@
 
 <div class="cart">
+<div class="field-back">
+                    <a href="index.php?act=home">
+                        <button type="button" title="Quay lại">← <b>Mua thêm </b></button>
+                    </a>
+                </div>
         <h1>Giỏ Hàng Của Bạn</h1>
        <div class="form-cart">
         <table class="table" >
@@ -99,7 +104,7 @@ table, th, td {
     .cart {
         margin: 150px auto 50px;
         width: 1200px;
-        height: 100%;
+      
         margin-bottom: 20px;
 
     }
@@ -148,6 +153,34 @@ table, th, td {
             padding: 8px;
            
         }
+        .field-back {
+        float: right;
+      
+
+    }
+
+    .field-back>a>button {
+        color: #ff5b6a;
+        background-color: white;
+        border-radius: 40px;
+        padding: 5px 17px;
+        border: none;
+        box-shadow: 1px 2px 2px 2px rgba(128, 128, 128, 0.415);
+        width: 140px;
+        height: 40px;
+        font-size: medium;
+        margin-right: 100px;
+    }
+
+    .field-back>a>button:hover {
+        color: white;
+        background-color: green;
+        border-radius: 40px;
+        padding: 5px 17px;
+        border: none;
+        box-shadow: 1px 2px 2px 2px rgba(128, 128, 128, 0.415);
+    }
+
 </style>
 
 

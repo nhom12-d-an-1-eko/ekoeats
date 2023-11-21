@@ -132,9 +132,9 @@
         if(parseInt( soluongcu.value)>1){
             var soluongmoi =parseInt( soluongcu.value)-1;
             soluongcu. value= soluongmoi;
-
+            
         }
-       
+      
 
     }
     function tangsl(x){
@@ -142,7 +142,7 @@
         var soluongcu = cha.children[1];
         var soluongmoi =parseInt( soluongcu.value)+1;
         soluongcu. value= soluongmoi;
-        
+    
 
     }
 

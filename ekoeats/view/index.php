@@ -1,5 +1,5 @@
 <?php
-ob_start(); 
+ob_start();
 session_start();
 include "../model/pdo.php";
 include "../model/sanpham.php";
@@ -131,15 +131,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
                 include "cart/viewcart.php";
                 break;
-                case "delcart": 
+            case "delcart": 
                     if(isset($_GET['idcart'])){
                         array_splice($_SESSION['mycart'],$_GET['idcart'],1);
-                       
                     }else{
                         $_SESSION['mycart']=[];
                     }
                     include "cart/viewcart.php";
-                    header('Location: index.php?act=addtocart');
+                    // header('Location: index.php?act=addtocart');
                     break;
             case "bill";
                     include "thanhtoan.php";
