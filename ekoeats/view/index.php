@@ -1,4 +1,5 @@
 <?php
+ob_start(); 
 session_start();
 include "../model/pdo.php";
 include "../model/sanpham.php";
@@ -52,35 +53,36 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             include "taikhoan/dangky.php";
             break;
-        case 'login':
-            if (isset($_POST['dangnhap'])) {
-                $email = $_POST['email'];
-                $pass = $_POST['pass'];
-                $checkuser = checkuser($email, $pass);
-                if (is_array($checkuser)) {
-                    $_SESSION['email'] = $checkuser;
-                    //$thongbao="Bạn đã đăng nhập thành công!!";
-                    header('Location: index.php');
-                } else {
-                    $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký.";
+            case 'login':
+                if (isset($_POST['dangnhap'])){
+                    $email=$_POST['email'];
+                    $pass=$_POST['pass'];
+                    $checkuser=checkuser($email,$pass);
+                    if (is_array($checkuser)) {
+                        $_SESSION['email']=$checkuser;
+                        //$thongbao="Bạn đã đăng nhập thành công!!";
+                        header('Location: index.php');
+                    }else {
+                        $thongbao="Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký.";
+                    }
+                   
                 }
-            }
-            include "login.php";
-            break;
-        case 'info':
-            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
-                $user = $_POST['user'];
-                $pass = $_POST['pass'];
-                $email = $_POST['email'];
-                $address = $_POST['address'];
-                $tel = $_POST['tel'];
-                $id = $_POST['id'];
-                update_taikhoan($id, $user, $pass, $email, $address, $tel);
-                $_SESSION['email'] = checkuser($email, $pass);
-                header('Location: index.php?act=info');
-            }
-            include "taikhoan/info.php";
-            break;
+               include "login.php";
+               break;
+            case 'info':
+               if (isset($_POST['capnhat'])&&($_POST['capnhat'])){
+                   $user=$_POST['user'];
+                   $pass=$_POST['pass'];
+                   $email=$_POST['email'];
+                   $address=$_POST['address'];
+                   $tel=$_POST['tel'];
+                   $id=$_POST['id'];
+                   update_taikhoan($id,$user,$pass,$email,$address,$tel);
+                   $_SESSION['user']=checkuser($user,$pass); 
+                   header('Location: index.php?act=info');
+               }
+                include "taikhoan/info.php";
+                break;
             // case 'quenmk':
             //     if (isset($_POST['guiemail'])&&($_POST['guiemail'])){
             //         $email=$_POST['email'];
@@ -104,14 +106,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             header('Location: index.php?act=home');
             break;
         case "addtocart":
-
-
             if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
                 $id = $_POST['id'];
                 $name = $_POST['name'];
                 $img = $_POST['img'];
                 $price = $_POST['price'];
-
                 $soluong = 1;
                 $j = 0;
                 $cnsl = 0;
@@ -125,7 +124,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     }
                     $j++;
                 }
-
                 if ($cnsl == 0) {
                     $spadd = [$id, $name, $img, $price, $soluong, $ttien];
                     array_push($_SESSION['mycart'], $spadd);
@@ -165,10 +163,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                          $bill=loadone_bill($idbill);
                         include "cart/billconfirm.php";
                         break;    
-            }
+                        }
             
          }else{
             include "home.php";
         } 
-    include "footer.php";
+            include "footer.php";
+
+            ob_end_flush(); 
     ?>

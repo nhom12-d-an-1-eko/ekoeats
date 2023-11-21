@@ -147,25 +147,5 @@
     }
 
 
-        // function tangsl(x){
-        //     let ongnoi = x.parentElement;
-            // let vt = ongnoi.chidren[0];
-            // let sl = ongnoi.chidren[1];
-            // alert(sl);
-            // let slmoi = 0;
-            // let thanhtien = 0;
-            // for (let i = 0; i < cart.length; i++) {
-            // if(i == vt){
-            //     slmoi = cart[i].soluong;
-            //     thanhtien = slmoi * cart[i].dongia;
-            //     cart[i].soluong += 1;
-            //     break;
-            //  }                
-            // }
-            // sessionStorage.setItem("mycart",JSON.stringify(cart));
-            // sl.value = slmoi;
-
-            // let tt = ongnoi.parentElement.parentElement.chidren[3].chidren[0];
-            // tt.innerText = thanhtien;
         
 </script>
