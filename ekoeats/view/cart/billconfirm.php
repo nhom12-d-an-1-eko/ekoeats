@@ -7,13 +7,15 @@
             if (isset($bill)&&(is_array($bill))) {
                 extract($bill);
             }
+            
+
             ?>
                 <div class="py-5 text-center">
                     <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
                     <h2>Thông tin đơn hàng</h2>
                     <p class="lead">Cảm ơn quý khách đã đặt hàng</p>
                 </div>
-
+           
                 <div class="row">
                     <div class="col-md-4 order-md-2 mb-4">
                         <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -101,7 +103,9 @@
                     </div>
                 </div>
             </form>
-
+            <div class="xacnhan">
+            <input type="submit" name="dong" value="Xác nhận">
+            </div>
         </div>
     </form>
         <!-- End block content -->
