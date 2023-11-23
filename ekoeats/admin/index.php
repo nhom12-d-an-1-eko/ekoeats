@@ -152,11 +152,12 @@ include "header.php";
             case "xoabl" : 
                 include "xoabl.php";
                 break;
+                ///////////////////
             case "dsdh" :   
-                if (isset($_POST['kyw'])) {
-                    $kyw=$_POST['kyw'];
-                }else{
-                    $kyw="";
+                if(isset($_POST['listok'])&&($_POST['listok'])){
+                    $kyw= $_POST['kyw'];
+                } else{
+                    $kyw= '';
                 }
                 $listbill=loadall_bill($kyw,0);
                 include "donhang/dsdh.php";
@@ -166,6 +167,14 @@ include "header.php";
                     $bill=loadone_dh($_GET['id']);
                 } 
                 include "donhang/suadh.php";
+                break;
+            case "chitietdh":  
+                if(isset($_GET['id'])&&($_GET['id']>0)){  
+                    $bill=loadone_dh($_GET['id']);
+                } 
+                $bill=loadone_dh($_GET['id']);
+                $listct = loadct_dh($_GET['id']); 
+                include "donhang/billchitiet.php";
                 break;
             case "themdh" :   
                 include "donhang/themdh.php";

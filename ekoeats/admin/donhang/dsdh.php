@@ -53,6 +53,7 @@
                                                     <th>SỐ LƯỢNG HÀNG</th>
                                                     <th>GIÁ TRỊ ĐƠN HÀNG</th>
                                                     <th>TÌNH TRANG ĐƠN HÀNG</th>
+                                                    <th>Chi TIẾT ĐƠN HÀNG</th>
                                                     <th>THAO TÁC</th>
                                                 </tr>
                                                 <?php 
@@ -67,12 +68,14 @@
                                                         $ttdh=get_ttdh($bill["bill_status"]);
                                                         $suadh="index.php?act=suadh&id=".$id;
                                                         $xoadh="index.php?act=xoadh&id=".$id;
+                                                        $chitietdh="index.php?act=chitietdh&id=".$id;
                                                         echo '<tr>
                                                         <td>EKO-'.$bill['id'].'</td>
                                                         <td>'.$kh.'</td>
                                                         <td>'.$countsp.'</td>
                                                         <td>'.$bill['tongthanhtoan'].'</td>
                                                         <td>'.$ttdh.'</td>
+                                                        <td><a href="'.$chitietdh.'"><input type="button" value="Chi tiết đơn hàng"></a></td>
                                                         <td><a href="'.$suadh.'"><input type="button" value="Sửa"></a> <a href="'.$xoadh.'">   <input type="button" value="Xóa"></a></td>
                                                         </td>
                                                     </tr>';

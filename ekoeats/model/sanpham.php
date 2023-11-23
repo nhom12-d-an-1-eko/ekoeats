@@ -42,7 +42,7 @@ function load_tendm($iddm){
     }
 }
 function loadone_spcl($id,$iddm){
-    $sql= "SELECT * FROM sanpham WHERE iddm=".$iddm." AND id<>".$id;
+    $sql= "SELECT * FROM sanpham WHERE iddm= $iddm AND id <> $id";
     $listsp=pdo_query($sql);
     return $listsp;
 }

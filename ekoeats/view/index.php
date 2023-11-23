@@ -37,9 +37,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
                 $id = $_GET['idsp'];
                 $onesp = loadone_sp($id);
-                extract($onesp);
-                $sp_cungloai = loadone_spcl($id, $iddm);
-                include "chitietsp.php";
+                 $sp_cungloai = loadone_spcl($id, $onesp['iddm']);
+                 include "chitietsp.php";
             } else {
                 include "home.php";
             }

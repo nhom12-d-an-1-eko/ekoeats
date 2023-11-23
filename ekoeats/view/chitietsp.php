@@ -1,13 +1,17 @@
 <?php
 extract($onesp);
 ?>
+
 <div class="wrapper">
-    <form action="">
+    
         <main class="container">
             <div class="product-catagory-detail">
                 <div class="title">
                     <h4>Chi tiết sản phẩm</h4>
                 </div>
+                    <a href="index.php?act=addtocart">
+                   
+                 </a>
                 <div class="field-back">
                     <a href="index.php?act=home">
                         <button type="button" title="Quay lại">← <b>Quay lại</b></button>
@@ -54,31 +58,34 @@ extract($onesp);
                             </li>
                         </ul>
                     </div>
-
+                    
+                  
                     <div class="nav-bottom">
                         <div class="inner">
                             <div class="pty">
                                 <span class="lbl">Số lượng</span>
                             </div>
-
+                            
+                           
                             <button class="btn-minute" type="button" onclick="giam1()">-</button>
                             <input type="text" name="amount1" id="amount1" value="1">
                             <button class="btn-plus" type="button" onclick="tang1()">+</button>
                             <div class="btn-cart">
                             <form action="index.php?act=addtocart" method="post">
-                                 <input type="hidden" name="id" value="<?=$id?>">
-                                 <input type="hidden" name="name" value="<?=$name?>">
-                                 <input type="hidden" name="img" value="<?=$img?>">
-                                 <input type="hidden" name="price" value="<?=$price?>">
-                                 <input type="submit" name="addtocart" value="THÊM" >
-                            </form>
+                    <input type="hidden" name="id" value=<?= $id ?>>
+                    <input type="hidden" name="name" value=<?= $name ?>>
+                    <input type="hidden" name="img" value=<?= $img ?>>
+                    <input type="hidden" name="price" value=<?= $price ?>>
+                    <input type="submit" name="addtocart" value="THÊM" >
+                    </form>
+                            
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-    </form>
+   
 </div>
 <style>
     .wrapper {

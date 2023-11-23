@@ -56,4 +56,13 @@
         $sql="UPDATE bill SET bill_status='".$ttdh."' WHERE id=".$id;
         pdo_execute($sql);
     }
+    function loadct_dh($id){
+        $sql="SELECT cart.id, cart.name, cart.price, cart.img, cart.soluong, cart.thanhtien FROM `cart` 
+        LEFT JOIN bill ON cart.idbill = bill.id
+        WHERE bill.id= $id";
+        $listct = pdo_query($sql);
+        return $listct;
+    }
+
+        
 ?>
