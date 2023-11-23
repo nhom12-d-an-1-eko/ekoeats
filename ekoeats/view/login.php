@@ -25,7 +25,7 @@
                     <h2>ĐĂNG NHẬP</h2>
                     <input type="email" name="email" placeholder="Địa chỉ email của bạn *">
                     <input type="password" name="pass" placeholder="Mật khẩu *">
-                    <p><a href="#">Bạn quên mật khẩu ?</a></p>
+                    <p><a href="index.php?act=quenmk">Bạn quên mật khẩu ?</a></p>
                     <button type="submit" name="dangnhap" value="Đăng nhập">Đăng nhập</button>
                     <p>Hoặc tiếp tục với </p>
                     <button><i class='bx bxl-facebook-circle'></i> FaceBook</button>
