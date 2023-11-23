@@ -165,6 +165,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                             //  $noidung = "Cảm ơn bạn";
                             //  $mail = new Mailer();
                             //  $mail->dathang();
+                            if (isset($_POST['dong'])){
+                                $email=$_POST['email'];
+                                $sendmailmess = sendmail($email);
+                            }
                             }
                          }
                          $bill=loadone_bill($idbill);
