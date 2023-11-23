@@ -49,6 +49,7 @@
                                                     <th>KHÁCH HÀNG</th>
                                                     <th>SỐ LƯỢNG HÀNG</th>
                                                     <th>GIÁ TRỊ ĐƠN HÀNG</th>
+                                                    <th>NGÀY ĐẶT HÀNG</th>
                                                     <th>TÌNH TRANG ĐƠN HÀNG</th>
                                                 </tr>
                                                 <?php 
@@ -66,6 +67,7 @@
                                                         <td>'.$kh.'</td>
                                                         <td>'.$countsp.'</td>
                                                         <td>'.$bill['tongthanhtoan'].'.000</td>
+                                                        <td>'.$bill['ngaydathang'].'</td>
                                                         <td>'.$ttdh.'</td>
                                                        </td>
                                                     </tr>';

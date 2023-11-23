@@ -63,12 +63,8 @@
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_dienthoai">Điện thoại</label>
-                                <input type="tel" class="form-control" name="tel" required
-<<<<<<< HEAD
-    pattern="[0-9]{3}[0-9]{3}[0-9]{4}"  id="phone">
-=======
-    pattern="[0-9]{3}[0-9]{3}[0-9]{4}"   id="phone">
->>>>>>> 36c99697d106675a3febcc32ca55673dc2a8e7fe
+                                <input type="tel" class="form-control" name="tel" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}"  id="phone">
+
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_email">Email</label>

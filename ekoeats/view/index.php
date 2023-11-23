@@ -29,7 +29,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $iddm = 0;
             }
             $listsp = loadall_sp($kyw, $iddm);
-            $name = load_ten_dm($iddm);
+            $name = load_tendm($iddm);
             include "home.php";
             break;
 
@@ -145,9 +145,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     include "thanhtoan.php";
                     break;    
             case "billconfirm":
-                require('../mail/sendmail.php');
+                // require('../mail/sendmail.php');
                          if(isset($_POST['dong'])&&($_POST['dong'])){
                              $iduser=$_SESSION['email']['id'];
+                             $idpro=$cart[0];
                              $name=$_POST['user'];
                              $email=$_POST['email'];
                              $address=$_POST['diachi'];
@@ -155,7 +156,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                              $ngaydathang=date('Y-m-d');
                              $tongdonhang=tongdonhang();
                              $pttt=$_POST['pttt'];
-                             $idbill=insert_bill($iduser,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
+                             $idbill=insert_bill($iduser,$idpro,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
                              //insert into cart :session['mycart']&bill
                              foreach($_SESSION['mycart'] as $cart){
                                  insert_cart($_SESSION['email']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
@@ -164,10 +165,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                             //  $noidung = "Cảm ơn bạn";
                             //  $mail = new Mailer();
                             //  $mail->dathang();
-                            if (isset($_POST['dong'])){
-                                $email=$_POST['email'];
-                                $sendmailmess = sendmail($email);
-                            }
+                            // if (isset($_POST['dong'])){
+                            //     $email=$_POST['email'];
+                            //     $sendmailmess = sendmail($email);
+                            // }
                             }
                          }
                          $bill=loadone_bill($idbill);

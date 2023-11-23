@@ -92,9 +92,9 @@ function tongdonhang()
     }
     return  $tong;
 }
-function insert_bill($iduser, $name, $email, $address, $tel, $ngaydathang, $tongdonhang, $pttt)
+function insert_bill($iduser, $idpro, $name, $email, $address, $tel, $ngaydathang, $tongdonhang, $pttt)
 {
-    $sql = "INSERT INTO bill(iduser,user,email,diachi,tel,ngaydathang,tongthanhtoan,pttt) values('$iduser','$name','$email','$address','$tel','$ngaydathang','$tongdonhang','$pttt')";
+    $sql = "INSERT INTO bill(iduser,idpro,user,email,diachi,tel,ngaydathang,tongthanhtoan,pttt) values('$iduser','$idpro','$name','$email','$address','$tel','$ngaydathang','$tongdonhang','$pttt')";
     return pdo_execute_return_lastInsertId($sql);
 }
 function insert_cart($iduser, $idpro, $img, $name, $price, $soluong, $thanhtien, $idbill)
