@@ -37,9 +37,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
                 $id = $_GET['idsp'];
                 $onesp = loadone_sp($id);
-                extract($onesp);
-                $sp_cungloai = loadone_spcl($id, $iddm);
-                include "chitietsp.php";
+                 $sp_cungloai = loadone_spcl($id, $onesp['iddm']);
+                 include "chitietsp.php";
             } else {
                 include "home.php";
             }
@@ -142,9 +141,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     // header('Location: index.php?act=addtocart');
                     break;
             case "bill";
+            
                     include "thanhtoan.php";
                     break;    
             case "billconfirm":
+                require('../mail/sendmail.php');
                          if(isset($_POST['dong'])&&($_POST['dong'])){
                              $iduser=$_SESSION['email']['id'];
                              $name=$_POST['user'];
@@ -158,11 +159,22 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                              //insert into cart :session['mycart']&bill
                              foreach($_SESSION['mycart'] as $cart){
                                  insert_cart($_SESSION['email']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
-                             }
+                            //  $maildathang = $_SESSION['email'];
+                            //  $tieude = "Đơn hàng của bạn";
+                            //  $noidung = "Cảm ơn bạn";
+                            //  $mail = new Mailer();
+                            //  $mail->dathang();
+                            if (isset($_POST['dong'])){
+                                $email=$_POST['email'];
+                                $sendmailmess = sendmail($email);
+                            }
+                            }
                          }
                          $bill=loadone_bill($idbill);
                         include "cart/billconfirm.php";
                         break; 
+           
+             
             case "mybill";
                     $dsbill=loadall_dh($_SESSION['email']['id']);
                     include "cart/mybill.php";

@@ -169,12 +169,6 @@ include "header.php";
                 include "donhang/suadh.php";
                 break;
             case "chitietdh":  
-                // if(isset($_POST['chitietdh'])&&($_POST['chitietdh'])){
-                //     $idbill= $_POST['idbill'];
-                //     $listct = loadall_sp($iddm);
-                // } else{
-                //     $iddm =0;
-                // }
                 if(isset($_GET['id'])&&($_GET['id']>0)){  
                     $bill=loadone_dh($_GET['id']);
                 } 

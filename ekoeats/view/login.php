@@ -3,8 +3,8 @@
                 <img width="100%" src="https://static.kfcvietnam.com.vn/images/web/signin/lg/signin.jpg?v=L7ybXg" alt="">
                 <div class="form-submit" >
                         <?php
-                            if (isset($_SESSION['user'])) {
-                                extract($_SESSION['user']);
+                            if (isset($_SESSION['email'])) {
+                                extract($_SESSION['email']);
                         ?>
                         <div class="header-right">
                             <ul>
