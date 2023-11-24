@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <div class="form-action">
-                                <input type="hidden" name="id" value="<?=$id?>">
+                                    <input type="hidden" name="id" value="<?=$id?>">
                                     <input class="btn btn-primary" type="submit"  value="Cập nhật" name="capnhat">
                                     </input>
                                 </div>

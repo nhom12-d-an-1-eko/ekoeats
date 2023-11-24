@@ -37,7 +37,8 @@
                     <div class="product-status-wrap">
 
                         <h4>DANH SÁCH THỐNG KÊ</h4>
-                        <h4>SẢN PHẢM THEO DANH MỤC</h4>
+                        <br>
+                        <h4>SẢN PHẢM THEO DANH MỤC:</h4>
                         <table>
                             <tr>
                                 <th>MÃ DANH MỤC</th>
@@ -50,20 +51,24 @@
                             <?php 
                     foreach ($thongkedm as $thongke) {
                         extract($thongke);
+                        $maxprice=number_format($maxprice,3);
+                        $minprice=number_format($minprice,3);
+                        $avgprice=number_format($avgprice,3);
                         echo '<tr>
                         <td>'.$madm.'</td>
                         <td>'.$tendm.'</td>
                         <td>'.$demsp.'</td>
-                        <td>'.$maxprice.'000</td>
-                        <td>'.$minprice.'000</td>
-                        <td>'.$avgprice.'000</td>
+                        <td>'.$maxprice.'</td>
+                        <td>'.$minprice.'</td>
+                        <td>'.$avgprice.'</td>
                     </tr>';
                     }
                 ?>
 
 
                         </table>
-                        <h4>ĐƠN HÀNG THEO NGÀY</h4>
+                        <br>
+                        <h4>ĐƠN HÀNG THEO NGÀY:</h4>
                         <table>
                             <tr>
                                 <th>NGÀY ĐẶT HÀNG</th>
@@ -75,17 +80,21 @@
                             <?php 
                     foreach ($thongkedh as $thongke) {
                         extract($thongke);
+                        $maxtong=number_format($maxtong,3);
+                        $mintong=number_format($mintong,3);
+                        $tongtien=number_format($tongtien,3,",");
                         echo '<tr>
                         <td>'.$ngay.'</td>
                         <td>'.$countbill.'</td>
-                        <td>'.$maxtong.'000</td>
-                        <td>'.$mintong.'000</td>
-                        <td>'.$tongtien.'000</td>
+                        <td>'.$maxtong.'</td>
+                        <td>'.$mintong.'</td>
+                        <td>'.$tongtien.'</td>
                     </tr>';
                     }
                 ?>
                         </table>
-                        <h4>TỔNG SỐ ĐƠN HÀNG ĐÃ BÁN</h4>
+                        <br>
+                        <h4>TỔNG SỐ ĐƠN HÀNG ĐÃ BÁN:</h4>
                         <table>
                             <tr>
                                 <th>TỔNG SỐ ĐƠN HÀNG</th>
@@ -94,9 +103,10 @@
                             <?php 
                     foreach ($tongsobill as $tong) {
                         extract($tong);
+                        $tong=number_format($tong,3,",");
                         echo '<tr>
                         <td>'.$tongsobill.'</td>
-                        <td>'.$tong.'000</td>
+                        <td>'.$tong.'</td>
                     </tr>';
                     }
                 ?>

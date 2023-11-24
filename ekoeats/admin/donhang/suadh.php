@@ -1,3 +1,9 @@
+<?php
+if (is_array($bill)) {
+    extract($bill);
+}
+
+?>
 <div class="breadcome-area">
                 <div class="container-fluid">
                     <div class="row">
@@ -37,7 +43,7 @@
                             <div class="review-tab-pro-inner">
                                 <ul id="myTab3" class="tab-review-design">
                                     <li class="active"><a href="#description"><i class="icon nalika-edit" aria-hidden="true"></i> Sửa đơn hàng</a></li>
-                                    <!-- <li><a href="#reviews"><i class="icon nalika-picture" aria-hidden="true"></i> Hình Ảnh</a></li> -->
+                                    <li><a href="#reviews"><i class="icon nalika-picture" aria-hidden="true"></i> Sản phẩm</a></li>
                                     <!-- <li><a href="#INFORMATION"><i class="icon nalika-chat" aria-hidden="true"></i> Review</a></li> -->
                                 </ul>
                                 <div id="myTabContent" class="tab-content custom-product-edit">
@@ -83,7 +89,19 @@
                                                     <label class="ten">Tình trạng đơn hàng:</label>
                                                      <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" name="bill_status" value="<?=$bill['bill_status']?>" placeholder="tình trạng đơn hàng">
+                                                        <select name="bill_status" class="form-control pro-edt-select form-control-primary">
+                                                             <?php 
+                                                             if (isset($bill['bill_status'])) {
+                                                                        echo '<option value="0">Đơn hàng mới</option>
+                                                                        <option value="1">Đang xử lý</option>
+                                                                        <option value="2">Đang giao</option>
+                                                                        <option value="3">Hoàn tất</option>
+                                                                        ';
+                                                                        
+                                                             }    
+                                                            ?> 
+														</select> 
+                                                        <!-- <input type="text" class="form-control" name="bill_status" value="" placeholder="tình trạng đơn hàng"> -->
                                                     </div> 
                                                 </div>
                                             </div>
@@ -100,7 +118,65 @@
                                             </div>
                                         </div>
                                     </div>
-                                
+                                </div>
+                                <div class="product-tab-list tab-pane fade" id="reviews">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="review-content-section">
+                                                    <div class="row">
+                                                    <div class="product-status-wrap border-pdt-ct">
+                                                    <table>
+                                                        <?php
+                                                            global $img_path;
+                                                            $tong=0;
+                                                            $i = 0;
+                                  
+                                                                echo '<tr>
+                                                                  <th>STT</th>
+                                                                  <th>Tên Món</th>
+                                                                  <th>Ảnh</th>
+                                                                  <th>Số Lượng</th>
+                                                                  <th>Giá</th>
+                                                                  <th>Thành Tiền</th>
+                                                                  </tr>';
+                                                            foreach($listct as $cart){
+                                                                extract($cart);
+                                                                $img="../upload/".$img;
+                                                                if (is_file($img)) {
+                                                                   $img="<img src='".$img."' height='80'>";
+                                                               }else{
+                                                                   $img="no photo";
+                                                               }
+                                                              $ttien=$cart['soluong']*$cart['price'];
+                                                              $tong+=$ttien;
+                                                              echo
+                                                                '
+                                                                <tr>
+                                                                <td>'.($i+1).'</td>
+                                                                <td>'.$cart['name'].'</td>
+                                                                <td>'.$img.'</td>                                                                                            
+                                                                <td>'.$cart['soluong'].'</td>                                                                                           
+                                                                <td>'.$cart['price'].'.000</td>
+                                                                 <td>'.$ttien.'.000</td>
+                                                                </tr>';
+                                                                $i+=1;
+                                                            }
+                                                            echo '<tr>
+                                                            <td colspan="5">Tổng Đơn Hàng</td>
+                                                            <td>'.$tong.'.000</td>
+                                                            </tr>
+                                                            ';
+                                                          
+                                    
+                                                        ?>
+                                                    </table>
+                                                        
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

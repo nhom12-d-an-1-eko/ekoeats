@@ -69,7 +69,17 @@
                                                     </div>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-new-file" aria-hidden="true"></i></span>
-                                                        <input type="text" class="form-control" placeholder="Vai trò" name="role" value="<?=$taikhoan['role']?>">
+                                                        <select name="role" class="form-control pro-edt-select form-control-primary">
+                                                             <?php 
+                                                             if (isset($taikhoan['role'])) {
+                                                                        echo '<option value="0">Khách Hàng</option>
+                                                                        <option value="1">Nhân Viên</option>
+                                                                        <option value="2">Admin</option>
+                                                                        ';
+                                                                        
+                                                             }
+                                                            ?> 
+														</select> 
                                                     </div>
                                                 </div>
                                             </div>

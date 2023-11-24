@@ -60,6 +60,7 @@
                                                 <?php 
                                                     foreach ($listbill as $bill) {
                                                         extract($bill);
+                                                        $billtong=number_format($bill['tongthanhtoan'],3);
                                                         $kh=$bill["user"].'
                                                         <br> '.$bill["email"].'
                                                         <br> '.$bill["tel"].'
@@ -74,7 +75,7 @@
                                                         <td>EKO-'.$bill['id'].'</td>
                                                         <td>'.$kh.'</td>
                                                         <td>'.$countsp.'</td>
-                                                        <td>'.$bill['tongthanhtoan'].'</td>
+                                                        <td>'.$billtong.'</td>
                                                         <td>'.$bill['ngaydathang'].'</td>
                                                         <td>'.$ttdh.'</td>
                                                         <td><a href="'.$chitietdh.'"><input type="button" value="Chi tiết đơn hàng"></a></td>
