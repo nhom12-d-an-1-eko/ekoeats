@@ -108,6 +108,52 @@ function loadone_bill($id)
     $bill = pdo_query_one($sql);
     return $bill;
 }
+
+function sendMaildonhang($email) {
+    $sql="SELECT * FROM taikhoan WHERE email='$email'";
+    $taikhoan=pdo_query_one($sql);
+    if ($taikhoan != false) {
+        sendMaildh($email, $taikhoan['user']);
+        return "Gửi email thành công. Vui lòng check email!";
+    }else{
+        return "Email không tồn tại.";
+    }
+}
+function sendMaildh($email, $username) {
+    require '../PHPMailer-master/src/Exception.php';
+    require '../PHPMailer-master/src/PHPMailer.php';
+    require '../PHPMailer-master/src/SMTP.php';   
+
+
+    $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+ 
+try {
+    //Server settings
+    $mail->SMTPDebug = PHPMailer\PHPMailer\SMTP::DEBUG_OFF;                      //Enable verbose debug output
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = 'sandbox.smtp.mailtrap.io';                     //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = '06f397728b9785';                     //SMTP username
+            $mail->Password   = '4ccf4bb25c4162';                               //SMTP password
+            $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+            $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        
+            //Recipients
+            $mail->setFrom('ekoeats@example.com', 'EKO EATS');
+            $mail->addAddress($email, $username);  // Add a recipient
+   
+  
+    $mail->isHTML(true);   // Set email format to HTML
+    $mail->Subject = 'EKO EATS xin chao';
+    $mail->Body = 'Cam on ban da dat hang';
+ 
+    $mail->send();
+    //echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
+}
 ?>
 
 
@@ -135,14 +181,12 @@ function loadone_bill($id)
     function giamsl(x) {
         var cha = x.parentElement;
         var soluongcu = cha.children[1];
-        var price =  cha.children[0];
+        var price =  cha.children[2];
         // var price = document.getElementById('price_' + input_id).innerHTML.replace(/₫|,/g, '');
         var dongia =  cha.children[3];
         if (parseInt(soluongcu.value) > 1) {
             var soluongmoi = parseInt(soluongcu.value) - 1;
             soluongcu.value = soluongmoi;
-            var pricem=parseInt(soluongmoi.value) * parseInt(dongia.value);
-            price.innerHTML =pricem;
         }
 
 

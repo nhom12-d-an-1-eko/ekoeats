@@ -7,6 +7,7 @@ include "../model/danhmuc.php";
 include "../model/taikhoan.php";
 include "../model/cart.php";
 include "../model/donhang.php";
+include "../model/binhluan.php";
 
 include "header.php";
 // include "chitietsp.php";
@@ -168,10 +169,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                             //  $noidung = "Cảm ơn bạn";
                             //  $mail = new Mailer();
                             //  $mail->dathang();
-                            // if (isset($_POST['dong'])){
-                            //     $email=$_POST['email'];
-                            //     $sendmailmess = sendmail($email);
-                            // }
+                            
                             }
                          }
                          $bill=loadone_bill($idbill);

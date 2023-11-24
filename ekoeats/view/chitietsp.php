@@ -21,7 +21,17 @@ extract($onesp);
             <div class="fied-img">
                 <div class="item">
                     <img src="../upload/<?= $img ?>" alt="">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script>
+                    $(document).ready(function(){
+                        $("#binhluan").load("ekoeats/view/binhluan/binhluanform.php", {idpro: <?=$id?>});
+                    });
+                    
+                </script>
+                  
+                    
                 </div>
+                
                 <div class="content">
                     <div class="fied-content">
                         <h3><?= $name ?></h3>
@@ -32,7 +42,7 @@ extract($onesp);
                             <p>2 miếng gà Hoàng Kim</p>
                         </span>
                     </div>
-
+    
                     <div class="options-product">
                         <div class="headline">
                             <h4>Có thể bạn sẽ thích</h4>
@@ -84,6 +94,8 @@ extract($onesp);
                     </div>
                 </div>
             </div>
+            <div class="row" id="binhluan">    
+                    </div>
         </main>
    
 </div>
