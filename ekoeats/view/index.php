@@ -158,8 +158,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                              $tongdonhang=tongdonhang();
                              $pttt=$_POST['pttt'];
                              $idbill=insert_bill($iduser,$idpro,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
-                             var_dump($idbill);
-                            die;
 
                              //insert into cart :session['mycart']&bill
                              foreach($_SESSION['mycart'] as $cart){
