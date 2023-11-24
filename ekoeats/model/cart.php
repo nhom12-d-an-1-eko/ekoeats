@@ -135,14 +135,12 @@ function loadone_bill($id)
     function giamsl(x) {
         var cha = x.parentElement;
         var soluongcu = cha.children[1];
-        var price =  cha.children[0];
+        var price =  cha.children[2];
         // var price = document.getElementById('price_' + input_id).innerHTML.replace(/₫|,/g, '');
         var dongia =  cha.children[3];
         if (parseInt(soluongcu.value) > 1) {
             var soluongmoi = parseInt(soluongcu.value) - 1;
             soluongcu.value = soluongmoi;
-            var pricem=parseInt(soluongmoi.value) * parseInt(dongia.value);
-            price.innerHTML =pricem;
         }
 
 
