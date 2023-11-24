@@ -158,6 +158,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                              $tongdonhang=tongdonhang();
                              $pttt=$_POST['pttt'];
                              $idbill=insert_bill($iduser,$idpro,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
+                             
+                            $sendMaildh = sendMaildonhang($email);
                              //insert into cart :session['mycart']&bill
                              foreach($_SESSION['mycart'] as $cart){
                                  insert_cart($_SESSION['email']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
@@ -166,10 +168,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                             //  $noidung = "Cảm ơn bạn";
                             //  $mail = new Mailer();
                             //  $mail->dathang();
-                            // if (isset($_POST['dong'])){
-                            //     $email=$_POST['email'];
-                            //     $sendmailmess = sendmail($email);
-                            // }
+                            
                             }
                          }
                          $bill=loadone_bill($idbill);
