@@ -92,9 +92,9 @@ function tongdonhang()
     }
     return  $tong;
 }
-function insert_bill($iduser, $name, $email, $address, $tel, $ngaydathang, $tongdonhang, $pttt)
+function insert_bill($iduser, $idpro, $name, $email, $address, $tel, $ngaydathang, $tongdonhang, $pttt)
 {
-    $sql = "INSERT INTO bill(iduser,user,email,diachi,tel,ngaydathang,tongthanhtoan,pttt) values('$iduser','$name','$email','$address','$tel','$ngaydathang','$tongdonhang','$pttt')";
+    $sql = "INSERT INTO bill(iduser,idpro,user,email,diachi,tel,ngaydathang,tongthanhtoan,pttt) values('$iduser','$idpro','$name','$email','$address','$tel','$ngaydathang','$tongdonhang','$pttt')";
     return pdo_execute_return_lastInsertId($sql);
 }
 function insert_cart($iduser, $idpro, $img, $name, $price, $soluong, $thanhtien, $idbill)
@@ -107,6 +107,42 @@ function loadone_bill($id)
     $sql = "SELECT * FROM bill WHERE id=" . $id;
     $bill = pdo_query_one($sql);
     return $bill;
+}
+function sendMaildh($email, $username, $pass) {
+    require '../PHPMailer-master/src/Exception.php';
+    require '../PHPMailer-master/src/PHPMailer.php';
+    require '../PHPMailer-master/src/SMTP.php';   
+
+
+    $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+ 
+try {
+    //Server settings
+    $mail->SMTPDebug = 0;// Enable verbose debug output
+    $mail->isSMTP();// gửi mail SMTP
+    $mail->Host       = 'sandbox.smtp.mailtrap.io';                     //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = '06f397728b9785';                     //SMTP username
+            $mail->Password   = '4ccf4bb25c4162';                               //SMTP password
+            $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+            $mail->Port       = 587;             
+ 
+    //Recipients
+    $mail->setFrom('ekoeats@example.com', 'EKO EATS');
+    $mail->addAddress($email, $username); // Add a recipient
+   
+  
+    $mail->isHTML(true);   // Set email format to HTML
+    $mail->Subject = 'EKO EATS xin chao';
+    $mail->Body = 'Cảm ơn bạn đã đặt hàng';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+ 
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
 }
 ?>
 
@@ -135,14 +171,12 @@ function loadone_bill($id)
     function giamsl(x) {
         var cha = x.parentElement;
         var soluongcu = cha.children[1];
-        var price =  cha.children[0];
+        var price =  cha.children[2];
         // var price = document.getElementById('price_' + input_id).innerHTML.replace(/₫|,/g, '');
         var dongia =  cha.children[3];
         if (parseInt(soluongcu.value) > 1) {
             var soluongmoi = parseInt(soluongcu.value) - 1;
             soluongcu.value = soluongmoi;
-            var pricem=parseInt(soluongmoi.value) * parseInt(dongia.value);
-            price.innerHTML =pricem;
         }
 
 

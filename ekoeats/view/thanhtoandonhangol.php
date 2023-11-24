@@ -1,15 +1,12 @@
+<?php
+    include "../model/cart.php";
+?>
 <main role="main" class="container">
-    <form action="index.php?act=billconfirm" method="post">
+    <form action="../model/congthanhtoan.php" method="post">
         <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
         <div class="container mt-4">
             <form class="needs-validation">
-            <?php
-            if (isset($bill)&&(is_array($bill))) {
-                extract($bill);
-            }
-            
 
-            ?>
                 <div class="py-5 text-center">
                     <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
                     <h2>Thanh toán</h2>
@@ -19,7 +16,7 @@
                 <div class="row">
                     <div class="col-md-4 order-md-2 mb-4">
                         <h4 class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="text-muted">Giỏ hàng</span>
+                            <span class="text-muted">Đơn hàng </span>
                         </h4>
                         <ul class="list-group mb-3">
                         <table>
@@ -69,13 +66,8 @@
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_dienthoai">Điện thoại</label>
-<<<<<<< HEAD
                                 <input type="tel" class="form-control" name="tel" required
     pattern="[0-9]{3}[0-9]{3}[0-9]{4}"   id="phone">
-=======
-                                <input type="tel" class="form-control" name="tel" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}"  id="phone">
-
->>>>>>> 826cf81d866618f8d24f1a5fceeb157eea356970
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_email">Email</label>
@@ -83,31 +75,8 @@
                                     value="<?=$email?>" readonly="">
                             </div>
                         </div>
-
-                        <h4 class="mb-3">Hình thức thanh toán</h4>
-
-                        <div class="d-block my-3">
-                            <div class="custom-control custom-radio">
-                                <input id="httt-1" name="pttt" type="radio" class="custom-control-input" checked required=""
-                                    value="0">
-                                <label class="custom-control-label" for="httt-1">Tiền mặt</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input id="httt-2" name="pttt" type="radio" class="custom-control-input" required=""
-                                    value="1">
-                                <label class="custom-control-label" for="httt-2">
-                                    <a href="index.php?act=thanhtoandonhangol">Thanh toán qua ví MOMO</a></label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input id="httt-3" name="pttt" type="radio" class="custom-control-input" required=""
-                                    value="2">
-                                <label class="custom-control-label" for="httt-3">Ship COD</label>
-                            </div>
-                        </div>
-                        <hr class="mb-4">
-                        <!-- <button class="btn btn-primary btn-lg btn-block" type="submit" name="dong">Đặt hàng</button> -->
-                            <input class="btn btn-primary btn-lg btn-block" type="submit" name="dong" value="Đặt hàng">
-                    </div>
+                        <input type="hidden" name="total" value="<?=$tong?>">
+                     <button name="thanhtoandonhangol" >Thanh toán</button>                   
                 </div>
             </form>
 
@@ -116,6 +85,7 @@
         <!-- End block content -->
 </main>
 <style>
+    
     .container{
         width: 100%;
         height:2000px;
