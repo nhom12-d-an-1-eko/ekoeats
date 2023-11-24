@@ -7,6 +7,7 @@ include "../model/danhmuc.php";
 include "../model/taikhoan.php";
 include "../model/cart.php";
 include "../model/donhang.php";
+include "../model/binhluan.php";
 
 include "header.php";
 // include "chitietsp.php";
@@ -145,7 +146,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     include "thanhtoan.php";
                     break;    
             case "billconfirm":
-                require('../mail/sendmail.php');
+               // require('../mail/sendmail.php');
                          if(isset($_POST['dong'])&&($_POST['dong'])){
                              $iduser=$_SESSION['email']['id'];
                              $name=$_POST['user'];
