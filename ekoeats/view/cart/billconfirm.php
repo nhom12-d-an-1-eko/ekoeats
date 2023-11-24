@@ -103,9 +103,9 @@
                     </div>
                 </div>
             </form>
-            <div class="xacnhan">
+            <!-- <div class="xacnhan">
             <input type="submit" name="dong" value="Xác nhận">
-            </div>
+            </div> -->
         </div>
     </form>
         <!-- End block content -->

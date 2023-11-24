@@ -69,8 +69,13 @@
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_dienthoai">Điện thoại</label>
+<<<<<<< HEAD
                                 <input type="tel" class="form-control" name="tel" required
     pattern="[0-9]{3}[0-9]{3}[0-9]{4}"   id="phone">
+=======
+                                <input type="tel" class="form-control" name="tel" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}"  id="phone">
+
+>>>>>>> 826cf81d866618f8d24f1a5fceeb157eea356970
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_email">Email</label>

@@ -1,11 +1,17 @@
 <?php
-include("../model/pdo.php");
-include("../model/danhmuc.php");
-include("../model/sanpham.php");
-include("../model/donhang.php");
-include("../model/taikhoan.php");
+    include("../model/pdo.php");
+    include("../model/danhmuc.php");
+    include("../model/sanpham.php");
+    include("../model/donhang.php");
+    include("../model/taikhoan.php");
+    include("../model/thongke.php");
 
-include "header.php";
+    include "header.php";
+                $tongsobill=tongdon();
+                $thongkedh=loadall_thongke_dh();
+                $thongkedm=loadall_thongke_dm();
+                $demsp=sosanpham();
+
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
@@ -195,13 +201,20 @@ include "header.php";
                 $listbill=loadall_bill("",0); 
                 include "donhang/dsdh.php";
                 break;
-            case "dsbanner" :   
-                include "banner/dsbanner.php";
+            case "dsthongke" : 
+                $tongsobill=tongdon();
+                $thongkedh=loadall_thongke_dh();
+                $thongkedm=loadall_thongke_dm();  
+                include "thongke/list.php";
                 break;
             case "suabanner"  :
                 include "banner/suabanner.php";
                 break;
-     
+            default:
+                $thongkedm=loadall_thongke_dm();
+                include "home.php";
+                break;
+            
         }
     }else{
         include "home.php";
