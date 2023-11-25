@@ -129,10 +129,10 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="caption pro-sl-hd">
-                                    <span class="caption-subject text-uppercase"><b>Sản Phẩm Đã Bán</b></span>
+                                    <span class="caption-subject text-uppercase"><b>Danh mục sản phẩm</b></span>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="actions graph-rp">
                                     <div class="btn-group" data-toggle="buttons">
                                         <label class="btn btn-grey active">
@@ -142,10 +142,11 @@
                                             <input type="radio" name="options" class="toggle" id="option2">Tuần</label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
-                    <div id="curved-line-chart" class="flot-chart-sts flot-chart curved-chart-statistic"></div>
+                    <div id="myChart" style="width:100%; width:900px; height:500px; align-items: center"></div>
+                    <!-- <div id="curved-line-chart" class="flot-chart-sts flot-chart curved-chart-statistic"></div> -->
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -231,7 +232,8 @@
                             </div>
                         </div>
                     </div>
-                    <div id="line-chart" class="flot-chart flot-chart-sts line-chart-statistic"></div>
+                    <div id="Chart" style="width:100%; max-width:1600px; height:500px;"></div>
+                    <!-- <div id="line-chart" class="flot-chart flot-chart-sts line-chart-statistic"></div> -->
                 </div>
             </div>
 

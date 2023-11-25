@@ -7,7 +7,7 @@
         return $thongkedm;
     }
     function loadall_thongke_dh(){
-        $sql= "select bill.ngaydathang as ngay, count(bill.id) as countbill,min(bill.tongthanhtoan) as mintong, max(bill.tongthanhtoan) as maxtong, sum(bill.tongthanhtoan) as tongtien ";
+        $sql= "select date(bill.ngaydathang) as ngay, count(bill.id) as countbill,min(bill.tongthanhtoan) as mintong, max(bill.tongthanhtoan) as maxtong, sum(bill.tongthanhtoan) as tongtien ";
         $sql.= "from bill ";
         $sql.= "group by ngay";
         // $sql.= "ORDER BY bill.id by bill.ngaydathang desc";
