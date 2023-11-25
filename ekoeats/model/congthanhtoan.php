@@ -31,7 +31,7 @@ $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
 $orderInfo = "Thanh toán qua MoMo";
 $amount = "100000";
 $orderId = time() ."";
-$redirectUrl = "http://localhost/EKOEATS/ekoeats/view/index.php?act=thanhtoandonhangol";
+$redirectUrl = "http://localhost/EKOEATS/ekoeats/view/index.php?act=billconfirm";
 $ipnUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";
 $extraData = "";
 // if (!empty($_POST)) {

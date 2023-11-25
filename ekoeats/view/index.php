@@ -146,7 +146,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     include "thanhtoan.php";
                     break;    
             case "billconfirm":
-                // require('../mail/sendmail.php');
                          if(isset($_POST['dong'])&&($_POST['dong'])){
                              $iduser=$_SESSION['email']['id'];
                              $idpro=$cart[0];
@@ -158,23 +157,26 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                              $tongdonhang=tongdonhang();
                              $pttt=$_POST['pttt'];
                              $idbill=insert_bill($iduser,$idpro,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
-
-                             //insert into cart :session['mycart']&bill
+                             $sendMaildh = sendMaildonhang($email);
                              foreach($_SESSION['mycart'] as $cart){
                                  insert_cart($_SESSION['email']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
-                            //  $maildathang = $_SESSION['email'];
-                            //  $tieude = "Đơn hàng của bạn";
-                            //  $noidung = "Cảm ơn bạn";
-                            //  $mail = new Mailer();
-                            //  $mail->dathang();
-                            
+                                
                             }
-                         }
-                         $bill=loadone_bill($idbill);
-                        include "cart/billconfirm.php";
-                        break; 
-           
-             
+
+                //     if(isset($_POST['tienmat'])&&($_POST['tienmat'])){
+                      
+                //         include "thanhtoandonhangol.php";
+                   
+                // } else if (isset($_POST['thanhtoandonhangol'])&&($_POST['thanhtoandonhangol'])){
+                  
+                }else{
+                        $bill=loadone_bill($idbill);
+                        include "thanhtoandonhangol.php";
+                    }  
+                    $bill=loadone_bill($idbill);
+                    include "cart/billconfirm.php";
+                    break;  
+                      
             case "mybill";
                     $dsbill=loadall_dh($_SESSION['email']['id']);
                     include "cart/mybill.php";

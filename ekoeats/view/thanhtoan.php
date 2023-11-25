@@ -78,30 +78,34 @@
                                     value="<?=$email?>" readonly="">
                             </div>
                         </div>
-
+                    
                         <h4 class="mb-3">Hình thức thanh toán</h4>
 
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
                                 <input id="httt-1" name="pttt" type="radio" class="custom-control-input" checked required=""
                                     value="0">
-                                <label class="custom-control-label" for="httt-1">Tiền mặt</label>
+                                    <input class="btn btn-primary btn-lg btn-block" type="submit" name="dong" value="Tiền mặt ">
+                                    <!-- <label class="custom-control-label" for="httt-1" name="tienmat">Tiền mặt </label> -->
                             </div>
+                            <p></p>
                             <div class="custom-control custom-radio">
                                 <input id="httt-2" name="pttt" type="radio" class="custom-control-input" required=""
                                     value="1">
-                                <label class="custom-control-label" for="httt-2">
-                                    <a href="index.php?act=thanhtoandonhangol">Thanh toán qua ví MOMO</a></label>
+        
+                                    <a href="./thanhtoandonhangol.php" class="btn btn-primary btn-lg btn-block" name="thanhtoandonhangol" value="" >Thanh toán bằng ví MOMO</a> 
+                                    <!-- <input class="btn btn-primary btn-lg btn-block" type="submit" name="thanhtoandonhangol"  value="Thanh toán bằng ví MOMO" > -->
+                                    <!-- <label class="custom-control-label" for="httt-2" name="thanhtoandonhangol" >Thanh toán bằng ví MOMO</label> -->
                             </div>
-                            <div class="custom-control custom-radio">
+                            <!-- <div class="custom-control custom-radio">
                                 <input id="httt-3" name="pttt" type="radio" class="custom-control-input" required=""
                                     value="2">
-                                <label class="custom-control-label" for="httt-3">Ship COD</label>
-                            </div>
+                                <label class="custom-control-label" for="httt-3">Ship COD </label>
+                            </div> -->
                         </div>
                         <hr class="mb-4">
                         <!-- <button class="btn btn-primary btn-lg btn-block" type="submit" name="dong">Đặt hàng</button> -->
-                            <input class="btn btn-primary btn-lg btn-block" type="submit" name="dong" value="Đặt hàng">
+                            <!-- <input class="btn btn-primary btn-lg btn-block" type="submit" name="dong" value="Đặt hàng"> -->
                             <?php 
                                 if (isset($sendMaildh)&&($sendMaildh!="")) {
                                     echo $sendMaildh;
