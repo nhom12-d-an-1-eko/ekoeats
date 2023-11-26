@@ -68,6 +68,58 @@
 
                         </table>
                         <br>
+                        <h4>ĐƠN HÀNG THEO NĂM:</h4>
+                        <table>
+                            <tr>
+                                <th>NĂM ĐẶT HÀNG</th>
+                                <th>SỐ LƯỢNG ĐƠN HÀNG</th>
+                                <th>GIÁ CAO NHẤT</th>
+                                <th>GIÁ THẤP NHẤT</th>
+                                <th>TỔNG THU</th>
+                            </tr>
+                            <?php 
+                    foreach ($thongkenam as $nam) {
+                        extract($nam);
+                        $maxtong=number_format($maxtong,3);
+                        $mintong=number_format($mintong,3);
+                        $tongtien=number_format($tongtien,3,",");
+                        echo '<tr>
+                        <td>'.$ngay.'</td>
+                        <td>'.$countbill.'</td>
+                        <td>'.$maxtong.'</td>
+                        <td>'.$mintong.'</td>
+                        <td>'.$tongtien.'</td>
+                    </tr>';
+                    }
+                ?>
+                        </table>
+                        <br>
+                        <h4>ĐƠN HÀNG THEO THÁNG:</h4>
+                        <table>
+                            <tr>
+                                <th>THÁNG ĐẶT HÀNG</th>
+                                <th>SỐ LƯỢNG ĐƠN HÀNG</th>
+                                <th>GIÁ CAO NHẤT</th>
+                                <th>GIÁ THẤP NHẤT</th>
+                                <th>TỔNG THU</th>
+                            </tr>
+                            <?php 
+                    foreach ($tkthang as $thang) {
+                        extract($thang);
+                        $maxtong=number_format($maxtong,3);
+                        $mintong=number_format($mintong,3);
+                        $tongtien=number_format($tongtien,3,",");
+                        echo '<tr>
+                        <td>'.$ngay.'</td>
+                        <td>'.$countbill.'</td>
+                        <td>'.$maxtong.'</td>
+                        <td>'.$mintong.'</td>
+                        <td>'.$tongtien.'</td>
+                    </tr>';
+                    }
+                ?>
+                        </table>
+                        <br>
                         <h4>ĐƠN HÀNG THEO NGÀY:</h4>
                         <table>
                             <tr>

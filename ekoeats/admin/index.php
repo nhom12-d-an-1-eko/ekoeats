@@ -205,6 +205,8 @@
                 include "donhang/dsdh.php";
                 break;
             case "dsthongke" : 
+                $tkthang=thang();
+                $thongkenam=nam();
                 $tongsobill=tongdon();
                 $thongkedh=loadall_thongke_dh();
                 $thongkedm=loadall_thongke_dm();  

@@ -14,6 +14,22 @@
         $thongkedh=pdo_query($sql);
         return $thongkedh;
     }
+    function thang(){
+        $sql= "select month(bill.ngaydathang) as ngay, count(bill.id) as countbill,min(bill.tongthanhtoan) as mintong, max(bill.tongthanhtoan) as maxtong, sum(bill.tongthanhtoan) as tongtien ";
+        $sql.= "from bill ";
+        $sql.= "group by ngay";
+        // $sql.= "ORDER BY bill.id by bill.ngaydathang desc";
+        $tkthang=pdo_query($sql);
+        return $tkthang;
+    }
+        function nam(){
+            $sql= "select year(bill.ngaydathang) as ngay, count(bill.id) as countbill,min(bill.tongthanhtoan) as mintong, max(bill.tongthanhtoan) as maxtong, sum(bill.tongthanhtoan) as tongtien ";
+            $sql.= "from bill ";
+            $sql.= "group by ngay";
+            // $sql.= "ORDER BY bill.id by bill.ngaydathang desc";
+            $thongkenam=pdo_query($sql);
+            return $thongkenam;
+        }
     function tongdon(){
         $sql= "select count(bill.id) as tongsobill,sum(bill.tongthanhtoan) as tong from bill";
         $tongsobill=pdo_query($sql);
