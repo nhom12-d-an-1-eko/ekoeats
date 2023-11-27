@@ -7,6 +7,7 @@
     include("../model/thongke.php");
 
     include "header.php";
+    $listbill=loadall_bill("",0); 
                 $tongsobill=tongdon();
                 $thongkedh=loadall_thongke_dh();
                 $thongkedm=loadall_thongke_dm();
@@ -172,6 +173,7 @@
                 if(isset($_GET['id'])&&($_GET['id']>0)){
                     $bill=loadone_dh($_GET['id']);
                 } 
+                $listct = loadct_dh($_GET['id']);
                 include "donhang/suadh.php";
                 break;
             case "chitietdh":  
@@ -198,10 +200,13 @@
                     $id=$_POST['id'];
                     update_dh($id,$ttdh); 
                 }
+                // $status=bill_status();
                 $listbill=loadall_bill("",0); 
                 include "donhang/dsdh.php";
                 break;
             case "dsthongke" : 
+                $tkthang=thang();
+                $thongkenam=nam();
                 $tongsobill=tongdon();
                 $thongkedh=loadall_thongke_dh();
                 $thongkedm=loadall_thongke_dm();  

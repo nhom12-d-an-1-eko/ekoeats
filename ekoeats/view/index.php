@@ -146,7 +146,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     include "thanhtoan.php";
                     break;    
             case "billconfirm":
-                // require('../mail/sendmail.php');
                          if(isset($_POST['dong'])&&($_POST['dong'])){
                              $iduser=$_SESSION['email']['id'];
                              $idpro=$cart[0];
@@ -154,23 +153,17 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                              $email=$_POST['email'];
                              $address=$_POST['diachi'];
                              $tel=$_POST['tel'];
-                             $ngaydathang=date('Y-m-d');
+                             $ngaydathang=date('Y-m-d H:i:s');
                              $tongdonhang=tongdonhang();
                              $pttt=$_POST['pttt'];
                              $idbill=insert_bill($iduser,$idpro,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
+
                              
-                            $sendMaildh = sendMaildonhang($email);
-                             //insert into cart :session['mycart']&bill
                              foreach($_SESSION['mycart'] as $cart){
                                  insert_cart($_SESSION['email']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
-                            //  $maildathang = $_SESSION['email'];
-                            //  $tieude = "Đơn hàng của bạn";
-                            //  $noidung = "Cảm ơn bạn";
-                            //  $mail = new Mailer();
-                            //  $mail->dathang();
-                            
                             }
                          }
+                         
                          $bill=loadone_bill($idbill);
                         include "cart/billconfirm.php";
                         break; 
