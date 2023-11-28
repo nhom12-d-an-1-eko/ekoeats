@@ -48,10 +48,17 @@ function viewcart($del)
     }
     echo '<tr>
                           <td colspan="5">Tổng Đơn Hàng</td>
-                          <td id="total">' . $tong . '.000</td>
+                          <td id="total">' . $tong . '.000</td>';
+                           
+                          if (isset($_SESSION['email'])) {
+                              extract($_SESSION['email']);
+                            echo'
                           <td><a href="index.php?act=bill"><input type="button" value="Thanh toán "> </a></td>
-                          </tr>
-                          ';
+                          </tr>';
+                          } else { 
+                            echo '<td><a href="index.php?act=login" ><input type="button" value="Đăng nhập"></a></td>';
+                          }
+                          
 }
 function view()
 {

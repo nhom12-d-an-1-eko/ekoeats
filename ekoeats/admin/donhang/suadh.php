@@ -95,7 +95,7 @@ if (is_array($bill)) {
                                                                         echo '<option value="0">Đơn hàng mới</option>
                                                                         <option value="1">Đang xử lý</option>
                                                                         <option value="2">Đang giao</option>
-                                                                        <option value="3">Hoàn tất</option>
+                                                                        <option value="3" selected>Hoàn tất</option>
                                                                         ';
                                                                         
                                                              }    
