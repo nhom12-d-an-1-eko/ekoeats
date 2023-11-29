@@ -132,7 +132,7 @@ google.charts.setOnLoadCallback(drawChart);
     ]);
     // Set Options
     const options = {
-      title: 'House Prices vs Size',
+      title: 'Thống kê đơn hàng theo ngày',
       hAxis: { title: 'ngày đặt hàng' },
       vAxis: { title: 'giá tính nghìn đồng' },
       legend: 'true'

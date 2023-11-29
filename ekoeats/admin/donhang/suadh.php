@@ -91,14 +91,20 @@ if (is_array($bill)) {
                                                         <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
                                                         <select name="bill_status" class="form-control pro-edt-select form-control-primary">
                                                              <?php 
-                                                             if (isset($bill['bill_status'])) {
+                                                             if ($bill['bill_status']!="3") {
                                                                         echo '<option value="0">Đơn hàng mới</option>
                                                                         <option value="1">Đang xử lý</option>
                                                                         <option value="2">Đang giao</option>
                                                                         <option value="3" selected>Hoàn tất</option>
                                                                         ';
                                                                         
-                                                             }    
+                                                             } else{
+                                                                echo '<option value="0" disabled >Đơn hàng mới</option>
+                                                                        <option value="1" disabled >Đang xử lý</option>
+                                                                        <option value="2" disabled>Đang giao</option>
+                                                                        <option value="3" selected>Hoàn tất</option>
+                                                                        ';
+                                                             }
                                                             ?> 
 														</select> 
                                                         <!-- <input type="text" class="form-control" name="bill_status" value="" placeholder="tình trạng đơn hàng"> -->

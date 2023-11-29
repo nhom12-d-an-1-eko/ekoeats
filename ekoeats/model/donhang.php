@@ -16,6 +16,7 @@
     }
     function loadall_dh($iduser){
         $sql="SELECT * FROM bill WHERE iduser=".$iduser;
+        $sql.=" order by id desc";
         $dsbill=pdo_query($sql);
         return $dsbill ;
     }
