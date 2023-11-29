@@ -21,15 +21,6 @@ extract($onesp);
             <div class="fied-img">
                 <div class="item">
                     <img src="../upload/<?= $img ?>" alt="">
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                <script>
-                    $(document).ready(function(){
-                        $("#binhluan").load("ekoeats/view/binhluan/binhluanform.php", {idpro: <?=$id?>});
-                    });
-                    
-                </script>
-                  
-                    
                 </div>
                 
                 <div class="content">
@@ -94,12 +85,23 @@ extract($onesp);
                     </div>
                 </div>
             </div>
-            <div class="row" id="binhluan">    
-                    </div>
+            <hr> 
+            <div id="binhluan">
+                <iframe src="binhluan.php?idpro=<?=$id?>" width="100% " height="500PX" frameborder="0"></iframe>
+                </div>
+                <hr>
         </main>
    
 </div>
 <style>
+    .wrapper{
+        margin-bottom: 100px;
+
+    }
+    #binhluan{
+        clear: both;
+        margin-bottom: 100px;
+    }
     .wrapper {
         width: 60%;
         height: 900px;

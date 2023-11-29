@@ -1,15 +1,12 @@
 <?php
-    function insert_binhluan($noidung,$iduser,$idpro,$ngaybinhluan){
-        $sql="insert into binhluan(noidung,iduser,idpro,ngaybinhluan) values('$noidung','$iduser','$idpro','$ngaybinhluan')";
-        pdo_execute($sql);
+require_once 'pdo.php';
+    function binhluan_insert($iduser,$idpro,$noidung,$ngaybl){
+        $sql="insert into binhluan(iduser,idpro,noidung,ngaybl) values(?,?,?,?)";
+        pdo_execute($sql,$iduser,$idpro,$noidung,$ngaybl);
     }
 
-    function loadall_binhluan($idpro)  {
-        $sql="select * from binhluan where 1";
-        if ($idpro>0) $sql.=" AND idpro='".$idpro="'"; 
-
-        $sql.=" order by id desc";
-        $listbl=pdo_query($sql);
-        return $listbl;
+    function binhluan_select_all(){
+        $sql = "SELECT * FROM binhluan ORDER BY id DESC";
+        return pdo_query($sql);
      }
 ?>

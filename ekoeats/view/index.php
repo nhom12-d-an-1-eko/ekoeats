@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-include "../model/pdo.php";
+
 include "../model/sanpham.php";
 include "../model/danhmuc.php";
 include "../model/taikhoan.php";
@@ -60,8 +60,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $pass=$_POST['pass'];
                     $checkuser=checkuser($email,$pass);
                     if (is_array($checkuser)) {
-                        $_SESSION['email']=$checkuser;
-                        //$thongbao="Bạn đã đăng nhập thành công!!";
+                        $_SESSION['email']=$checkuser;//CLICK ĐNHAP TỪ BL.
+                        if (    $_SESSION['trang']=="chitietsp") {
+                            header('location:index.php?act=chitietsp&idsp='.$_SESSION['idpro'].'#binhluan');
+                        }else
                         header('Location: index.php');
                     }else {
                         $thongbao="Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký.";
@@ -80,7 +82,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                    $id=$_POST['id'];
                    update_taikhoan($id,$user,$pass,$email,$address,$tel);
                    $_SESSION['email']=checkuser($email,$pass); 
-                   header('Location: index.php?act=info');
+                   header('Location: index.php');
                }
                 include "taikhoan/info.php";
                 break;
@@ -157,6 +159,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                              $tongdonhang=tongdonhang();
                              $pttt=$_POST['pttt'];
                              $idbill=insert_bill($iduser,$idpro,$name,$email,$address,$tel,$ngaydathang,$tongdonhang,$pttt);
+                             $sendMaildh=sendMaildonhang($email);
 
                              
                              foreach($_SESSION['mycart'] as $cart){
