@@ -42,7 +42,8 @@ function viewcart($del)
                           </td>
                           <td id= "dogia">' . $cart[3] . '.000</td>
                           <td  id="price">' . $ttien . '.000</td>
-                              <td>' . $xoasp_td . '</td>
+                              <td>' . $xoasp_td . '
+                              <button class="cn" type="button" onclick="tai_lai_trang()">cap nhat</button></td>
                               </tr>';
         $i += 1;
     }
@@ -183,6 +184,9 @@ try {
         color: white;
 
     }
+    .cn{
+        width: 120px;
+    }
 </style>
 <script>
     function giamsl(x) {
@@ -208,4 +212,11 @@ try {
 
     }
     </script>
+    
+
+<script>
+    function tai_lai_trang(){
+        location.reload();
+    }
+</script>
    
