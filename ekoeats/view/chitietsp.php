@@ -87,7 +87,7 @@ extract($onesp);
             </div>
             <hr> 
             <div id="binhluan">
-                <iframe src="binhluan.php?idpro=<?=$id?>" width="100% " height="500PX" frameborder="0"></iframe>
+                <iframe src="binhluan.php?idpro=<?=$id?>" width="100% " height="550px" frameborder="0"></iframe>
                 </div>
                 <hr>
         </main>
@@ -95,7 +95,7 @@ extract($onesp);
 </div>
 <style>
     .wrapper{
-        margin-bottom: 100px;
+        margin-bottom: 300px;
 
     }
     #binhluan{

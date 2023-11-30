@@ -5,6 +5,7 @@
     include("../model/donhang.php");
     include("../model/taikhoan.php");
     include("../model/thongke.php");
+    include("../model/binhluan.php");
 
     include "header.php";
     $listbill=loadall_bill("",0); 
@@ -154,10 +155,15 @@
                     include "taikhoan/dstk.php" ;                        
                 break;                
             case "dsbl" :
+                $listbl=loadall_bl(0);
                 include "binhluan/dsbl.php";
                 break;
             case "xoabl" : 
-                include "xoabl.php";
+                if(isset($_GET['id'])&&($_GET['id']>0)){
+                    delete_binhluan($_GET['id']);
+                }
+                $listbl=loadall_bl(0);
+                include "binhluan/dsbl.php";
                 break;
                 ///////////////////
             case "dsdh" :   

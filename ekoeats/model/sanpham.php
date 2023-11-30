@@ -7,11 +7,10 @@ function delete_sp($id){
     $sql="DELETE FROM sanpham WHERE id=".$id;
     pdo_execute($sql);
 }
-function loadall_sp_home(){
-    $sql="SELECT * FROM sanpham WHERE 1 order by id desc limit 0,9";
-
-    $listsp = pdo_query($sql);
-    return $listsp;
+function loadall_sanpham_home(){
+    $sql="select * from sanpham where 1 order by id desc limit 0,9";
+    $listsanpham=pdo_query($sql);
+    return  $listsanpham;
 }
 function loadall_sp($kyw="",$iddm=0){
     $sql="SELECT * FROM sanpham WHERE 1";

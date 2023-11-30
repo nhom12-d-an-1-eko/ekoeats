@@ -1,12 +1,31 @@
 <?php
 require_once 'pdo.php';
-    function binhluan_insert($iduser,$idpro,$noidung,$ngaybl){
-        $sql="insert into binhluan(iduser,idpro,noidung,ngaybl) values(?,?,?,?)";
-        pdo_execute($sql,$iduser,$idpro,$noidung,$ngaybl);
+    function insert_binhluan($noidung,$iduser,$idpro,$ngaybinhluan){
+        $sql= "INSERT INTO binhluan(noidung,iduser,idpro,ngaybinhluan) VALUES('$noidung','$iduser','$idpro','$ngaybinhluan')";
+        pdo_execute($sql);
     }
-
-    function binhluan_select_all(){
-        $sql = "SELECT * FROM binhluan ORDER BY id DESC";
-        return pdo_query($sql);
-     }
+    function loadall_binhluan($idpro){
+        $sql = "
+            SELECT binhluan.id, binhluan.noidung, taikhoan.user, binhluan.ngaybinhluan FROM `binhluan` 
+            LEFT JOIN taikhoan ON binhluan.iduser = taikhoan.id
+            LEFT JOIN sanpham ON binhluan.idpro = sanpham.id
+            WHERE sanpham.id = $idpro;
+        ";
+    $listbl=pdo_query($sql);
+    return  $listbl;
+    }
+     function loadall_bl($idpro){
+        $sql= "select * from  binhluan where 1";
+        if ($idpro>0) {
+            $sql.=" AND idpro='".$idpro."'";
+        }else{
+            $sql.=" order by id desc";
+        }
+        $listbl=pdo_query($sql);
+        return $listbl;
+    }
+    function delete_binhluan($id){
+        $sql= "DELETE  FROM binhluan WHERE id=".$id;
+        $listbl=pdo_query($sql);
+    }
 ?>
