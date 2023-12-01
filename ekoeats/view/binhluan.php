@@ -32,6 +32,9 @@ $dsbl = loadall_binhluan($idpro);
                 ?>
             </table>
         </div>
+        <?php
+    if (isset($_SESSION['email'])&&(count($_SESSION['email'])>0)) {
+?>
         <div class="box_search">
             <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
                 <input type="hidden" name="idpro" value="<?= $idpro ?>">
@@ -39,6 +42,13 @@ $dsbl = loadall_binhluan($idpro);
                 <input type="submit" value="binh luan" name="guibinhluan">
             </form>
         </div>
+        <?php 
+}else{
+    $_SESSION['trang']="chitietsp";
+    $_SESSION['idpro']=$_GET['idpro'];
+    echo "<a href='index.php?act=login' target='_parent'>Bạn phải đăng nhập mới có thể bình luận</a>"; 
+}
+?>
         <?php
         if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
             if (isset($_SESSION['email'])) {
