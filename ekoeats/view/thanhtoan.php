@@ -44,12 +44,12 @@
                         </ul>
 
 
-                        <div class="input-group">
+                        <!-- <div class="input-group">
                             <input type="text" class="form-control" placeholder="Mã khuyến mãi">
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-secondary">Xác nhận</button>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                     <div class="col-md-8 order-md-1">

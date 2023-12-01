@@ -23,8 +23,15 @@ $dsbl = loadall_binhluan($idpro);
         <div class="binhluan">
             <table>
                 <?php
+                 echo '<tr>
+                 <th>Nội dung </th>
+                 <th>Khách hàng </th>
+                 <th>Ngày bình luận</th>
+                
+                 
+           </tr>';
                 foreach ($dsbl as $value) {
-                    echo '<tr><td>' . $value['noidung'] . ' </td>
+                    echo '<tr ><td>' . $value['noidung'] . ' </td>
                                 <td>' . $value['user'] . ' </td>
                                 <td>' . $value['ngaybinhluan'] . ' </td></tr>';
 
@@ -56,7 +63,7 @@ $dsbl = loadall_binhluan($idpro);
                 $noidung = $_POST['noidung'];
                 $iduser = $_SESSION['email']['id'];
                 $idpro = $_POST['idpro'];
-                $ngaybinhluan = date('H:i:s d/m/Y');
+                $ngaybinhluan = date('H:i:s Y-m-d');
                 insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
             } else {
                 echo "dang nhap de binh luan";
@@ -70,6 +77,11 @@ $dsbl = loadall_binhluan($idpro);
 
 </html>
 <style>
+    tr>td{
+        width: 1000px;
+        height: 10px;
+        border: 0.5px solid burlywood;
+    }
     .box_search input {
         margin-top: 9px;
         padding: 5px 10px;
@@ -79,6 +91,7 @@ $dsbl = loadall_binhluan($idpro);
     }
     .binhluan table{
         border-spacing: 20px;
+        background-color: wheat;
     }
     .binhluan{
     padding:20px;
