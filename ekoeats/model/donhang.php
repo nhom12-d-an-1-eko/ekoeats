@@ -37,6 +37,9 @@
             case '3':
                 $tt ="Hoàn tất";
                 break;
+            case '4':
+                $tt ="Đơn đã hủy";
+                break;
             
             default:
                 $tt ="Đơn hàng mới";
@@ -63,6 +66,11 @@
         WHERE bill.id= $id";
         $listct = pdo_query($sql);
         return $listct;
+    }
+    function huy($id){
+        $sql=" UPDATE `bill` SET `bill_status` = '4' WHERE `bill`.`id`=  ".$id;
+        $huy = pdo_query($sql);
+        return $huy;
     }
    
         
