@@ -45,27 +45,14 @@ extract($onesp);
     
                     <div class="options-product">
                         <div class="headline">
-                            <h4>Có thể bạn sẽ thích</h4>
+                            <h4>Món của bạn</h4>
                         </div>
                         <ul class="list-options add-opts">
                             <li>
-                                <div class="product-name">
-                                    <img src="../upload/2-Cajun.jpg" alt="">
-                                    <span class="txt">Gà Que Kem Xốt Cajun</span>
-                                </div>
-                                <div class="r-info">
-                                    <div class="inner">
-                                        <span class="price">
-                                            +43.000đ
-                                        </span>
-
-                                        <button class="btn-minute" type="button" onclick="giam()">-</button>
-                                        <input type="text" name="amount" id="amount" value="1">
-                                        <button class="btn-plus" type="button" onclick="tang()">+</button>
-
-                                    </div>
-                                </div>
+                                <span>Fried Chicken: 2 miếng gà hoàng kim</span><br>
+                               
                             </li>
+                            <li> <span>Drink : 1 lon pepsi</span></li>
                         </ul>
                     </div>
                     
@@ -77,9 +64,9 @@ extract($onesp);
                             </div>
                             
                            
-                            <button class="btn-minute" type="button" onclick="giam1()">-</button>
+                            <!-- <button class="btn-minute" type="button" onclick="giam1()">-</button> -->
                             <input type="text" name="amount1" id="amount1" value="1">
-                            <button class="btn-plus" type="button" onclick="tang1()">+</button>
+                            <!-- <button class="btn-plus" type="button" onclick="tang1()">+</button> -->
                             <div class="btn-cart">
                             <form action="index.php?act=addtocart" method="post">
                     <input type="hidden" name="id" value=<?= $id ?>>
@@ -100,6 +87,17 @@ extract($onesp);
    
 </div>
 <style>
+    
+    .add-opts>li{
+        color: black;
+        margin: 5px;
+        height: 30px;
+        list-style:disc;
+     
+    }
+    .add-opts>li>span{
+        font-size: 16px;
+    }
     .wrapper {
         width: 60%;
         height: 900px;
@@ -180,7 +178,9 @@ extract($onesp);
         height: 67px;
         padding: 15px;
         font-size: 17px;
-        background-color: #F2F2F2;
+        background-color:#e81c1c9e;
+        color: black;
+        border-radius: 5px;
     }
 
     .list-options {

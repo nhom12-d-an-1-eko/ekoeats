@@ -29,21 +29,23 @@ function viewcart($del)
         } else {
             $xoasp_td = '';
         }
+
         echo
         '
                               <tr>
-                              <td>' . ($i + 1) . '</td>
+                              <td id ="stt">' . ($i + 1) . '</td>
                               <td>' . $cart[1] . '</td>
                               <td><img src="' . $hinh . '" alt="" height="70px"></td>                             
                        
-                              <td><button class="btn-minute" type="button" onclick="giamsl(this)">-</button>
+                              <td><button class="btn-minute" id="btn-minute" type="button" onclick="giamsl(this)">-</button>
                               <input type="text" name="amount" id="amount" value="' . $cart[4] . '">
-                              <button class="btn-plus" type="button" onclick="tangsl(this)">+</button>
+                              <button class="btn-plus" id= "btn-plus" type="button" onclick="tangsl(this)">+</button>
                           </td>
-                          <td id= "dogia">' . $cart[3] . '.000</td>
-                          <td  id="price">' . $ttien . '.000</td>
+                          
+                          <td id= "dogia" >' . $cart[3] . '.000</td>
+                          <td  id="price" >' . $ttien . '.000</td>
                               <td>' . $xoasp_td . '
-                              <button class="cn" type="button" onclick="tai_lai_trang()">cap nhat</button></td>
+                           
                               </tr>';
         $i += 1;
     }
@@ -73,24 +75,26 @@ function view()
         echo
         '
             <tr>
+            <td id ="stt">' . ($i + 1) . '</td>
             <td>' . $cart[1] . '</td>
             <td><img src="' . $hinh . '" alt="" height="50 "></td>                             
-            <td>' . $cart[3] . '.000</td>
+            <td id= "dogia">' . $cart[3] . '.000</td>
+           
+            <td id="amount" >' . $cart[4] . '</td>
             <td></td>
-            <td>' . $cart[4] . '</td>
-            <td></td>
-            <td>' . $ttien . '.000</td>
+            <td  id="price">' . $ttien . '.000</td>
             </tr>';
         $i += 1;
     }
     echo '<tr>
         <td colspan="6">Tổng Đơn Hàng</td>
-        <td>' . $tong . '.000</td>
+        <td id="total" >' . $tong . '.000</td>
         </tr>
         ';
 }
+
 function tongdonhang()
-{
+{ 
 
     $tong = 0;
 
@@ -99,6 +103,10 @@ function tongdonhang()
         $tong += $ttien;
     }
     return  $tong;
+}
+function insert_momo($partnerCode,$requestId,$amount,$orderId,$orderInfo,$requestType,$signature){
+    $sql="INSERT INTO momo(partnerCode,requestId,amount,orderId,orderInfo,requestType,signature) values('$partnerCode','$requestId','$amount','$orderId','$orderInfo','$requestType','$signature')";
+    return pdo_execute($sql);
 }
 function insert_bill($iduser, $idpro, $name, $email, $address, $tel, $ngaydathang, $tongdonhang, $pttt)
 {
@@ -189,34 +197,65 @@ try {
     }
 </style>
 <script>
+     
+  
+    
+    function tangsl(x) {
+        var cha = x.parentElement;
+        var dongia = cha.parentElement.children[4];
+        var price = cha.parentElement.children[5];
+        var  soluongcu= cha.children[1];
+        var soluongmoi = parseInt(soluongcu.value) + 1;
+        soluongcu.value = soluongmoi;
+      
+        var pricem = parseInt(soluongmoi*(dongia.innerText));
+        price.innerText=pricem +'.000';
+       
+        var trtong = cha.parentElement.parentElement;
+           
+           var total = trtong.children[3].children[1]; 
+           console.log(total);
+           var totalm =parseInt(total.innerText)+parseInt(dongia.innerText);
+          
+           document.getElementById('total').innerHTML = totalm +'.000' ;
+          
+                
+
+    }
     function giamsl(x) {
         var cha = x.parentElement;
-        var soluongcu = cha.children[1];
-        var price =  cha.children[2];
-        // var price = document.getElementById('price_' + input_id).innerHTML.replace(/₫|,/g, '');
-        var dongia =  cha.children[3];
+        var dongia = cha.parentElement.children[4];
+        
+        var price = cha.parentElement.children[5];
+        var  soluongcu= cha.children[1];
+        
         if (parseInt(soluongcu.value) > 1) {
             var soluongmoi = parseInt(soluongcu.value) - 1;
             soluongcu.value = soluongmoi;
+            var pricem = parseInt(soluongmoi*(dongia.innerText));
+            
+            price.innerText=pricem +'.000';
+       
+            var trtong = cha.parentElement.parentElement;
+           
+        var total = trtong.children[3].children[1]; 
+       	
+        var totalm =parseInt(total.innerText)-parseInt(dongia.innerText);
+       
+        document.getElementById('total').innerHTML = totalm +'.000' ;
+        console.log(totalm);
+
         }
 
 
     }
 
-    function tangsl(x) {
-        var cha = x.parentElement;
-        var soluongcu = cha.children[1];
-        var soluongmoi = parseInt(soluongcu.value) + 1;
-        soluongcu.value = soluongmoi;
-
-
-    }
     </script>
     
 
-<script>
+<!-- <script>
     function tai_lai_trang(){
         location.reload();
     }
-</script>
+</script> -->
    
