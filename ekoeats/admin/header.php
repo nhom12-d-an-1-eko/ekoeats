@@ -137,12 +137,12 @@
                                             Tài Khoản</span></a></li>
                             </ul>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a class="has-arrow" href="index.php?act=dsbl" aria-expanded="false"><span class="mini-click-non">Bình Luận</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="File Manager" href="index.php?act=dsbl"><span class="mini-sub-pro">Danh sách bình luận</span></a></li>
                             </ul>
-                        </li> -->
+                        </li> 
                         <li>
                             <a class="has-arrow" href="index.php?act=dsdh" aria-expanded="false"><span
                                     class="mini-click-non">Đơn Hàng </span></a>

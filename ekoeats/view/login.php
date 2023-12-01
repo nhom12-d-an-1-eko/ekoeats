@@ -4,8 +4,9 @@
                 <div class="form-submit" >
                 <form action="index.php?act=login" method="post">
                     <h2>ĐĂNG NHẬP</h2>
-                    <input type="email" name="email" placeholder="Địa chỉ email của bạn *">
-                    <input type="password" name="pass" placeholder="Mật khẩu *">
+                    <input type="email" name="email" placeholder="Địa chỉ email của bạn *" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+    required>
+                    <input type="password" name="pass" placeholder="Mật khẩu *" required minlength="3" maxlength="100">
                     <p><a href="index.php?act=quenmk">Bạn quên mật khẩu ?</a></p>
                     <button type="submit" name="dangnhap" value="Đăng nhập">Đăng nhập</button>
                     <p>Hoặc tiếp tục với </p>

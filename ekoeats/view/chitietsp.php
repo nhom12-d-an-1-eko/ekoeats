@@ -21,15 +21,6 @@ extract($onesp);
             <div class="fied-img">
                 <div class="item">
                     <img src="../upload/<?= $img ?>" alt="">
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-                <script>
-                    $(document).ready(function(){
-                        $("#binhluan").load("ekoeats/view/binhluan/binhluanform.php", {idpro: <?=$id?>});
-                    });
-                    
-                </script>
-                  
-                    
                 </div>
                 
                 <div class="content">
@@ -65,7 +56,7 @@ extract($onesp);
                             
                            
                             <!-- <button class="btn-minute" type="button" onclick="giam1()">-</button> -->
-                            <input type="text" name="amount1" id="amount1" value="1">
+                            <input type="text" class="amount1" name="amount1" id="amount1" value="1">
                             <!-- <button class="btn-plus" type="button" onclick="tang1()">+</button> -->
                             <div class="btn-cart">
                             <form action="index.php?act=addtocart" method="post">
@@ -81,8 +72,11 @@ extract($onesp);
                     </div>
                 </div>
             </div>
-            <div class="row" id="binhluan">    
-                    </div>
+            <hr> 
+            <div id="binhluan">
+                <iframe src="binhluan.php?idpro=<?=$id?>" width="100% " height="550px" frameborder="0"></iframe>
+                </div>
+                <hr>
         </main>
    
 </div>
@@ -97,6 +91,14 @@ extract($onesp);
     }
     .add-opts>li>span{
         font-size: 16px;
+    }
+    .wrapper{
+        margin-bottom: 300px;
+
+    }
+    #binhluan{
+        clear: both;
+        margin-bottom: 100px;
     }
     .wrapper {
         width: 60%;
