@@ -183,8 +183,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $requestType = $_GET['requestType'];
                     $signature =$_GET['signature'];
 
+<<<<<<< HEAD
                     $momo= insert_momo($partnerCode,$requestId,$amount,$orderId,$orderInfo,$requestType,$signature);
                     $result = execPostRequest($endpoint, json_encode($momo));                        $result = execPostRequest($endpoint, json_encode($momo));
+=======
+                        $momo= insert_momo($partnerCode,$requestId,$amount,$orderId,$orderInfo,$requestType,$signature);
+                    
+>>>>>>> 8d5728b801919e7ab7ed67678d09b01806ede3cf
                       
                        
                     }
@@ -192,10 +197,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     break; 
              
             case "mybill";
+                if(isset($_POST['huy'])&& ($_POST['huy'])){
+                    $id=$_POST['id'];
+                    huy($id); 
+                }
                     $dsbill=loadall_dh($_SESSION['email']['id']);
                     include "cart/mybill.php";
                     break;   
-                }
+        }
             
          }else{
             include "home.php";

@@ -5,8 +5,10 @@
                         <button type="button" title="Quay lại">← <b>Mua thêm </b></button>
                     </a>
                 </div>
+                
         <h1>Đơn hàng của bạn</h1>
        <div class="form-cart">
+        <form action="index.php?act=mybill" method="post">
         <table class="table" >
         <tr>
                 <th>MÃ ĐƠN HÀNG</th>
@@ -15,6 +17,7 @@
                 <th>GIÁ TRỊ ĐƠN HÀNG</th>
                 <th>TÌNH TRANG ĐƠN HÀNG</th>
                 <th>NGÀY ĐẶT HÀNG</th>
+                <th>Chức Năng</th>
         </tr>
             <?php 
                 foreach ($dsbill as $bill) {
@@ -33,17 +36,27 @@
                     <td>'.$bill['tongthanhtoan'].'.000</td>
                     <td>'.$ttdh.'</td>
                     <td>'.$bill['ngaydathang'].'</td>
+                    <td>';
+                
+                    if ($bill['bill_status']!="3"&&$bill['bill_status']!="2"&&$bill['bill_status']!="4") {
+                        echo '
+                        <input type="hidden" name="id" value="'.$bill['id'].'">
+                        <input  type="submit" value="hủy" name="huy" onclick="return confirm(\'Bạn có chắc muốn hủy đơn\')"> ';                  
+                    } else{
+                       echo 'không thể hủy đơn';
+                    }
+                    echo'
                     </td>
                     </tr>';
                 }
             ?>
 
-                 
+                
         </table>
        </div>
     </div>
    
-
+    </form>
 </div>
 </div>
 <style>
@@ -84,12 +97,12 @@
         
     }
     button {
-        width: 32px;
-        height: 32px;
+        width: 70px;
+        height: 40px;
         background-color: #e36872dd;
         border: none;
         border-radius: 5px;
-        font-size: 20px;
+        font-size: 15px;
     }
     input{
             width: 32px;

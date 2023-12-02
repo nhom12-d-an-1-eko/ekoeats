@@ -85,7 +85,7 @@
                             <div class="custom-control custom-radio">
                                 <input id="httt-1" name="pttt" type="radio" class="custom-control-input" checked required=""
                                     value="0">
-                                    <input class="btn btn-primary btn-lg btn-block" type="submit" name="dong" value="Tiền mặt ">
+                                    <input class="btn btn-primary btn-lg btn-block" type="submit" name="dong" value="Thanh toán khi nhận hàng ">
                                     <!-- <label class="custom-control-label" for="httt-1" name="tienmat">Tiền mặt </label> -->
                             </div>
                             <p></p>
