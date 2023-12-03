@@ -16,6 +16,7 @@
                 <th>SỐ LƯỢNG HÀNG</th>
                 <th>GIÁ TRỊ ĐƠN HÀNG</th>
                 <th>TÌNH TRANG ĐƠN HÀNG</th>
+                <th>Trạng Thái Thanh Toán</th>
                 <th>NGÀY ĐẶT HÀNG</th>
                 <th>Chức Năng</th>
         </tr>
@@ -29,12 +30,14 @@
                 
                     $countsp=loadall_cart_count($bill["id"]);
                     $ttdh=get_ttdh($bill["bill_status"]);
+                    $paybill=get_tt($bill["tinhtrangtt"]);
                     echo '<tr>
                     <td>EKO-'.$bill['id'].'</td>
                     <td>'.$kh.'</td>
                     <td>'.$countsp.'</td>
                     <td>'.$bill['tongthanhtoan'].'.000</td>
                     <td>'.$ttdh.'</td>
+                    <td>'.$paybill.'</td>
                     <td>'.$bill['ngaydathang'].'</td>
                     <td>';
                 
