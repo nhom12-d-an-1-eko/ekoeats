@@ -73,26 +73,3 @@ $extraData = "";
 // }
 
 ?>
-                        <!-- partnerCode=MOMOBKUN20180529
-                        orderId=1701350537
-                        requestId=1701350537
-                        amount=285000
-                        orderInfo=Thanh+to%C3%A1n+qua+MoMo
-                        orderType=momo_wallet&transId=1701350541477
-                        resultCode=1006
-                        
-                        responseTime=1701350541481
-                      
-                        signature=7ce3402f6f31e283a5bfd1c7ec9dfef4a9085c662ddfd32abb4abab0084769c0
-                        
-                    $partnerCode =$_GET['partnerCode'];
-                    $requestId = $_GET['requestId'];
-                    $amount =$_GET['amount'];
-                    $orderId=$_GET['orderId'];
-                    $orderInfo = $_GET['orderInfo'];
-                    $resultCode=$_GET['resultCode'];
-                    $responseTime=$_GET['responseTime'];
-                    $requestType = $_GET['requestType'];
-                    $signature =$_GET['signature'];
-
-                     -->
