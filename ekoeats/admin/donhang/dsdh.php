@@ -54,6 +54,7 @@
                                                     <th>GIÁ TRỊ ĐƠN HÀNG</th>
                                                     <th>NGÀY ĐẶT HÀNG</th>
                                                     <th>TÌNH TRANG ĐƠN HÀNG</th>
+                                                    <th>Trạng Thái Thanh Toán</th>
                                                     <th>Chi TIẾT ĐƠN HÀNG</th>
                                                     <th>THAO TÁC</th>
                                                 </tr>
@@ -68,6 +69,7 @@
                 
                                                         $countsp=loadall_cart_count($bill["id"]);
                                                         $ttdh=get_ttdh($bill["bill_status"]);
+                                                        $paybill=get_tt($bill["tinhtrangtt"]);
                                                         $suadh="index.php?act=suadh&id=".$id;
                                                         $xoadh="index.php?act=xoadh&id=".$id;
                                                         $chitietdh="index.php?act=chitietdh&id=".$id;
@@ -78,6 +80,7 @@
                                                         <td>'.$billtong.'</td>
                                                         <td>'.$bill['ngaydathang'].'</td>
                                                         <td>'.$ttdh.'</td>
+                                                        <td>'.$paybill.'</td>
                                                         <td><a href="'.$chitietdh.'"><input type="button" value="Chi tiết đơn hàng"></a></td>
                                                         <td><a href="'.$suadh.'"><input type="button" value="Sửa"></a> <a href="'.$xoadh.'">   <input type="button" value="Xóa"></a></td>
                                                         </td>

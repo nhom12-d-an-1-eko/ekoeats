@@ -47,6 +47,21 @@
         }
         return $tt;
     }
+    function get_tt($n){
+        switch ($n) {
+            case '0':
+                $pay="Chưa thanh toán";
+                break;
+            
+            case '1':
+                $pay ="Đã thanh toán";
+                break;
+            default:
+                $pay ="Chưa thanh toán";
+                break;
+        }
+        return $pay;
+    }
     function delete_dh($id){
         $sql="DELETE FROM bill WHERE id=".$id;
         pdo_execute($sql);
@@ -56,8 +71,8 @@
         $bill=pdo_query_one($sql);
         return $bill;
     }
-    function update_dh($id,$ttdh){
-        $sql="UPDATE bill SET bill_status='".$ttdh."' WHERE id=".$id;
+    function update_dh($id,$ttdh,$paybill){
+        $sql="UPDATE bill SET bill_status='".$ttdh."', tinhtrangtt='".$paybill."' WHERE id=".$id;
         pdo_execute($sql);
     }
     function loadct_dh($id){

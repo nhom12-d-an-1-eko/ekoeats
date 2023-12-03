@@ -105,8 +105,8 @@
         font-size: 15px;
     }
     input{
-            width: 32px;
-            height: 32px;
+            width: 70px;
+            height: 40px;
             background-color: #d3737bdd;
             border: none;
             border-radius: 5px;
