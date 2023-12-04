@@ -80,7 +80,7 @@
             </div> -->
             <div class="nalika-profile">
                 <div class="profile-dtl">
-                    <a href="#"><img src="../asset/img/logo.png" alt="" /></a>
+                    <a href="../view/index.php"><img src="../asset/img/logo.png" alt="" /></a>
                     <h2>Eko <span class="min-dtn">Eats</span></h2>
                 </div>
                 <div class="profile-social-dtl">

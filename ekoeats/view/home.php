@@ -12,8 +12,8 @@
             <section class="banner">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide"><img src="../asset/img/buatruavuive.webp" alt=""></div>
-                      <div class="swiper-slide"><img src="../asset/img/gahoangkim.webp" alt=""></div>
+                      <div class="swiper-slide"><img src="../asset/img/buatruavuive.png" alt=""></div>
+                      <div class="swiper-slide"><img src="../asset/img/gahoangkim.png" alt=""></div>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>

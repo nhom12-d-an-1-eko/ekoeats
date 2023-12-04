@@ -1,6 +1,6 @@
 <div class="container login">
             <div class="form-login">
-                <img width="100%" src="https://static.kfcvietnam.com.vn/images/web/signin/lg/signin.jpg?v=L7ybXg" alt="">
+                <img width="100%" src="../asset/img/signin.jpg" alt="">
                 <div class="form-submit" >
                 <form action="index.php?act=login" method="post">
                     <h2>ĐĂNG NHẬP</h2>
