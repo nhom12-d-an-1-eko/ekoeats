@@ -49,11 +49,13 @@
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" name="tensp" placeholder="Tên Sản Phẩm">
+                                                        <span style="color:red"><?=$errortensp?></span>
                                                     </div>
                                                     <label class="ten">GIÁ SẢN PHẨM:</label>
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" name="price" placeholder="Giá">
+                                                        <span style="color:red"><?=$errorprice?></span>
                                                     </div>
                                                     <!-- <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-new-file" aria-hidden="true"></i></span>
@@ -63,6 +65,7 @@
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-favorites" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" name="soluong" placeholder="Số Lượng">
+                                                        <span style="color:red"><?=$errorsoluong?></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -72,6 +75,7 @@
                                                     <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-favorites-button" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" name="motasp" placeholder="Mô Tả">
+                                                        <span style="color:red"><?=$errormotasp?></span>
                                                     </div>
                                                     <!-- <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
@@ -91,12 +95,15 @@
                                                                     echo '<option value="'.$id.'">'.$name.'</option>';
                                                                     }
                                                                 ?> 
-														</select> 
+														    </select> 
+                                                            
+                                                            
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <br>
                                                 <div class="text-center custom-pro-edt-ds">
                                                     <input type="submit" value="THÊM MỚI" name="themmoi" class="btn btn-ctl-bt waves-effect waves-light m-r-10">
 														

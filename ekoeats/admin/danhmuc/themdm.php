@@ -52,6 +52,7 @@
                                                 <div class="input-group mg-b-pro-edt">
                                                         <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
                                                         <input type="text" class="form-control" name="tenloai" placeholder="Tên Hàng Hóa">
+                                                        <span style="color:red"><?=$errortenloai?></span>
                                                     </div>
                                                   
                                                     
