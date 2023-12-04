@@ -173,7 +173,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             case "billol":
                 
 
-                if(isset($_GET['index.php?act=billol'])&&($_GET['index.php?act=billol'])){
+                if(isset($_GET['partnerCode'])&&($_GET['partnerCode'])){
                     
                     $partnerCode =$_GET['partnerCode'];
                     $requestId = $_GET['requestId'];
@@ -184,7 +184,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $signature =$_GET['signature'];
 
                         $momo= insert_momo($partnerCode,$requestId,$amount,$orderId,$orderInfo,$requestType,$signature);
-                        $result = execPostRequest($endpoint, json_encode($momo));
                       
                        
                     }
