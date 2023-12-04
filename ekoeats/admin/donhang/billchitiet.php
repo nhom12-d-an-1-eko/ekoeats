@@ -51,6 +51,7 @@
                                                     <th>GIÁ TRỊ ĐƠN HÀNG</th>
                                                     <th>NGÀY ĐẶT HÀNG</th>
                                                     <th>TÌNH TRANG ĐƠN HÀNG</th>
+                                                    <th>Trạng Thái Thanh Toán</th>
                                                 </tr>
                                                 <?php 
                                                     // foreach ($listbill as $bill) {
@@ -62,6 +63,7 @@
                 
                                                         $countsp=loadall_cart_count($bill["id"]);
                                                         $ttdh=get_ttdh($bill["bill_status"]);
+                                                        $paybill=get_tt($bill["tinhtrangtt"]);
                                                         echo '<tr>
                                                         <td>EKO-'.$bill['id'].'</td>
                                                         <td>'.$kh.'</td>
@@ -69,6 +71,7 @@
                                                         <td>'.$bill['tongthanhtoan'].'.000</td>
                                                         <td>'.$bill['ngaydathang'].'</td>
                                                         <td>'.$ttdh.'</td>
+                                                        <td>'.$paybill.'</td>
                                                        </td>
                                                     </tr>';
                                                     // }

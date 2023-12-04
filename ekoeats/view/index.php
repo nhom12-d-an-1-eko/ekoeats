@@ -191,10 +191,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     break; 
              
             case "mybill";
+                if(isset($_POST['huy'])&& ($_POST['huy'])){
+                    $id=$_POST['id'];
+                    huy($id); 
+                }
                     $dsbill=loadall_dh($_SESSION['email']['id']);
                     include "cart/mybill.php";
                     break;   
-                }
+        }
             
          }else{
             include "home.php";

@@ -203,8 +203,9 @@
             case "updatedh":
                 if(isset($_POST['capnhat'])&& ($_POST['capnhat'])){
                     $ttdh=$_POST['bill_status'];
+                    $paybill=$_POST['tinhtrangtt'];
                     $id=$_POST['id'];
-                    update_dh($id,$ttdh); 
+                    update_dh($id,$ttdh,$paybill); 
                 }
                 // $status=bill_status();
                 $listbill=loadall_bill("",0); 

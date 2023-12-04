@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="footer-copy-right">
-            <p>Copyright © 2023 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+            <p>EKO EATS - NHÓM 12.</p>
           </div>
         </div>
       </div>

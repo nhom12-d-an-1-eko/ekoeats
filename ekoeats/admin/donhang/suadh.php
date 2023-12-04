@@ -91,11 +91,12 @@ if (is_array($bill)) {
                                                         <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
                                                         <select name="bill_status" class="form-control pro-edt-select form-control-primary">
                                                              <?php 
-                                                             if ($bill['bill_status']!="3") {
+                                                             if ($bill['bill_status']!="3"&&$bill['bill_status']!="4") {
                                                                         echo '<option value="0">Đơn hàng mới</option>
                                                                         <option value="1">Đang xử lý</option>
                                                                         <option value="2">Đang giao</option>
                                                                         <option value="3" selected>Hoàn tất</option>
+                                                                        <option value="4" selected>Đơn đã hủy</option>
                                                                         ';
                                                                         
                                                              } else{
@@ -107,7 +108,25 @@ if (is_array($bill)) {
                                                              }
                                                             ?> 
 														</select> 
-                                                        <!-- <input type="text" class="form-control" name="bill_status" value="" placeholder="tình trạng đơn hàng"> -->
+                                                        
+                                                    </div> 
+                                                    <!-- ///////////////////////////////////////////////////////// -->
+                                                    <label class="ten">Trạng thái thanh toán:</label>
+                                                     <div class="input-group mg-b-pro-edt">
+                                                        <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
+                                                        <select name="tinhtrangtt" class="form-control pro-edt-select form-control-primary">
+                                                             <?php 
+                                                             if ($bill['tinhtrangtt']!="1") {
+                                                                        echo '<option value="0">Chưa thanh toán</option>
+                                                                        <option value="1">Đã thanh toán</option>';
+                                                                        
+                                                             } else{
+                                                                echo '  <option value="0"disabled>Chưa thanh toán</option>
+                                                                        <option value="1"selected>Đã thanh toán</option>';
+                                                             }
+                                                            ?> 
+														</select> 
+                                                        
                                                     </div> 
                                                 </div>
                                             </div>
