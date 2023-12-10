@@ -81,8 +81,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $checkuser=checkuser($email,$pass);
                     if (is_array($checkuser)) {
                         $_SESSION['email']=$checkuser;//CLICK ĐNHAP TỪ BL.
-                        if (    $_SESSION['trang']=="chitietsp") {
+                        if (   $_SESSION['trang']=="chitietsp") {
                             header('location:index.php?act=chitietsp&idsp='.$_SESSION['idpro'].'#binhluan');
+                        }else 
+                        if ( $_SESSION['giohang']="giohang") {
+                            header('location:index.php?act=addtocart'); 
+                            
                         }else
                         header('Location: index.php');
                     }else {

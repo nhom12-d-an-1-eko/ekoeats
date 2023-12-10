@@ -67,6 +67,8 @@ function viewcart($del)
                         </td>
                           </tr>';
                           } else { 
+                            $_SESSION['giohang']="giohang";
+
                             echo '<td><a href="index.php?act=login" ><input type="button" value="Đăng nhập"></a></td>';
                           }
                           
