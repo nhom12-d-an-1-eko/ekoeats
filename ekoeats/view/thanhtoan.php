@@ -2,6 +2,7 @@
     <form action="index.php?act=billconfirm" method="post">
         <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
         <div class="container mt-4">
+        
             <form class="needs-validation">
             <?php
             if (isset($bill)&&(is_array($bill))) {
@@ -12,6 +13,9 @@
             ?>
                 <div class="py-5 text-center">
                     <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
+                    <a href="index.php?act=addtocart">
+                        <button type="button" title="Quay lại">← <b>Mua thêm </b></button>
+                    </a>
                     <h2>Thanh toán</h2>
                     <p class="lead">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Đặt hàng.</p>
                 </div>
@@ -120,6 +124,37 @@
         <!-- End block content -->
 </main>
 <style>
+   a>button {
+    color: white;
+        background-color: green;
+        border-radius: 40px;
+        padding: 5px 17px;
+        border: none;
+        box-shadow: 1px 2px 2px 2px rgba(128, 128, 128, 0.415);
+        width: 140px;
+        height: 40px;
+        font-size: medium;
+        margin-right: 100px;
+        margin-top: 50px;
+        float: right;
+    }
+    a>button:hover {
+        color: #ff5b6a;
+        background-color: white;
+       
+        border-radius: 40px;
+        padding: 5px 17px;
+        border: none;
+        box-shadow: 1px 2px 2px 2px rgba(128, 128, 128, 0.415);
+    }
+     button {
+        width: 150px;
+        height: 52px;
+        background-color: #e36872dd;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+    }
     .container{
         width: 100%;
         height:2000px;

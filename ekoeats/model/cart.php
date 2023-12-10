@@ -16,14 +16,14 @@ function viewcart($del)
                                 <th>Ảnh</th>
                                 <th>Số Lượng</th>
                                 <th>Giá</th>
-                                <th>Thành Tiền</th>
+                                <th id="amount" class = "amount">Thành Tiền</th>
                               ' . $xoasp_th . '
                           </tr>';
     foreach ($_SESSION['mycart'] as $cart) {
 
         $hinh = $img_path . $cart[2];
         $ttien = $cart[3] * $cart[4];
-        $tong += $ttien;
+        
         if ($del == 1) {
             $xoasp_td = '<a href="index.php?act=delcart&idcart=' . $i . '"><input  class="mr20" type="button" value="Xóa" onclick="return confirm(\'Bạn có chắc muốn xóa\')"></a>';
         } else {
@@ -32,31 +32,40 @@ function viewcart($del)
 
         echo
         '
-                              <tr>
+                              <tr class ="mycart">
                               <td id ="stt">' . ($i + 1) . '</td>
                               <td>' . $cart[1] . '</td>
                               <td><img src="' . $hinh . '" alt="" height="70px"></td>                             
                        
                               <td><button class="btn-minute" id="btn-minute" type="button" onclick="giamsl(this)">-</button>
-                              <input type="text" name="amount" id="amount" value="' . $cart[4] . '">
-                              <button class="btn-plus" id= "btn-plus" type="button" onclick="tangsl(this)">+</button>
-                          </td>
-                          
-                          <td id= "dogia" >' . $cart[3] . '.000</td>
-                          <td  id="price" >' . $ttien . '.000</td>
+                                 <span  name="amount" id="amount" value="">' . $cart[4] . '</span>
+                                   <button class="btn-plus" id= "btn-plus" type="button" onclick="tangsl(this)" >+</button>
+                                </td>
+
+                            
+                                  <td id= "dogia" >' . $cart[3] . '.000</td>
+                                   <td  id="price" >' . $ttien . '.000</td>
+                       
+
+                            
+
                               <td>' . $xoasp_td . '
                            
-                              </tr>';
+                              </tr>'; 
         $i += 1;
+        $tong += $ttien;
+        $_SESSION['total']= $tong;
     }
-    echo '<tr>
+    echo '<tr>AZA
                           <td colspan="5">Tổng Đơn Hàng</td>
-                          <td id="total">' . $tong . '.000</td>';
-                           
+                          <td id="total" class = "total">' . $tong . '.000</td>';
+                         
                           if (isset($_SESSION['email'])) {
                               extract($_SESSION['email']);
                             echo'
-                          <td><a href="index.php?act=bill"><input type="button" value="Thanh toán "> </a></td>
+                          <td><a href="index.php?act=bill"><input type="button" onclick="thanhtoan"   value="Thanh toán "> 
+                          <input type="hidden" onclick="updateQuantity()"  value="cn"></a>
+                        </td>
                           </tr>';
                           } else { 
                             echo '<td><a href="index.php?act=login" ><input type="button" value="Đăng nhập"></a></td>';
@@ -96,7 +105,7 @@ function view()
 function tongdonhang()
 { 
 
-    $tong = 0;
+    $tong = 0;   
 
     foreach ($_SESSION['mycart'] as $cart) {
         $ttien = $cart[3] * $cart[4];
@@ -196,6 +205,8 @@ try {
         width: 120px;
     }
 </style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
 <script>
      
   
@@ -205,21 +216,22 @@ try {
         var dongia = cha.parentElement.children[4];
         var price = cha.parentElement.children[5];
         var  soluongcu= cha.children[1];
-        var soluongmoi = parseInt(soluongcu.value) + 1;
-        soluongcu.value = soluongmoi;
-      
+       
+        var soluongmoi = parseInt(soluongcu.innerText) + 1;
+         
+        soluongcu.innerText= soluongmoi;
+        
         var pricem = parseInt(soluongmoi*(dongia.innerText));
         price.innerText=pricem +'.000';
        
-        var trtong = cha.parentElement.parentElement;
-           
-           var total = trtong.children[3].children[1]; 
-           console.log(total);
+        var total = document.getElementById('total');
+     
            var totalm =parseInt(total.innerText)+parseInt(dongia.innerText);
-          
+        
            document.getElementById('total').innerHTML = totalm +'.000' ;
+
           
-                
+         
 
     }
     function giamsl(x) {
@@ -229,33 +241,49 @@ try {
         var price = cha.parentElement.children[5];
         var  soluongcu= cha.children[1];
         
-        if (parseInt(soluongcu.value) > 1) {
-            var soluongmoi = parseInt(soluongcu.value) - 1;
-            soluongcu.value = soluongmoi;
+        if (parseInt(soluongcu.innerText) > 1) {
+            var soluongmoi = parseInt(soluongcu.innerText) - 1;
+            soluongcu.innerText = soluongmoi;
             var pricem = parseInt(soluongmoi*(dongia.innerText));
             
             price.innerText=pricem +'.000';
-       
-            var trtong = cha.parentElement.parentElement;
-           
-        var total = trtong.children[3].children[1]; 
+    
+        var total = document.getElementById('total');
+
        	
         var totalm =parseInt(total.innerText)-parseInt(dongia.innerText);
        
         document.getElementById('total').innerHTML = totalm +'.000' ;
-        console.log(totalm);
+       
 
         }
+       
 
 
+    }
+    function updateQuantity(id, index) {
+    $.ajax({
+            type: 'POST',
+            url: 'ekoeats/view/index.php',
+            data: {
+                id: id,
+                soluongmoi: soluongmoi
+            },
+            success: function(response) {
+                // Sau khi cập nhật thành công
+                $.post('ekoeats/view/index.php', function(data) {
+                    $('#bill').html(data);
+                })
+            },
+            error: function(error) {
+                console.log(error);
+            },
+        }) 
     }
 
     </script>
     
+<!-- < 
 
-<!-- <script>
-    function tai_lai_trang(){
-        location.reload();
-    }
-</script> -->
-   
+
+

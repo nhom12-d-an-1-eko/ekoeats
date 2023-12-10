@@ -144,6 +144,31 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     // header('Location: index.php?act=addtocart');
                     break;
             case "bill";
+           
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                
+                // Lấy dữ liệu từ ajax đẩy lên
+                $productId = $_POST['id'];
+                $soluongmoi = $_POST['amount'];
+            
+                // Kiểm giỏ hàng có tồn tại hay không
+                if (!empty($_SESSION['mycart'])) {
+                    // Kiểm tra sản phẩm đã có trong giỏ hàng chưa
+                    $index = array_search($productId, array_column($_SESSION['mycart'], 'id'));
+                    
+                    // Nếu sản phẩm tồn tại thì cập nhật lại số lượng
+                    if ($index !== false) {
+                        // $_SESSION['mycart'][$j][4] = $soluongm;
+                        $_SESSION['mycart'][$index][4] = $soluongmoi;
+                       
+                    // array_push($_SESSION['mycart'], $spadd);
+                    } else {
+                        echo 'Sản phầm ko tồn tại trong giỏ hàng';
+                    }
+                }
+            } else {
+                echo 'Yêu cầu không hợp lệ';
+            }
             
                     include "thanhtoan.php";
                     break;    

@@ -20,13 +20,13 @@ extract($onesp);
             </div>
             <div class="fied-img">
                 <div class="item">
-                    <img src="../upload/<?= $img ?>" alt="">
+                    <img src="../upload/<?=$img?>" alt="">
                 </div>
                 
                 <div class="content">
                     <div class="fied-content">
-                        <h3><?= $name ?></h3>
-                        <div class="fied-price"><?= $price ?>.000đ <del> 150.000đ</del></div>
+                        <h3><?=$name?></h3>
+                        <div class="fied-price"><?=$price?>.000đ <del> 150.000đ</del></div>
                     </div>
                     <div class="fied-note">
                         <span class="fied-text">
@@ -56,14 +56,16 @@ extract($onesp);
                             
                            
                             <!-- <button class="btn-minute" type="button" onclick="giam1()">-</button> -->
-                            <input type="text" class="amount1" name="amount1" id="amount1" value="1">
+                            <span  class="amount1" name="amount1" id="amount1" value="1">01</span>
                             <!-- <button class="btn-plus" type="button" onclick="tang1()">+</button> -->
                             <div class="btn-cart">
                             <form action="index.php?act=addtocart" method="post">
-                    <input type="hidden" name="id" value=<?= $id ?>>
-                    <input type="hidden" name="name" value=<?= $name ?>>
-                    <input type="hidden" name="img" value=<?= $img ?>>
-                    <input type="hidden" name="price" value=<?= $price ?>>
+                                
+                    <input type="hidden" name="id" value=<?=$id?>>
+                    <input type="hidden" name="name" value=<?=$name?>>
+                    <input type="hidden" name="img" value=<?=$img?>>
+                    <input type="hidden" name="soluong" value=<?=$soluong?>>
+                    <input type="hidden" name="price" value=<?=$price?>>
                     <input type="submit" name="addtocart" value="THÊM" >
                     </form>
                             
@@ -244,7 +246,17 @@ extract($onesp);
             padding: 8px;
            
         }
-        
+        .inner span{
+            width: 32px;
+            height: 32px;
+            background-color: #d3737bdd;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            padding: 8px;
+            color: black;
+           
+        }
 
     .nav-bottom {
         clear: both;
