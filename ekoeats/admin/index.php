@@ -30,7 +30,27 @@
                 include "sanpham/dssp.php";
                 break;
             case "themsp":
-                if(isset($_POST['themmoi'])&& ($_POST['themmoi'])){
+                $errortensp= $errorprice = $errormotasp = $errorsoluong = ""; 
+                if(isset($_POST['themmoi'])){
+                    $countError = 0;
+                    if (strlen($_POST['tensp']) == 0) { 
+                        $errortensp = "tên sản phẩm không được để trống";
+                        $countError += 1;
+                    }
+                    if (($_POST['price']) <0) {
+                        $errorprice = "giá không được là số âm";
+                        $countError += 1;
+                    }
+                    if (strlen($_POST['motasp']) ===0) { 
+                        $errormotasp = "mô tả không được bỏ trống";
+                        $countError += 1;
+                    }
+                    if ($_POST['soluong'] <0) { 
+                        $errorsoluong = "số lượng không được âm";
+                        $countError += 1;
+                    }
+                    
+                if($countError === 0){
                     $iddm=$_POST['iddm'];
                     $tensp=$_POST['tensp'];
                     $price=$_POST['price'];
@@ -46,6 +66,7 @@
                       }
                     insert_sp($tensp,$price,$hinh,$motasp,$soluong,$iddm);
                     $thongbao="thêm thành công";
+                }
                 }
                 $listdm=loadall_dm();
                 include "sanpham/themsp.php";
@@ -93,9 +114,17 @@
                 include "danhmuc/dsdm.php";
                 break;
             case "themdm":
-                if(isset($_POST['themmoi'])&& ($_POST['themmoi'])){
+                $errortenloai= ""; 
+                if(isset($_POST['themmoi'])){
+                    $countError = 0;
+                    if (strlen($_POST['tenloai']) === 0) { 
+                        $errortenloai = "tên loại không được để trống";
+                        $countError += 1;
+                    }
+                if($countError === 0){
                     $tenloai=$_POST['tenloai'];
                     insert_danhmuc($tenloai);
+                }
                 }
 
                 include "./danhmuc/themdm.php";

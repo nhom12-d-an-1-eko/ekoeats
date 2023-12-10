@@ -13,9 +13,9 @@
         $sp=pdo_query_one($sql);
         return $sp;
     }
-    function update_taikhoan($id,$user,$pass,$email,$address,$tel)
+    function update_taikhoan($id,$user,$email,$address,$tel)
      {
-        $sql="update taikhoan set user='".$user."', pass='".$pass."', email='".$email."',address='".$address."',tel='".$tel."',id='".$id."' where id=".$id;
+        $sql="update taikhoan set user='".$user."', email='".$email."',address='".$address."',tel='".$tel."',id='".$id."' where id=".$id;
         pdo_execute($sql);
     }
     function loadall_taikhoan() {  

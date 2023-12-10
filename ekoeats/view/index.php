@@ -45,13 +45,33 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             break;
         case 'dangky':
-            if (isset($_POST['dangky']) && ($_POST['dangky'])) {
-                $user = $_POST['user'];
-                $pass = $_POST['pass'];
-                $email = $_POST['email'];
-                insert_taikhoan($user, $pass, $email);
-                $thongbao = "Đã đăng ký thành công. Vui lòng đăng nhập.";
-            }
+            $erroruser= $erroremail = $errorpass = $errortel = ""; 
+                if(isset($_POST['dangky'])){
+                    $countError = 0;
+                    if (strlen($_POST['email']) === 0) { 
+                        $erroremail = "email không được để trống";
+                        $countError += 1;
+                    }
+                    if (strlen($_POST['user']) <3) {
+                        $erroruser = "user không được it hon 3";
+                        $countError += 1;
+                    }
+                    if ($_POST['pass'] <=6) { 
+                        $errorpass = "pass không được ít hơn 6";
+                        $countError += 1;
+                    }
+                    if (strlen($_POST['tel']) <10) { 
+                        $errortel = "số điện thoại không đúng";
+                        $countError += 1;
+                    }
+                    if ($countError === 0) {
+                    $user = $_POST['user'];
+                    $pass = $_POST['pass'];
+                    $email = $_POST['email'];
+                    insert_taikhoan($user, $pass, $email);
+                    $thongbao = "Đã đăng ký thành công. Vui lòng đăng nhập.";
+                    }
+                }
             include "taikhoan/dangky.php";
             break;
             case 'login':
@@ -75,12 +95,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             case 'info':
                if (isset($_POST['capnhat'])&&($_POST['capnhat'])){
                    $user=$_POST['user'];
-                   $pass=$_POST['pass'];
                    $email=$_POST['email'];
                    $address=$_POST['address'];
                    $tel=$_POST['tel'];
                    $id=$_POST['id'];
-                   update_taikhoan($id,$user,$pass,$email,$address,$tel);
+                   update_taikhoan($id,$user,$email,$address,$tel);
                    $_SESSION['email']=checkuser($email,$pass); 
                    header('Location: index.php');
                }
