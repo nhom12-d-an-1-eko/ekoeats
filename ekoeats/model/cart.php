@@ -56,15 +56,14 @@ function viewcart($del)
         $tong += $ttien;
         $_SESSION['total']= $tong;
     }
-    echo '<tr>AZA
+    echo '<tr>
                           <td colspan="5">Tổng Đơn Hàng</td>
                           <td id="total" class = "total">' . $tong . '.000</td>';
                          
                           if (isset($_SESSION['email'])) {
                               extract($_SESSION['email']);
                             echo'
-                          <td><a href="index.php?act=bill"><input type="button" onclick="thanhtoan"   value="Thanh toán "> 
-                          <input type="hidden" onclick="updateQuantity()"  value="cn"></a>
+                          <td><a href="index.php?act=bill"><input type="button" onclick="thanhtoan"   value="Thanh toán "> </a>
                         </td>
                           </tr>';
                           } else { 
@@ -264,16 +263,16 @@ try {
     function updateQuantity(id, index) {
     $.ajax({
             type: 'POST',
-            url: 'ekoeats/view/index.php',
+            url: './view/index.php',
             data: {
                 id: id,
                 soluongmoi: soluongmoi
             },
             success: function(response) {
                 // Sau khi cập nhật thành công
-                $.post('ekoeats/view/index.php', function(data) {
-                    $('#bill').html(data);
-                })
+                // $.post('./view/index.php', function(data) {
+                //     $('#index').html(data);
+                // })
             },
             error: function(error) {
                 console.log(error);
@@ -283,7 +282,7 @@ try {
 
     </script>
     
-<!-- < 
+
 
 
 
